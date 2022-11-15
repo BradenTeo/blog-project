@@ -4,6 +4,7 @@
       <Title :title="title" />
     </header>
 
+    <div class="max-w-[680px] mx-auto">
       <h1 class="text-2xl text-blue-800 font-bold text-center py-4">My Cancer Journey</h1>
 
       <div class="m-2 border-4 p-4 rounded-lg">
@@ -27,7 +28,7 @@
         What went down
       </h1>
 
-      <p class="m-2 border-4 p-4 rounded-lg">
+      <div class="m-2 border-4 p-4 rounded-lg">
         Early this February, I noticed a few lumps forming on my left shoulder and neck. 
         To my alarm, in just a week's time, the growths had spread rapidly over a larger area, 
         and also felt hard to the touch. &#129300;
@@ -55,29 +56,90 @@
           <li class="py-3">
             I had a <u>tube</u> stuck into my chest &#128576;. <br>
             This tube can deliver fluids into a larger vein compared to using a standard IV line.
-            It can be used to administer chemotherapy drugs, and to easily get blood samples.
-            <img src="~/assets/images/cancer/cvc_line.jpg" alt="cvc line"/>
+            It can be used to administer chemotherapy drugs, and to easily get blood samples.<br /><br />
+            <img class="max-w-[400px] mx-auto" src="~/assets/images/cancer/cvc_line.jpg" alt="cvc line"/><br />
             Thankfully, the procedure for this was painless &#128519;.
           </li>
         </ol>
         <br>
-        <span class="text-gray-600">
-          Did you know? Medical procedures (e.g. surgery) can only be done on weekdays. 
-          Who knew doctors have to rest too :P
-        </span>
-        <br><br>
+
         So as you can tell, hospital stay was a bit taxing and I was glad I was finally out after 
         <b>1 week</b>.<br><br>
         
-        The next phase soon began a week later, and I started seeing this building really often -- 
-        as I started going for chemotherapy, blood tests, scans, and doctor consultations.
-        <img src="~/assets/images/cancer/nccs.jpg" alt="nccs"/><br><br>
+        <i>Another week later...</i><br><br>
+        My actual treatment finally started for real.
+        Soon, I started seeing <b class="text-red-700" @mouseover="hover = true" @mouseleave="hover = false">this building</b> (National Cancer Centre) really often -- 
+        going there for <b>chemotherapy</b>, <b>blood tests</b>, <b>scans</b>, and <b>doctor consultations</b>.
+        
+        <br><br><span v-if="hover"><img class="max-w-[400px] mx-auto" src="~/assets/images/cancer/nccs.jpg" alt="nccs"/><br /></span>
+        
+        For those unfamiliar, chemotherapy involves using anti-cancer drugs to kill cancer cells.
+        It stops cancer cells from growing and reproducing themselves. It is commonly given in cycles,
+        with each cycle consisting of a treatment period followed by a recovery period.
+        <br><i>(Info lifted from  
+        <a href="https://www.nccs.com.sg/patient-care/cancer-types/pages/cancer-treatment.aspx" class="text-red-700" target="_blank ">NCCS's website</a>
+        . Do check it out for more useful info :) )</i>
+        <br><br>
+      
+        For my case, I was given 4 cycles of chemotherapy, each cycle lasting 4 weeks.<br>
+        So it goes like:<br>
+        <b>Week 1</b>: chemotherapy<br>
+        <b>Week 2</b>: recovery + blood test<br>
+        <b>Week 3</b>: chemotherapy<br>
+        <b>Week 4</b>: recovery + blood test + doctor consultation<br><br>
+      
+        Overall, it was quite a smooth and streamlined process. Thanks to the CVC line 
+        (the tube stuck into my chest), I didn't have to go through the pain of getting
+        an IV line inserted into my arm every other week. However, the CVC line eventually
+        slipped further out of my chest to a worrying degree... so I had to get it removed
+        <u>before my last treatment</u>. That meant using an IV line for my last treatment.
+        Nevertheless, that one time gave me perspective:
+        <br><br>
+        <div class="bg-orange-100">
+          On one hand, I was actually getting real tired of the CVC line.
+          <ul class="list-disc ml-[3ch]">
+            <li>
+              The dressing for the CVC line needed to be changed every week (done by nurses)
+              The process took anywhere between 20 minutes to around 40 minutes.
+            </li>
+            <li>
+              I had to make sure the dressing was kept clean. That also meant taping the area
+              around the dressing to prevent it from getting wet when I showered.
+            </li>
+            <li>
+              But I guess the most annoying thing was that it was on me 24/7. I mean.. it 
+              wasn't particularly uncomfortable or anything, but having something artificial
+              sticking out of your chest is just... weird.
+            </li>
+          </ul>
+        </div>
+        <br>
+        <div class="bg-purple-100">
+          But on the other hand, IV lines suck... They're painful, and I also get a bruise 
+          around the area for days even after the line is removed.
+        </div>
+        <br>
+        Well.. personally, I feel that the CVC line is still the lesser of 2 evils, so I'm
+        thankful I had it for 7 chemo sessions.
+        <br>
+        <br>        
+        But other than that, there were of course numerous side effects from the drugs, 
+        which I will talk about later.<br><br>
+        
+        <i>Moving on with the story...</i><br><br>
+        
+        <b>4 months and 8 chemo sessions later~~</b><br>
+        Chemotherapy DONE!<br>
+        Now for Radiotherapy!<br><br>
 
-        <b>4 months later~~</b><br>
-        8 rounds of chemo DONE!<br>
-        Now just left with 15 days of radiotherapy!
+        <b>Radiotherapy</b><br />
+        Now this one was interesting...<br />
+        Take a look at this image first:<br />
+        <img v-if="noLabel" class="max-w-[400px] mx-auto" src="~/assets/images/cancer/radiotherapy.jpg" alt="radiotherapy" @click="label" />
+        <img v-else class="max-w-[400px] mx-auto" src="~/assets/images/cancer/radiotherapy_with_label.jpg" alt="radiotherapy" @click="label" />
+        
 
-      </p>
+      </div>
 
       <h1 class="m-2 font-bold border-4 p-4 rounded-lg hover:bg-orange-100">
         Struggles
@@ -151,7 +213,7 @@
       <p class="m-2 border-4 p-4 rounded-lg">
         
       </p>
-      
+    </div>  
   </div>
 </template>
 
@@ -162,6 +224,13 @@ export default {
   data () {
     return {
       title: "Cancer",
+      hover: false,
+      noLabel: true
+    }
+  },
+  methods: {
+    label () {
+      this.noLabel = !this.noLabel
     }
   }
 }
