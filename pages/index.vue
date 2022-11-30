@@ -16,10 +16,10 @@
       </i>
     </div>
 
-    <div
-      class="w-[460px] md:w-[680px] mx-auto border-4 rounded-md border-white bg-slate-200 bg-opacity-50 backdrop-blur-md"
-    >
-      <div class="w-[400px] md:w-[580px] p-2 mx-auto text-left">
+    <!-- <div
+      class="max-w-[680px] mx-auto border-4 rounded-md border-white bg-slate-200 bg-opacity-50 backdrop-blur-md"
+    > -->
+    <!-- <div class="max-w-[600px] p-2 mx-auto text-left">
         <p class="font-bold">Some reasons why I created this site:</p>
         <ol class="list-decimal marker:font-bold">
           <li>
@@ -31,8 +31,26 @@
             And I hope my experiences help others in some shape or form :)
           </li>
         </ol>
+      </div> -->
+
+    <div
+      class="max-w-[460px] md:max-w-[680px] mx-auto text-justify py-[10px] px-[10px] border-4 rounded-md border-white bg-slate-200 bg-opacity-50 backdrop-blur-md"
+    >
+      <b>Some reasons why I created this site:</b>
+      <div class="pb-2">
+        <ol class="list-decimal list-inside marker:font-bold">
+          <li>
+            I've always wanted a place to pen down my thoughts and experiences
+            in a purposeful way
+          </li>
+          <li>To practise web development</li>
+          <li>
+            And I hope my experiences help others in some shape or form :)
+          </li>
+        </ol>
       </div>
     </div>
+    <!-- </div> -->
   </div>
 
   <!--

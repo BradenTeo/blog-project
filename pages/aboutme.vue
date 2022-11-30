@@ -11,7 +11,7 @@
         <i
           >(more info
           <nuxt-link
-            to="/cancer"
+            to="/perspectives/cancer"
             class="link font-bold hover:bg-teal-100 hover:text-black"
             >here</nuxt-link
           >).</i

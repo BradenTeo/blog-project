@@ -81,7 +81,7 @@
               a standard IV line. It can be used to administer chemotherapy
               drugs, and to easily get blood samples.<br /><br />
               <img
-                class="max-w-[400px] mx-auto"
+                class="max-w-[300px] md:max-w-[400px] mx-auto"
                 src="~/assets/images/cancer/cvc_line.jpg"
                 alt="cvc line"
               /><br />
@@ -108,7 +108,7 @@
 
           <br /><br /><span v-if="hover"
             ><img
-              class="max-w-[400px] mx-auto"
+              class="max-w-[300px] md:max-w-[400px] mx-auto"
               src="~/assets/images/cancer/nccs.jpg"
               alt="nccs" /><br
           /></span>
@@ -191,14 +191,14 @@
           Take a look at this image:<br />
           <img
             v-if="noLabel"
-            class="max-w-[400px] mx-auto"
+            class="max-w-[300px] md:max-w-[400px] mx-auto"
             src="~/assets/images/cancer/radiotherapy.jpg"
             alt="radiotherapy"
             @click="label"
           />
           <img
             v-else
-            class="max-w-[400px] mx-auto"
+            class="max-w-[300px] md:max-w-[400px] mx-auto"
             src="~/assets/images/cancer/radiotherapy_with_label.jpg"
             alt="radiotherapy"
             @click="label"
@@ -466,17 +466,17 @@
           On a lighter note, recently my senior pastor unveiled some resources
           to help people going through tough ordeals like cancer. She had gone
           through Stage 3 Breast Cancer and celebrates her 10th year being
-          cancer free this year! Click
+          cancer free this year! Visit this
           <a
             class="border-2 hover:border-slate-600 border-slate-600 hover:bg-slate-600 hover:text-white rounded-md px-[2px] py-[1px]"
             href="https://pastorlia.com/music/not-afraid/"
             target="_blank"
-            >HERE</a
+            >website</a
           >
-          to check out the website. She posted things that had helped her
-          through her journey, and tried to give a balanced view on her whole
-          journey. I think it would inspire you to see how she had kept her
-          faith and spirits so strong despite her condition. For myself, she had
+          if you're interested. She posted things that had helped her through
+          her journey, and tried to give a balanced view on her whole journey. I
+          think it would inspire you to see how she had kept her faith and
+          spirits so strong despite her condition. For myself, she had
           personally prayed for me before I went for my first chemo treatment
           &#128522;, and I believe that that prayer, together with many others,
           really helped me get through my cancer journey with minimal

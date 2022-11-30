@@ -102,6 +102,24 @@
         </a>
       </div>
 
+      <ClickableTabVue class="pb-5">
+        <template #title> Steps I took to set up this Project </template>
+        <template #content>
+          <ol class="list-decimal list-inside marker:font-bold">
+            <li>Follow the video shown above from 2:59 to 7:12 minutes</li>
+            <li>
+              In the website guide, follow the steps starting from this line:<br />
+              <div class="bg-slate-300 bg-opacity-50 italic">
+                Update nuxt.config.js to add a base URL (replace my-project by
+                your project name): <br />
+                router: { base: '/my-project/' },
+              </div>
+            </li>
+            <li>Follow the guide to setup Tailwind CSS</li>
+          </ol>
+        </template>
+      </ClickableTabVue>
+
       <div class="p-5">
         <img
           class="h-[240px] mx-auto shadow-2xl"
