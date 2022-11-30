@@ -52,5 +52,17 @@
     "stylelint-config-recommended-vue": "^1.1.0",
     "stylelint-config-standard": "^24.0.0",
     "tailwindcss": "^3.1.5"
-  }
+  },
+  "description": "```bash\r # install dependencies\r $ npm install",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BradenTeo/blog-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BradenTeo/blog-project/issues"
+  },
+  "homepage": "https://github.com/BradenTeo/blog-project#readme"
 }
