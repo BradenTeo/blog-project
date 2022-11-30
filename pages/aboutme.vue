@@ -1,34 +1,48 @@
 <template>
-  <div>
+  <div class="relative">
     <header>
       <Title :title="title" />
     </header>
-    
     <div class="max-w-[680px] mx-auto py-[24px] px-[24px]">
+      <p class="text-center border-4 m-2 p-4 rounded-lg">
+        I'm a Year 3 Computer Engineering student (NUS).<br /><br />
+        During the recent Summer break, I started learning Web Dev because I was
+        stuck at home
+        <i
+          >(more info
+          <nuxt-link
+            to="/cancer"
+            class="link font-bold hover:bg-teal-100 hover:text-black"
+            >here</nuxt-link
+          >).</i
+        >
+      </p>
+      <br />
 
-      <p class="text-center">
-        I'm a 23-year-old Uni student, about to enter Year 3 of my Computer Engineering course in NUS.<br><br>
-        During the recent Summer break, I started learning Web Dev because I was stuck at home (more info 
-        <nuxt-link to="/cancer" class="link font-bold hover:bg-teal-100">here</nuxt-link>).
-      </p><br><br>
-
-      <div class="text-left">
+      <div class="text-justify border-4 m-2 p-4 rounded-lg overflow-hidden">
         <b>Interests:</b>
-        <p>      
-          A short section here, but I like anime (and manga), since my Secondary School days.<br>
-          It's probably the easiest (a.k.a cheapest) form of entertainment/hobby to get into, if you think about it 😂.<br>
-          Here's my <a href="https://myanimelist.net/profile/brainaden" target="_blank" class="border-2 rounded-md">MAL account</a> if you're interested.
+        <p>
+          A short section here, but I like anime (and manga), since my Secondary
+          School days. It's probably the easiest (a.k.a cheapest) form of
+          entertainment/hobby to get into, if you think about it 😂.<br />
+          Here's my
+          <a
+            href="https://myanimelist.net/profile/brainaden"
+            target="_blank"
+            class="border-2 hover:border-slate-600 border-slate-600 hover:bg-slate-600 hover:text-white rounded-md px-[1px] py-[1px]"
+            >MAL</a
+          >.
         </p>
-      </div><br><br>
-
-      <div class="text-center">
-        <b>Contact Me!</b><br>
-        <a href = "mailto: bteowr@hotmail.com" target="_blank" class="border-2 rounded-md">Shoot me a quick Email</a><br>
-        <p class="text-gray-500">(I'm not comfortable with disclosing my socials, but I would love to hear how you feel about my site!)</p>
+        <img
+          src="~/assets/images/aboutme/yuru-yuri.gif"
+          class="w-2/3 mx-auto"
+        />
+        <!-- <img
+          src="~/assets/images/aboutme/ryougishiki.png"
+          class="w-1/3 float-right"
+        /> -->
       </div>
-
     </div>
-      
   </div>
 </template>
 
@@ -36,10 +50,10 @@
 export default {
   name: 'AboutMe',
   layout: 'default',
-  data () {
+  data() {
     return {
-      title: "About Me",
+      title: 'About Me',
     }
-  }
+  },
 }
 </script>

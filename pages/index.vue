@@ -4,28 +4,37 @@
       <Title title="Home" class="text-xl" />
     </section>
 
-    <div class="max-w-[680px] mx-auto text-center pt-[64px] pb-[56px] px-[24px]">
-      <p class="text-gray-600">
-        Welcome to my personal site! This is where I document important things in my life.<br>
-      </p>
+    <div
+      class="max-w-[680px] mx-auto text-center pt-[64px] pb-[56px] px-[24px] font-bold"
+    >
+      <i class="text-2xl">
+        Welcome to my personal site! &#128513;<br /><br />
+      </i>
+      <i class="text-xl">
+        Its main purpose is to help me archive important stuff that happens from
+        time to time~<br />
+      </i>
     </div>
 
-    <div class="w-[375px] md:w-[680px] mx-auto rounded-md bg-gradient-to-r from-purple-300 to-pink-300">
-      <div class="w-[300px] md:w-[580px] p-2 mx-auto text-left"> 
-        
-        <p class="font-bold">Here are some reasons why I created this blog:</p>
-        <ol class="list-decimal marker:text-white marker:font-bold">
-          <li>I've always wanted a place to pen down my thoughts and experiences in a purposeful way</li>
+    <div
+      class="w-[460px] md:w-[680px] mx-auto border-4 rounded-md border-white bg-slate-200 bg-opacity-50 backdrop-blur-md"
+    >
+      <div class="w-[400px] md:w-[580px] p-2 mx-auto text-left">
+        <p class="font-bold">Some reasons why I created this site:</p>
+        <ol class="list-decimal marker:font-bold">
+          <li>
+            I've always wanted a place to pen down my thoughts and experiences
+            in a purposeful way
+          </li>
           <li>To practise web development</li>
-          <li>And I hope my experiences help others in some shape or form :)</li>
+          <li>
+            And I hope my experiences help others in some shape or form :)
+          </li>
         </ol>
-
       </div>
     </div>
-
   </div>
 
-  
   <!--
     {{ $store.state.title }}
 
@@ -42,12 +51,11 @@ export default {
   components: {
     // HelloWorld
   },
-  layout: 'default',  
+  layout: 'default',
   methods: {
     increment() {
       this.$store.commit('increment')
-    }
-  }
+    },
+  },
 }
 </script>
-
