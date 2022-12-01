@@ -4,7 +4,7 @@
       <Title :title="title" />
     </header>
     <div class="max-w-[680px] mx-auto py-[24px] px-[24px]">
-      <p class="text-center border-4 m-2 p-4 rounded-lg">
+      <p class="text-center border-4 border-white/50 m-2 p-4 rounded-lg">
         I'm a Year 3 Computer Engineering student (NUS).<br /><br />
         During the recent Summer break, I started learning Web Dev because I was
         stuck at home
@@ -19,7 +19,9 @@
       </p>
       <br />
 
-      <div class="text-justify border-4 m-2 p-4 rounded-lg overflow-hidden">
+      <div
+        class="text-justify border-4 border-white/50 m-2 p-4 rounded-lg overflow-hidden"
+      >
         <b>Interests:</b>
         <p>
           A short section here, but I like anime (and manga), since my Secondary

@@ -47,7 +47,7 @@
 
           Personally, I'm still a newbie in all this, but I'm hoping to get a
           better hang of things as I code more. This website is still very
-          bare-bones, with no back-end and having very little animations. I
+          bare-bones, with very little animations and having minimal back-end. I
           might work on these features more in the future, but don't hold me to
           it, lol.<br /><br />
 
@@ -103,13 +103,14 @@
       </div>
 
       <ClickableTabVue class="pb-5">
-        <template #title> Steps I took to set up this Project </template>
+        <template #title> How I set up this Project </template>
         <template #content>
           <ol class="list-decimal list-inside marker:font-bold">
-            <li>Follow the video shown above from 2:59 to 7:12 minutes</li>
+            <li>Follow the video shown above to the 7:12 min mark</li>
             <li>
-              In the website guide, follow the steps starting from this line:<br />
-              <div class="bg-slate-300 bg-opacity-50 italic">
+              In the guide for publishing on gh pages, follow the steps starting
+              from this line:<br />
+              <div class="bg-slate-300/50 italic ml-4">
                 Update nuxt.config.js to add a base URL (replace my-project by
                 your project name): <br />
                 router: { base: '/my-project/' },

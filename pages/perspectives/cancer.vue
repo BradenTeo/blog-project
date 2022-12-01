@@ -450,8 +450,8 @@
           Special Consideration. It's not like I was totally unable to study
           after all. Literally, all I could do was to trust that my profs were
           understanding enough to cut me some slack... To their credit, they
-          were. Or at least I think they were... After all, I only had emails to
-          base my judgement on. Sigh... At least this prepares me for the real
+          were. Or at least I think they were. Well, I only had emails to base
+          my judgement on. Sigh... At least this prepares me for the real
           world... &#128552;
           <br /><br />
 

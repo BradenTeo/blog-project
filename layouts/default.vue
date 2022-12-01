@@ -17,29 +17,50 @@
       <nuxt class="flex flex-col min-h-screen" />
     </div>
 
-    <footer class="mt-auto bottom-0 text-center bg-slate-700 text-white">
-      <div class="my-3">
-        <b> Contact Me! </b>
-      </div>
-
-      <a
-        href="mailto: bteowr@hotmail.com"
-        target="_blank"
-        class="border-2 p-1 rounded-md hover:bg-teal-100 hover:text-black hover:font-bold"
-        >Shoot me a quick Email</a
+    <footer
+      class="relative mt-auto bottom-0 text-center bg-slate-600 text-white py-3 bg-opacity-50"
+    >
+      <img
+        class="absolute bottom-0 left-[5%] md:left-[25%] lg:left-[30%] xl:left-[35%] 2xl:left-[40%] h-[60px]"
+        src="~/assets/images/default/footer-img.gif"
+      />
+      <button
+        class="mx-auto border-2 p-1 rounded-md w-[250px] hover:bg-slate-300 hover:text-black hover:font-bold hover:border-black"
+        @click="openDialog"
       >
+        Send me some feedback!
+      </button>
 
-      <div class="text-gray-500 p-5">
-        (I'm not comfortable with disclosing my socials, but I would love to
-        hear how you feel about my site!)
-      </div>
+      <BaseDialogVue v-if="showDialog" @close="closeDialog">
+        <template #header>Feedback</template>
+        <FeedbackForm />
+      </BaseDialogVue>
     </footer>
   </div>
 </template>
 
 <script>
+import BaseDialogVue from '~/components/BaseDialog.vue'
+import FeedbackForm from '~/components/FeedbackForm.vue'
 export default {
   name: 'DefaultTemplate',
+  components: {
+    BaseDialogVue,
+    FeedbackForm,
+  },
+  data() {
+    return {
+      showDialog: false,
+    }
+  },
+  methods: {
+    openDialog() {
+      this.showDialog = true
+    },
+    closeDialog() {
+      this.showDialog = false
+    },
+  },
 }
 </script>
 
