@@ -17,6 +17,10 @@
       <nuxt class="flex flex-col min-h-screen" />
     </div>
 
+    <div class="relative bottom-0 flex justify-end text-xs italic">
+      <p class="mr-[2px]">Website last updated: 01/12/22</p>
+    </div>
+
     <footer
       class="relative mt-auto bottom-0 text-center bg-slate-600 text-white py-3 bg-opacity-50"
     >
