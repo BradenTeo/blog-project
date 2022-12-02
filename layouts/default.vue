@@ -18,7 +18,7 @@
     </div>
 
     <div class="relative bottom-0 flex justify-end text-xs italic">
-      <p class="mr-[2px]">Website last updated: 01/12/22</p>
+      <p class="mr-[2px]">Website last updated: 02/12/22</p>
     </div>
 
     <footer
