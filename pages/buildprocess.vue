@@ -47,9 +47,9 @@
 
           Personally, I'm still a newbie in all this, but I'm hoping to get a
           better hang of things as I code more. This website is still very
-          bare-bones, with very little animations and having minimal back-end. I
-          might work on these features more in the future, but don't hold me to
-          it, lol.<br /><br />
+          bare-bones, with very little animations and having minimal back-end.
+          No comment section too. I might work on these features more in the
+          future, but don't hold me to it, lol.<br /><br />
 
           Here's some tips I have though:
           <ol class="list-decimal list-inside marker:font-bold">
@@ -118,6 +118,19 @@
             </li>
             <li>Follow the guide to setup Tailwind CSS</li>
           </ol>
+        </template>
+      </ClickableTabVue>
+
+      <ClickableTabVue class="pb-5">
+        <template #title> Shortcomings </template>
+        <template #content>
+          <ul class="list-disc list-inside marker:font-bold">
+            <li>I was not able to get my favicon to show...</li>
+            <li>
+              Was not able to blur the backdrop for the feedback dialog pop-up
+            </li>
+            <li>Some parts of the website looks a bit wonky on my phone.</li>
+          </ul>
         </template>
       </ClickableTabVue>
 
