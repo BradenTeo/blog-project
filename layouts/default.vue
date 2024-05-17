@@ -2,14 +2,13 @@
   <div class="bg-gradient-to-br from-orange-200 to-slate-400">
     <div>
       <div class="text-3xl text-white bg-slate-700 font-bold text-center py-4">
-        &#127833; Braden's Journal &#9997;
+        Braden's Journal &#9997;
       </div>
 
       <nav
         class="inline-block sticky top-0 z-[100] h-[28px] flex justify-center space-x-4 bg-slate-600"
       >
         <nuxt-link to="/" class="link"> Home </nuxt-link>
-        <nuxt-link to="/aboutme" class="link"> About Me </nuxt-link>
         <nuxt-link to="/buildprocess" class="link"> Build Process </nuxt-link>
         <nuxt-link to="/perspectives" class="link"> Perspectives </nuxt-link>
       </nav>
@@ -18,7 +17,7 @@
     </div>
 
     <div class="relative bottom-0 flex justify-end text-xs italic">
-      <p class="mr-[2px]">Website last updated: 02/12/22</p>
+      <p class="mr-[2px]">Website last updated: 17/05/24</p>
     </div>
 
     <footer

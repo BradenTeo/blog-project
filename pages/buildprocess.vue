@@ -5,11 +5,13 @@
     </header>
 
     <div class="max-w-[680px] mx-auto text-justify py-[24px] px-[24px]">
-      <h2 class="font-bold text-xl">What's on here?</h2>
+      <h2 class="font-bold text-xl">What's here?</h2>
       <div class="pb-5 border-b-2">
-        On this page, I'll be documenting the steps I took to build this site,
-        so that you can follow along if you want to. But if you manage to find
-        better ways of creating such a website online, do let me know! :)
+        On this page, I've documented the steps I took to build this site in
+        2022, so that you can follow along if you want to. But if you manage to
+        find better ways of creating such a website online, do let me know! :)
+        Especially with ChatGPT and other AI tools nowadays, it's much easier to
+        learn and build these stuff.
       </div>
 
       <h2 class="font-bold text-xl pt-5">Baby Steps</h2>
@@ -23,11 +25,13 @@
         </ol>
       </div>
 
-      <ClickableTabVue class="pb-5">
+      <ClickableTabVue
+        class="pb-5"
+        :open="true"
+        @click.native="showPara = !showPara"
+      >
         <template #title>
-          <span v-if="!showPara">Show</span>
-          <span v-else>Hide</span>
-          details of my experience
+          Details of my experience
         </template>
         <template #content>
           Web development probably seems pretty simple and straightforward at
@@ -73,10 +77,9 @@
           <li>
             Setting up a new Vue project:
             <iframe
-              class="pl-5"
+              class="pl-5 w-[560px] h-[315px]"
               src="https://www.youtube.com/embed/CBwq_TUL5Fg"
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             >
@@ -102,7 +105,7 @@
         </a>
       </div>
 
-      <ClickableTabVue class="pb-5">
+      <ClickableTabVue class="pb-5" :open="true">
         <template #title> How I set up this Project </template>
         <template #content>
           <ol class="list-decimal list-inside marker:font-bold">
@@ -121,7 +124,7 @@
         </template>
       </ClickableTabVue>
 
-      <ClickableTabVue class="pb-5">
+      <ClickableTabVue class="pb-5" :open="true">
         <template #title> Shortcomings </template>
         <template #content>
           <ul class="list-disc list-inside marker:font-bold">

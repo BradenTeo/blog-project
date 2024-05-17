@@ -4,19 +4,19 @@
       <Title :title="title" />
     </header>
 
-    <div class="max-w-[680px] mx-auto">
+    <div class="max-w-[680px] mx-auto w-auto lg:w-[680px]">
       <h1 class="text-2xl text-blue-800 font-bold text-center py-4">
-        My Cancer Journey
+        My Cancer Journey (2022)
       </h1>
 
-      <i class="text-slate-600 ml-2">
+      <!-- <i class="text-slate-600 ml-2">
         Hint: Click on the arrow buttons to expand and collapse the tabs~
-      </i>
+      </i> -->
 
       <ClickableTabVue :open="true">
         <template #title> &#10071; Disclaimer &#10071; </template>
         <template #content>
-          1 in 3 people in Singapore will be diagnosed with cancer some time in
+          1 in 4 people in Singapore will be diagnosed with cancer some time in
           their lives. Odds are, you know someone who has cancer, has had
           cancer, or will have cancer in the future. I didn't realise it back
           then, but this is the reality we live in -- one where our lives can
@@ -42,7 +42,7 @@
       <ClickableTabVue>
         <template #title> What went Down </template>
         <template #content>
-          Early this February, I noticed a few lumps forming on my left shoulder
+          In February of 2022, I noticed a few lumps forming on my left shoulder
           and neck. To my alarm, in just a week's time, the growths had spread
           rapidly over a larger area, and also felt hard to the touch. &#129300;
           <br /><br />
@@ -95,23 +95,22 @@
           <b>1 week</b>.<br /><br />
 
           <i>Another week later...</i><br /><br />
+
+          <img
+            class="max-w-[300px] md:max-w-[400px] mx-auto"
+            src="~/assets/images/cancer/nccs.jpg"
+            alt="nccs"
+          /><br />
+
           My actual treatment finally started for real. Soon, I started seeing
-          <b
-            class="text-red-700"
-            @mouseover="hover = true"
-            @mouseleave="hover = false"
-            >this building</b
-          >
-          (National Cancer Centre) really often -- going there for
+          this building (National Cancer Centre) really often -- going there for
           <b>chemotherapy</b>, <b>blood tests</b>, <b>scans</b>, and
           <b>doctor consultations</b>.
-
-          <br /><br /><span v-if="hover"
-            ><img
-              class="max-w-[300px] md:max-w-[400px] mx-auto"
-              src="~/assets/images/cancer/nccs.jpg"
-              alt="nccs" /><br
-          /></span>
+          <i
+            >(Unrelated, but right now NCCS has transferred to a new building
+            that looks pretty sleek haha)</i
+          >
+          <br /><br />
 
           For those unfamiliar, chemotherapy involves using anti-cancer drugs to
           kill cancer cells. It stops cancer cells from growing and reproducing
@@ -207,8 +206,13 @@
           tumor, compared to chemo which affects the whole body. If you
           <b>click</b> on the image, you can see that the person is wearing a
           mask, which is to keep his head still during the procedure. It's a
-          plastic mould with holes to breathe through. I couldn't really see
-          much of anything during the procedure thanks to that &#128517;
+          plastic mould with holes to breathe through. It had to be custom-made
+          for me, so a technician would heat up a plastic sheet and mould it to
+          my face. Thanks to the mould, I couldn't really see much of anything
+          during the procedure &#128517; <br /><br />
+
+          Fun(?) fact: I also had to be tattooed on my torso (just 4 small dots)
+          to help the radiographers align the machine properly.
           <br /><br />
 
           This procedure was done roughly 5 times a week for 3 weeks. Each
@@ -236,7 +240,7 @@
           mid-Feb to mid-Aug) took about 6 months. Half a year! It lasted for
           half of a Uni semester, a whole summer break, and 2.5 weeks of the
           next Semester.
-          <b>Dayum</b> <br /><br />
+          <b>Wow</b> <br /><br />
 
           In the next section, I will go into more detail for some of the stuff
           I glossed over in this section.
@@ -331,16 +335,9 @@
             It's tough to admit but I was down in my spiritual life too. I did
             not have established habits of prayer and Bible reading yet, as I
             was a relatively new Christian. That said, I did involve myself in
-            CG (Church Group) meetings and watched the weekly online sermons
+            CG (Connect Group) meetings and watched the weekly online sermons
             (grateful for this!). I also finished a book called "Driven by
             Eternity" by John Bevere.
-            <i>
-              [Though I recently watched a review of the book, which exposed
-              some stuff and I realised that maybe it's better that I read the
-              Bible more first, so that I can be more discerning of the Truth. I
-              think I would still recommend the book to others though, just be
-              careful and take everything with a grain of salt.]
-            </i>
           </p>
         </template>
       </ClickableTabVue>
@@ -451,22 +448,37 @@
           after all. Literally, all I could do was to trust that my profs were
           understanding enough to cut me some slack... To their credit, they
           were. Or at least I think they were. Well, I only had emails to base
-          my judgement on. Sigh... At least this prepares me for the real
-          world... &#128552;
+          my judgement on. &#128552; Sigh... it was a very confusing and
+          fustrating period of time, but I'm thankful that it all turned out
+          fine in the end... Like I could take my final exam at home (special
+          arrangement from my prof). Luckily, I was also not mentally affected
+          too much by the whole ordeal, and could still study for my exams.
+          Looking back, it's pretty awesome how I didn't need to delay my
+          graduation by a semester.
           <br /><br />
 
-          After returning to my own home, one thing I realised was that I wanted
-          to help out more. Being purely a receiver of help is not a good thing,
-          and I wanted to help out with at least washing the dishes. (I did that
-          for like only 2 weeks until I got tired >_>) I think this point is
-          very important for any caregiver. Please let your patient also help
-          out in some way, if not he/she is sure to feel like a useless burden.
+          Anyways, after returning to my own home, one thing I realised was that
+          I wanted to help out more. Being purely a receiver of help is not a
+          good thing, and I wanted to help out with at least washing the dishes.
+          I think this point is very important for any caregiver -- to let your
+          patient help out in any way possible, so that he/she would not feel
+          like a burden. But what about patients who are really unable to
+          contribute much? I've read this very impactful book called
+          <b>"Courage for Caregivers"</b>
+          by Henri Nouwen, and one thing that really stood out to me was that
+          some caregivers, while taking care of their terminally ill patient, do
+          feel like they learn so much from the patient. I think it was about
+          learning forgiveness, love, and the human condition. I can't remember
+          exactly how the author phrased that point, but it was so powerful.
+          Well, I don't know what compelled me to read the book, because it is
+          more targeted at caregivers, but I think it's a good read for anyone
+          who wants to understand the caregiver's perspective.
           <br /><br />
 
-          On a lighter note, recently my senior pastor unveiled some resources
-          to help people going through tough ordeals like cancer. She had gone
-          through Stage 3 Breast Cancer and celebrates her 10th year being
-          cancer free this year! Visit this
+          On another note, my senior pastor unveiled some resources to help
+          people going through tough ordeals like cancer. She had gone through
+          Stage 3 Breast Cancer and celebrated her 10th year being cancer-free
+          in 2022! Visit this
           <a
             class="border-2 hover:border-slate-600 border-slate-600 hover:bg-slate-600 hover:text-white rounded-md px-[2px] py-[1px]"
             href="https://pastorlia.com/music/not-afraid/"
@@ -482,7 +494,6 @@
           really helped me get through my cancer journey with minimal
           complications.
           <br /><br />
-          (Stay tuned for more...)
         </template>
       </ClickableTabVue>
     </div>

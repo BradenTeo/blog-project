@@ -1,53 +1,79 @@
 <template>
   <div
-    class="m-2 border-4 p-4 rounded-lg hover:border-blue-800"
+    class="m-2 border-4 p-4 rounded-lg border-gray-200 hover:border-slate-600"
     :class="{
-      'border-blue-800': clicked,
-      'border-gray-200': !clicked,
-      'bg-orange-100': clicked,
+      'border-slate-600': tabOpened,
+      'border-gray-200': !tabOpened,
+      'bg-orange-100': tabOpened,
+      'cursor-pointer': !tabOpened,
     }"
+    @mouseover="hoveredTab = true"
+    @mouseleave="hoveredTab = false"
+    @mousedown="
+      tabOpened = true
+      hoveredButton = false
+    "
   >
     <div>
       <h1
         class="sticky top-9 z-50 font-bold w-100 inline-block"
-        :style="{
-          'background-color': clicked ? 'rgb(255 237 213)' : 'transparent',
-          'border-color': clicked ? 'rgb(30 64 175)' : 'transparent',
-          'border-bottom-width': clicked ? '2px' : '0px',
+        :class="{
+          'border-slate-600': tabOpened,
+          'border-transparent': !tabOpened,
+          'border-b-2': tabOpened,
+          'border-b-0': !tabOpened,
+          'bg-orange-100': tabOpened,
         }"
       >
         <slot name="title"></slot>
       </h1>
       <button
-        class="sticky top-9 z-50 float-right inline-block border-2 hover:border-blue-800 rounded-lg"
+        v-if="tabOpened"
+        class="sticky top-9 z-50 float-right inline-block border-2 hover:border-slate-600 rounded-lg flex flex-row items-center justify-center p-1"
         :style="{
-          'background-color': clicked ? 'rgb(255 237 213)' : 'transparent',
+          'background-color': tabOpened ? 'slate-600' : 'transparent',
         }"
-        @mousedown="clicked = !clicked"
+        @mouseover="hoveredButton = true"
+        @mouseleave="hoveredButton = false"
+        @click.stop="
+          tabOpened = false
+          hoveredTab = false
+        "
       >
+        <div
+          class="text-center mr-1"
+          :class="{
+            'text-gray-300': !hoveredButton,
+            'text-black': hoveredButton,
+          }"
+        >
+          Hide
+        </div>
+
+        <!-- This is the SVG that will be displayed when the button is tabOpened -->
         <svg
-          v-if="!clicked"
+          v-if="tabOpened && !hoveredButton"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6"
+          class="w-5 h-5 text-gray-300"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
+            d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"
           />
         </svg>
         <svg
-          v-else
+          v-if="tabOpened && hoveredButton"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-6 h-6"
+          class="w-5 h-5"
         >
           <path
             stroke-linecap="round"
@@ -56,7 +82,29 @@
           />
         </svg>
       </button>
-      <p v-if="clicked" class="pt-3 text-justify block">
+
+      <!-- This is the SVG that will be displayed when the tab is not open -->
+      <svg
+        v-else
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="w-6 h-6 sticky top-9 z-50 float-right inline-block"
+        :class="{
+          'text-white': !hoveredTab,
+          'text-slate-600': hoveredTab,
+        }"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
+        />
+      </svg>
+
+      <p v-if="tabOpened" class="text-justify block mt-4">
         <slot name="content"></slot>
       </p>
     </div>
@@ -71,18 +119,12 @@ export default {
       required: false,
       default: false,
     },
-    title: {
-      type: String,
-      required: true,
-    },
-    content: {
-      type: String,
-      required: true,
-    },
   },
   data() {
     return {
-      clicked: this.open,
+      tabOpened: this.open,
+      hoveredButton: false,
+      hoveredTab: false,
     }
   },
 }
