@@ -1,4 +1,4 @@
-require('dotenv').config()
+// require('dotenv').config()
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -23,7 +23,7 @@ export default {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: `${process.env.BASE_URL}favicon.ico`,
+        href: `/favicon.ico`,
       },
     ],
   },
@@ -62,6 +62,6 @@ export default {
   },
 
   router: {
-    base: process.env.BASE_URL,
+    base: '/blog-project/',
   },
 }
