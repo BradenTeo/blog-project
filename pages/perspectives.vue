@@ -6,17 +6,17 @@
 
     <div v-if="isParent" class="flex flex-wrap justify-center mt-4">
       <PerspectivesButtonVue
-        title="Cancer Journey"
-        description="I was diagnosed with Stage 2 Hodgkin's Lymphoma earlier this year, and 
-                    am currently in remission :)"
+        title="Cancer Journey (2022) 🩺"
+        description="I was diagnosed with Stage 2 Hodgkin's Lymphoma in 2022 😲...
+                    But I'm currently in remission :)"
         :background-url="
-          require('~/assets/images/perspectives/cancer-cell.jpg')
+          require('~/assets/images/perspectives/hospital.jpg')
         "
         weblink="cancer"
       />
 
       <PerspectivesButtonVue
-        title="LifeHacks"
+        title="LifeHacks 🛠️"
         description="Random tips"
         :background-url="
           require('~/assets/images/perspectives/random-stuff.png')
@@ -25,14 +25,14 @@
       />
     </div>
     <div v-if="isParent" class="italic text-sm mt-10 mx-auto text-slate-600">
-      (I'll probably be adding more stuff down the road...)
+      (Stay tuned for more...)
     </div>
 
     <div
       v-if="!isParent"
       class="lg:flex lg:flex-row lg:justify-between sticky z-20 left-0 top-[28px]"
     >
-      <PerspectivesNavBar />
+      <PerspectivesNavBar class="hidden lg:block" />
       <nuxt-child class="static" />
       <div class="absolute-right sticky z-20 right-0 top-[28px] w-[19ch]"></div>
     </div>
