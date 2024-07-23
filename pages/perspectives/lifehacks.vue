@@ -21,20 +21,6 @@
       </section>
 
       <section>
-        <h2>&#128214; Online courses</h2>
-        <p>
-          Get access to tons of Udemy courses for free, by again, using your
-          library account!
-        </p>
-        <a
-          href="https://lnkd.in/g9uQiUyh?trk=public_post_share-update_update-text"
-          target="_blank"
-        >
-          Check out this guide
-        </a>
-      </section>
-
-      <section>
         <h2>&#128241; Reducing iPhone screen brightness</h2>
         This is useful for when you're in a dark room.
         <a
