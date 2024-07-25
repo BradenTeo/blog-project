@@ -52,6 +52,8 @@ jobs:
           git config --global user.name "BradenTeo"
 
       - name: Deploy to GitHub Pages 🚀
-        run: npm run deploy
+        run: |
+          echo "machine github.com login ${{ secrets.GITHUB_TOKEN }}" > ~/.netrc
+          npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
