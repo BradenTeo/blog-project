@@ -42,3 +42,18 @@ jobs:
 
       # - name: Run linter 👀
       # run: npm run lint
+
+      - name: Build project 🏗
+        run: npm run generate
+
+      - name: Configure Git identity
+        run: |
+          git config --global user.email "bteowr@hotmail.com"
+          git config --global user.name "BradenTeo"
+
+      - name: Deploy to GitHub Pages 🚀
+        run: |
+          echo "machine github.com login ${{ secrets.GITHUB_TOKEN }}" > ~/.netrc
+          npm run deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
