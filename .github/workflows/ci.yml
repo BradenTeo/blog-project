@@ -42,3 +42,11 @@ jobs:
 
       # - name: Run linter 👀
       # run: npm run lint
+
+      - name: Build project 🏗
+        run: npm run generate
+
+      - name: Deploy to GitHub Pages 🚀
+        run: npm run deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
