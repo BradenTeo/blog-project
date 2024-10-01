@@ -75,15 +75,9 @@
             >
           </li>
           <li>
-            Setting up a new Vue project:
-            <iframe
-              class="pl-5 w-[560px] h-[315px]"
-              src="https://www.youtube.com/embed/CBwq_TUL5Fg"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
+            <a href="https://www.youtube.com/watch?v=CBwq_TUL5Fg" target="_blank">
+              Setting up a new Vue project
+            </a>
           </li>
           <li>
             <a href="https://tailwindcss.com/docs/guides/nuxtjs" target="_blank"
