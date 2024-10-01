@@ -9,9 +9,8 @@
       <div class="pb-5 border-b-2">
         On this page, I've documented the steps I took to build this site in
         2022, so that you can follow along if you want to. But if you manage to
-        find better ways of creating such a website online, do let me know! :)
-        Especially with ChatGPT and other AI tools nowadays, it's much easier to
-        learn and build these stuff.
+        find better ways of creating such a website online, do let me know! :)<br />
+        (Tbh, I've been facing some errors when deploying the website recently 😓)
       </div>
 
       <h2 class="font-bold text-xl pt-5">Baby Steps</h2>
