@@ -106,7 +106,7 @@
             <li>
               In the guide for publishing on gh pages, follow the steps starting
               from this line:<br />
-              <div class="bg-slate-300/50 italic ml-4">
+              <div class="bg-slate-300/50 dark:bg-slate-700 italic ml-4">
                 Update nuxt.config.js to add a base URL (replace my-project by
                 your project name): <br />
                 router: { base: '/my-project/' },
@@ -121,14 +121,31 @@
         <template #title> Shortcomings </template>
         <template #content>
           <ul class="list-disc list-inside marker:font-bold">
-            <li>I was not able to get my favicon to show...</li>
+            <li><s>I was not able to get my favicon to show...</s> ✅ Fixed in 2026</li>
             <li>
-              Was not able to blur the backdrop for the feedback dialog pop-up
+              <s>Was not able to blur the backdrop for the feedback dialog pop-up</s> ✅ Fixed in 2026
             </li>
             <li>Some parts of the website looks a bit wonky on my phone.</li>
           </ul>
         </template>
       </ClickableTabVue>
+
+      <h2 class="font-bold text-xl pt-5 border-t-2">2026 Update — AI-assisted UI/UX overhaul</h2>
+      <div class="pb-5">
+        In 2026, I used <a href="https://claude.ai/code" target="_blank">Claude Code</a>
+        (Anthropic's AI coding assistant) to revisit and improve the website. It was a fun experience —
+        I mostly just described what I wanted in plain English and the AI handled the implementation.
+        Here's a summary of what was done:
+        <ul class="list-disc list-inside mt-2">
+          <li>Added a dark / light mode toggle</li>
+          <li>Fixed the favicon not showing on GitHub Pages</li>
+          <li>Added a blurred backdrop to the feedback dialog</li>
+          <li>Fixed a layout shift caused by the scrollbar appearing and disappearing</li>
+          <li>Redesigned the nav tabs and content tabs for a cleaner look</li>
+          <li>Added a scroll-to-top button on long pages</li>
+          <li>General bug fixes and UI polish throughout</li>
+        </ul>
+      </div>
 
       <div class="p-5">
         <img
@@ -156,11 +173,24 @@ export default {
       showPara: false,
     }
   },
+  head() {
+    return {
+      title: "Build Process | Braden's Journal",
+      meta: [
+        { hid: 'description', name: 'description', content: 'How I built this site — learning HTML, CSS, JavaScript, and Nuxt.js step by step.' },
+        { hid: 'og:title', property: 'og:title', content: "Build Process | Braden's Journal" },
+      ],
+    }
+  },
 }
 </script>
 
 <style scoped>
 a {
   color: #2b6cb0;
+}
+
+a:hover {
+  color: #1a4a8a;
 }
 </style>

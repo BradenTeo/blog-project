@@ -144,7 +144,7 @@
           <u>before my last treatment</u>. That meant using an IV line for my
           last treatment. Nevertheless, that one time gave me perspective:
           <br /><br />
-          <div class="bg-orange-100">
+          <div class="bg-orange-100 dark:bg-orange-950 dark:text-gray-200">
             On one hand, I was actually getting real tired of the CVC line.
             <ul class="list-disc ml-[3ch]">
               <li>
@@ -166,7 +166,7 @@
             </ul>
           </div>
           <br />
-          <div class="bg-purple-100">
+          <div class="bg-purple-100 dark:bg-purple-950 dark:text-gray-200">
             But on the other hand, IV lines suck... They're painful, and I also
             get a bruise around the area for days even after the line is
             removed.
@@ -269,6 +269,8 @@
             <img
               class="float-right w-[30%] pl-2"
               src="~/assets/images/cancer/open_grassland.jpg"
+              alt="Open grassland with sparse vegetation"
+              loading="lazy"
             />
             <b>1.</b> How would you expect my hair to drop? I first expected it
             to fall out in clumps, but it turned out to be more like your
@@ -509,12 +511,21 @@ export default {
     // DefaultTabVue,
     ClickableTabVue,
   },
-  layout: 'dafault',
+  layout: 'default',
   data() {
     return {
       title: 'Cancer',
       hover: false,
       noLabel: true,
+    }
+  },
+  head() {
+    return {
+      title: "Cancer Journey | Braden's Journal",
+      meta: [
+        { hid: 'description', name: 'description', content: 'My personal account of being diagnosed with Stage 2 Hodgkin\'s Lymphoma in 2022, and the journey through treatment and recovery.' },
+        { hid: 'og:title', property: 'og:title', content: "Cancer Journey (2022) | Braden's Journal" },
+      ],
     }
   },
   methods: {

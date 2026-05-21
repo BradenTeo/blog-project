@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  overflow-y: scroll;
+}
+
+/* Content links: underline + dim on hover */
+a:not(.link):not(.card-link):hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.75;
+}
+
+/* Dark mode: readable link color on dark backgrounds */
+.dark a:not(.link):not(.card-link) {
+  color: rgb(147 197 253); /* blue-300 */
+}
+
+/* Dark mode: dividers */
+.dark .border-b-2 {
+  border-color: rgb(75 85 99); /* gray-600 */
+}

@@ -14,7 +14,7 @@
           <p class="text-left">Name:</p>
           <input
             v-model.trim="name"
-            class="border-2 md:ml-2 w-full dark:bg-[#054078] dark:bg-opacity-50 dark:border-slate-500"
+            class="border-2 md:ml-2 w-full dark:bg-slate-700 dark:border-slate-500 dark:text-gray-100 dark:placeholder-gray-400"
             type="text"
             placeholder="optional"
           />
@@ -27,7 +27,7 @@
           <p class="text-left">Feedback:</p>
           <textarea
             v-model.trim="feedback"
-            class="border-2 md:ml-2 w-full h-32 dark:bg-[#054078] dark:bg-opacity-50 dark:border-slate-500"
+            class="border-2 md:ml-2 w-full h-32 dark:bg-slate-700 dark:border-slate-500 dark:text-gray-100 dark:placeholder-gray-400"
             placeholder="What do you think of the website? Or what do you think of the content? Feel free to give suggestions! You can also write a normal message here, I'll read it all :)"
           ></textarea>
         </div>
@@ -39,10 +39,12 @@
         <img
           class="h-40 absolute left-0 bottom-0"
           src="~/assets/images/default/peeking-small.png"
+          alt=""
+          aria-hidden="true"
         />
 
         <input
-          class="mx-auto border-2 p-1 rounded-md w-[250px] hover:bg-slate-300 hover:text-black hover:font-bold hover:border-black mt-4"
+          class="block mx-auto border-2 p-1 rounded-md w-[250px] hover:bg-slate-300 hover:text-black hover:border-black dark:border-gray-400 dark:text-gray-100 dark:hover:bg-slate-600 dark:hover:text-white transition-colors duration-150 mt-4"
           type="submit"
           value="Submit"
         />
@@ -54,6 +56,7 @@
       <img
         class="mx-auto w-[50%] max-w-[200px]"
         src="~/assets/images/default/cat.gif"
+        alt="Thank you cat animation"
       />
     </div>
   </div>
@@ -78,7 +81,7 @@ export default {
       }
 
       fetch(
-        'https://blog-project-e9428-default-rtdb.asia-southeast1.firebasedatabase.app/feedback.json',
+        this.$config.firebaseUrl,
         {
           method: 'POST',
           headers: {

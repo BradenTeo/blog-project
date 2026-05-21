@@ -1,10 +1,10 @@
 <template>
   <div
-    class="absolute-left sticky z-20 left-0 top-[28px] w-[19ch] h-[90px] hidden lg:flex flex-col bg-slate-400 bg-opacity-50 text-white p-2"
+    class="absolute-left sticky z-20 left-0 top-9 w-[19ch] h-[90px] hidden lg:flex flex-col bg-slate-400 bg-opacity-50 text-white p-2"
   >
     <nuxt-link
-      to="/perspectives"
-      class="link flex flex-row hover:animate-bounce"
+      to="/posts"
+      class="link flex flex-row items-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -23,8 +23,8 @@
       <div>Main Menu</div>
     </nuxt-link>
     <nuxt-link
-      to="/perspectives/cancer"
-      class="link flex flex-row hover:animate-bounce"
+      to="/posts/cancer"
+      class="link flex flex-row items-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +43,8 @@
       <div>Cancer Journey</div>
     </nuxt-link>
     <nuxt-link
-      to="/perspectives/lifehacks"
-      class="link flex flex-row hover:animate-bounce"
+      to="/posts/lifehacks"
+      class="link flex flex-row items-center"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -67,11 +67,21 @@
 
 <script>
 export default {
-  name: 'PerspectivesNavBar',
+  name: 'PostsNavBar',
 }
 </script>
 
 <style scoped>
+.link {
+  transition: color 0.15s;
+}
+
+.link:hover {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .link.nuxt-link-exact-active {
   color: #000;
   font-weight: bold;

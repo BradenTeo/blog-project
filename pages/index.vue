@@ -17,7 +17,23 @@
     </div>
 
     <div
-      class="max-w-[460px] md:max-w-[680px] mx-auto text-justify py-[10px] px-[10px] border-4 rounded-md border-white bg-slate-200 bg-opacity-50 backdrop-blur-md"
+      class="max-w-[460px] md:max-w-[680px] mx-auto text-justify py-[10px] px-[10px] border-4 rounded-md border-white dark:border-gray-600 bg-slate-200 dark:bg-gray-800 bg-opacity-50 dark:bg-opacity-80 backdrop-blur-md mb-4"
+    >
+      <b>Update (May 2026):</b><br />
+      <div class="pb-2">
+        Did a UI/UX overhaul with the help of AI (Claude Code) &#129302; Here's what's new:
+        <ul class="list-disc list-inside marker:font-bold mt-1">
+          <li>Dark / light mode toggle — give it a try! :)</li>
+          <li>Redesigned nav bar and content tabs</li>
+          <li>Added a scroll-to-top button on long pages</li>
+          <li>Blurred backdrop when the feedback dialog is open</li>
+          <li>Fixed the favicon and a bunch of other bugs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="max-w-[460px] md:max-w-[680px] mx-auto text-justify py-[10px] px-[10px] border-4 rounded-md border-white dark:border-gray-600 bg-slate-200 dark:bg-gray-800 bg-opacity-50 dark:bg-opacity-80 backdrop-blur-md"
     >
       <b>Update (May 2024):</b><br />
       <div class="pb-2">
@@ -57,5 +73,14 @@
 export default {
   name: 'HomePage',
   layout: 'default',
+  head() {
+    return {
+      title: "Home | Braden's Journal",
+      meta: [
+        { hid: 'description', name: 'description', content: "Braden's personal journal — archiving experiences, perspectives, and things worth sharing." },
+        { hid: 'og:title', property: 'og:title', content: "Home | Braden's Journal" },
+      ],
+    }
+  },
 }
 </script>

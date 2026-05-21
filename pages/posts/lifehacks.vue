@@ -9,6 +9,7 @@
           <img
             class="h-[1.5rem] float-left mt-[5px] mr-[8px]"
             src="~/assets/images/lifehacks/libby.png"
+            alt="Libby app logo"
           />
           <h2>Libby</h2>
         </div>
@@ -43,6 +44,15 @@ export default {
       title: 'Life Hacks',
     }
   },
+  head() {
+    return {
+      title: "Life Hacks | Braden's Journal",
+      meta: [
+        { hid: 'description', name: 'description', content: 'Useful tips and tricks — from free library ebooks with Libby to iPhone brightness hacks.' },
+        { hid: 'og:title', property: 'og:title', content: "Life Hacks | Braden's Journal" },
+      ],
+    }
+  },
 }
 </script>
 
@@ -56,6 +66,10 @@ h2 {
 a {
   color: #1a73e8;
   text-decoration: none;
+}
+
+a:hover {
+  color: #1254b5;
 }
 
 section {
