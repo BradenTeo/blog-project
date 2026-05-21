@@ -1,68 +1,87 @@
-# blog-project
+# Braden's Journal
 
-## Build Setup
+A personal blog built with Nuxt 2 and Tailwind CSS, deployed as a static site on GitHub Pages.
+
+**Live site:** https://bradenteo.github.io/blog-project/
+
+## Tech Stack
+
+| Tool | Purpose |
+|------|---------|
+| [Nuxt 2](https://nuxtjs.org) | Vue.js framework — handles routing, SSG, and component auto-imports |
+| [Vue 2](https://v2.vuejs.org) | UI framework |
+| [Tailwind CSS v3](https://tailwindcss.com) | Utility-first styling, including dark mode |
+| [Firebase Realtime Database](https://firebase.google.com) | Stores feedback form submissions |
+| [GitHub Pages](https://pages.github.com) | Hosts the static site from the `gh-pages` branch |
+
+## Prerequisites
+
+- Node.js v24+
+- npm v11+
+
+## Getting Started
 
 ```bash
-# install dependencies
-$ npm install
+# Install dependencies
+npm install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+# Start local dev server at http://localhost:3000
+npm run dev
 ```
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+## Available Scripts
 
-## Special Directories
+```bash
+npm run dev       # Local dev server with hot reload
+npm run generate  # Build static site into dist/
+npm run deploy    # Push dist/ to the gh-pages branch (deploys to GitHub Pages)
+npm run lint      # Run ESLint across all .js and .vue files
+```
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+## Deploying
 
-### `assets`
+Deployment is a two-step process run locally:
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+```bash
+npm run generate && npm run deploy
+```
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+`generate` builds the static site into `dist/`. `deploy` uses `push-dir` to push the `dist/` folder to the `gh-pages` branch on GitHub, which GitHub Pages then serves automatically.
 
-### `components`
+> **Note:** CI runs on every push to `main` (lint + generate) as a validation check, but does not deploy. Deployment must be triggered manually with the command above.
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+## Environment Variables
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+The Firebase URL for the feedback form is read from an environment variable:
 
-### `layouts`
+```bash
+FIREBASE_URL=https://your-project.firebaseio.com/feedback.json
+```
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
+If not set, it falls back to the default URL defined in `nuxt.config.js` under `publicRuntimeConfig`.
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
+## Project Structure
 
-### `pages`
+```
+pages/
+  index.vue              # Home page
+  buildprocess.vue       # Build process page
+  posts.vue              # Posts listing page
+  posts/
+    cancer.vue           # My Cancer Journey post
+    lifehacks.vue        # Life Hacks post
 
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
+components/
+  ClickableTab.vue        # Expandable/collapsible content tab
+  PostsButton.vue         # Card link used on the Posts page
+  PostsNavBar.vue         # Sidebar nav shown on post pages
+  BaseDialog.vue          # Modal dialog wrapper
+  FeedbackForm.vue        # Feedback form inside the modal
+  ScrollToTop.vue         # Floating scroll-to-top button
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
+layouts/
+  default.vue             # Main layout (header, nav, footer, dark mode toggle)
 
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+assets/
+  css/main.css            # Global styles (scrollbar fix, link hover, dark mode)
+```

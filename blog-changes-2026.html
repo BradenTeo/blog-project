@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Project — 2026 Changes</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #1a202c;
+      background: #f7fafc;
+      padding: 40px 24px;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 56px 64px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1a202c;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #718096;
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #2d3748;
+      margin-top: 40px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e2e8f0;
+      counter-increment: section;
+    }
+
+    h2::before {
+      content: counter(section) ". ";
+      color: #a0aec0;
+    }
+
+    body { counter-reset: section; }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #4a5568;
+      margin-top: 20px;
+      margin-bottom: 6px;
+    }
+
+    p { margin-bottom: 10px; color: #4a5568; }
+
+    ul, ol {
+      padding-left: 22px;
+      margin-bottom: 12px;
+      color: #4a5568;
+    }
+
+    li { margin-bottom: 5px; }
+
+    code {
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+      font-size: 0.82em;
+      background: #edf2f7;
+      color: #c53030;
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: #2d3748;
+      color: #e2e8f0;
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+      font-size: 0.8em;
+      line-height: 1.6;
+      overflow-x: auto;
+      margin: 12px 0 16px;
+    }
+
+    pre code {
+      background: none;
+      color: inherit;
+      padding: 0;
+      font-size: inherit;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72em;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 99px;
+      margin-left: 8px;
+      vertical-align: middle;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .tag-fix    { background: #fed7d7; color: #c53030; }
+    .tag-new    { background: #c6f6d5; color: #276749; }
+    .tag-style  { background: #bee3f8; color: #2b6cb0; }
+    .tag-rename { background: #fef3c7; color: #92400e; }
+    .tag-infra  { background: #e9d8fd; color: #553c9a; }
+
+    .callout {
+      background: #ebf8ff;
+      border-left: 4px solid #4299e1;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      margin: 14px 0;
+      color: #2b6cb0;
+      font-size: 0.9em;
+    }
+
+    .callout strong { color: #2c5282; }
+
+    .file {
+      font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+      font-size: 0.8em;
+      color: #805ad5;
+      background: #faf5ff;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 0.9em;
+    }
+
+    th {
+      background: #edf2f7;
+      text-align: left;
+      padding: 8px 12px;
+      font-weight: 600;
+      color: #4a5568;
+    }
+
+    td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #4a5568;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .toc {
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 20px 28px;
+      margin-bottom: 36px;
+    }
+
+    .toc h3 {
+      color: #2d3748;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .toc ol {
+      color: #4a5568;
+      margin-bottom: 0;
+    }
+
+    .toc li { margin-bottom: 3px; }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .page { box-shadow: none; border-radius: 0; padding: 32px 48px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>Blog Project — 2026 Changes</h1>
+  <p class="subtitle">A walkthrough of every UI/UX improvement made to Braden's Journal using Claude Code &nbsp;·&nbsp; May 2026</p>
+
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <ol>
+      <li>Dark Mode</li>
+      <li>Scrollbar Layout Shift</li>
+      <li>Navigation Bar Redesign</li>
+      <li>Footer — Fixed Position &amp; Dialog Stacking Bug</li>
+      <li>Scroll-to-Top Button</li>
+      <li>ClickableTab Component Redesign</li>
+      <li>Modal / Feedback Dialog</li>
+      <li>Link Hover Styles</li>
+      <li>Feedback Form Fixes</li>
+      <li>Favicon Fix</li>
+      <li>Renaming Perspectives → Posts</li>
+      <li>ESLint Setup</li>
+      <li>CI/CD Fixes</li>
+    </ol>
+  </div>
+
+
+  <!-- 1 -->
+  <h2>Dark Mode <span class="tag tag-new">New Feature</span></h2>
+
+  <h3>What was the problem?</h3>
+  <p>The site had no dark mode at all. The toggle button existed in the design but did nothing visible.</p>
+
+  <h3>How does dark mode work in Tailwind?</h3>
+  <p>Tailwind's dark mode works via a <code>class</code> strategy: when a <code>dark</code> class is added to the <code>&lt;html&gt;</code> element, any utility prefixed with <code>dark:</code> activates.</p>
+
+  <pre><code>&lt;!-- nuxt.config.js --&gt;
+tailwindcss: {
+  config: {
+    darkMode: 'class',   // ← this enables class-based dark mode
+  }
+}</code></pre>
+
+  <h3>The toggle logic (layouts/default.vue)</h3>
+  <pre><code>toggleDarkMode() {
+  this.darkMode = !this.darkMode
+  document.documentElement.classList.toggle('dark')  // adds/removes 'dark' on &lt;html&gt;
+  localStorage.setItem('darkMode', this.darkMode)    // persist preference
+},
+mounted() {
+  this.darkMode = localStorage.getItem('darkMode') === 'true'
+  if (this.darkMode) document.documentElement.classList.add('dark')
+}</code></pre>
+
+  <h3>Adding dark classes to components</h3>
+  <p>Once the strategy was configured, dark mode classes were added throughout every component. For example:</p>
+  <pre><code>&lt;!-- Before --&gt;
+&lt;div class="bg-white text-gray-900"&gt;
+
+&lt;!-- After --&gt;
+&lt;div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"&gt;</code></pre>
+
+  <div class="callout">
+    <strong>Key insight:</strong> Dark mode classes don't replace regular classes — they stack on top. The browser applies whichever one is relevant based on the presence of the <code>dark</code> class on <code>&lt;html&gt;</code>.
+  </div>
+
+
+  <!-- 2 -->
+  <h2>Scrollbar Layout Shift <span class="tag tag-fix">Bug Fix</span></h2>
+
+  <h3>What was the problem?</h3>
+  <p>When navigating between pages, the scrollbar appeared on long pages and disappeared on short ones. This caused the entire page content to shift left/right by ~15px, which is jarring to watch.</p>
+
+  <h3>Root cause</h3>
+  <p>A scrollbar takes up physical space. When it appears, it shrinks the viewport width, pushing content inward. When it disappears, content expands back out.</p>
+
+  <h3>The fix</h3>
+  <p>Force the scrollbar to <em>always</em> be visible — even on pages that don't need it. This reserves the space permanently.</p>
+  <pre><code>/* assets/css/main.css */
+html {
+  overflow-y: scroll;
+}</code></pre>
+
+  <h3>Short pages showing a scrollbar</h3>
+  <p>This introduced a new issue: short pages showed an unnecessary scrollbar because the layout used <code>min-h-screen</code> plus bottom padding, which exceeded the viewport height.</p>
+  <p>Fix: switch the root to a flex column, so the main content stretches to fill remaining space without overflowing.</p>
+  <pre><code>&lt;!-- Root div --&gt;
+&lt;div class="min-h-screen flex flex-col"&gt;
+
+  &lt;!-- Main content stretches to fill, no overflow --&gt;
+  &lt;nuxt class="flex-1 pb-20" /&gt;
+
+&lt;/div&gt;</code></pre>
+
+
+  <!-- 3 -->
+  <h2>Navigation Bar Redesign <span class="tag tag-style">Styling</span></h2>
+
+  <h3>Problems fixed</h3>
+  <ul>
+    <li>Active tab had an old-fashioned <code>border-style: outset</code> (the 3D "pressed button" effect from the 90s)</li>
+    <li>When a tab became active and bold, it was wider than its inactive state, pushing the other tabs sideways</li>
+    <li>The tab group was not truly centred — it was centred within the remaining space after the dark mode toggle, not within the full nav width</li>
+  </ul>
+
+  <h3>Fix 1 — Always-bold links (prevent width shift)</h3>
+  <p>If all links are always bold, they always occupy their "maximum" width. The active state adds a background tint rather than changing font weight, so nothing shifts.</p>
+  <pre><code>.link {
+  font-weight: bold;       /* always bold — no width change on activation */
+  color: rgba(255,255,255,0.65);
+  padding: 3px 12px;
+  border-radius: 6px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.link:hover {
+  color: white;
+  background-color: rgba(255,255,255,0.12);
+}
+
+.link.nuxt-link-active {
+  color: white;
+  background-color: rgba(255,255,255,0.2);  /* subtle white tint pill */
+}</code></pre>
+
+  <h3>Fix 2 — True centering with absolute positioning</h3>
+  <p>When a nav has items on both the left and right, <code>justify-center</code> on a <code>flex-1</code> child centres within the <em>leftover</em> space — not the full nav. The correct approach is to absolutely position the centre group:</p>
+  <pre><code>&lt;nav class="relative h-9 flex items-center px-3"&gt;
+
+  &lt;!-- Centred relative to the full nav width --&gt;
+  &lt;div class="absolute left-1/2 -translate-x-1/2 flex items-center space-x-1"&gt;
+    &lt;nuxt-link&gt;Home&lt;/nuxt-link&gt;
+    &lt;nuxt-link&gt;Build Process&lt;/nuxt-link&gt;
+    &lt;nuxt-link&gt;Posts&lt;/nuxt-link&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Toggle pushed to the right --&gt;
+  &lt;div class="ml-auto"&gt; ... &lt;/div&gt;
+
+&lt;/nav&gt;</code></pre>
+
+  <h3>Fix 3 — Home link always highlighted</h3>
+  <p>Nuxt's <code>nuxt-link-active</code> class activates on any route that <em>starts with</em> the link's path. Since every route starts with <code>/</code>, the Home link was always highlighted.</p>
+  <p>Fix: add the <code>exact</code> prop, which switches it to use <code>nuxt-link-exact-active</code> (only matches <code>/</code> precisely).</p>
+  <pre><code>&lt;nuxt-link to="/" class="link" exact&gt; Home &lt;/nuxt-link&gt;</code></pre>
+
+
+  <!-- 4 -->
+  <h2>Footer — Fixed Position &amp; Dialog Stacking Bug <span class="tag tag-fix">Bug Fix</span></h2>
+
+  <h3>Making the footer fixed</h3>
+  <p>The footer was in normal document flow, meaning you had to scroll to the bottom to see it. Changed it to <code>position: fixed</code> so it's always visible at the bottom of the viewport.</p>
+  <pre><code>&lt;footer class="fixed bottom-0 left-0 right-0 z-50"&gt;</code></pre>
+  <p>Added <code>pb-20</code> to the main content so the footer doesn't cover the bottom of the page.</p>
+
+  <h3>The stacking context bug</h3>
+  <p>After fixing the footer, the feedback modal's backdrop no longer covered the nav bar — it was trapped behind it.</p>
+
+  <div class="callout">
+    <strong>What is a stacking context?</strong> Certain CSS properties (like <code>position: fixed</code> combined with <code>z-index</code>) create an isolated "layer" for an element and all its children. No child can ever appear above elements that are siblings of its stacking-context ancestor, regardless of how high its own <code>z-index</code> is.
+  </div>
+
+  <p>The <code>BaseDialog</code> component was rendered <em>inside</em> the <code>&lt;footer&gt;</code>, which had <code>z-index: 50</code>. Even with <code>z-index: 200</code> on the dialog itself, it could never escape the footer's stacking context.</p>
+
+  <p><strong>Fix:</strong> move <code>&lt;BaseDialogVue&gt;</code> outside the <code>&lt;footer&gt;</code> tag entirely, so it forms its own top-level stacking context.</p>
+  <pre><code>&lt;!-- Wrong: dialog trapped inside footer's stacking context --&gt;
+&lt;footer class="fixed z-50"&gt;
+  &lt;BaseDialogVue /&gt;
+&lt;/footer&gt;
+
+&lt;!-- Correct: dialog is a sibling of the footer --&gt;
+&lt;footer class="fixed z-50"&gt; ... &lt;/footer&gt;
+&lt;BaseDialogVue /&gt;</code></pre>
+
+
+  <!-- 5 -->
+  <h2>Scroll-to-Top Button <span class="tag tag-new">New Feature</span></h2>
+
+  <p>A new <span class="file">ScrollToTop.vue</span> component was created. Key implementation details:</p>
+
+  <h3>Scroll listener with passive flag</h3>
+  <pre><code>mounted() {
+  window.addEventListener('scroll', this.handleScroll, { passive: true })
+  // passive: true tells the browser this listener won't call preventDefault()
+  // This allows the browser to optimise scrolling performance
+},
+beforeDestroy() {
+  window.removeEventListener('scroll', this.handleScroll)
+  // Always clean up listeners to prevent memory leaks
+}</code></pre>
+
+  <h3>Smooth scroll to top</h3>
+  <pre><code>scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}</code></pre>
+
+  <h3>Vue transition for fade in/out</h3>
+  <pre><code>&lt;transition name="fade"&gt;
+  &lt;button v-if="visible" @click="scrollToTop"&gt; ↑ &lt;/button&gt;
+&lt;/transition&gt;
+
+&lt;style scoped&gt;
+.fade-enter-active, .fade-leave-active { transition: opacity 0.2s; }
+.fade-enter, .fade-leave-to           { opacity: 0; }
+&lt;/style&gt;</code></pre>
+
+
+  <!-- 6 -->
+  <h2>ClickableTab Component Redesign <span class="tag tag-style">Styling</span></h2>
+
+  <h3>Problems with the original design</h3>
+  <ul>
+    <li>A separate "Show / Hide" button was used to toggle content — not intuitive</li>
+    <li>When the tab was open and the user scrolled, the sticky title would float over the content text with no background, making it unreadable</li>
+  </ul>
+
+  <h3>Making the entire header row clickable</h3>
+  <p>Instead of a dedicated button, the whole header row (title + chevron) became the toggle target:</p>
+  <pre><code>&lt;div
+  class="flex items-center justify-between cursor-pointer select-none"
+  @click="tabOpened = !tabOpened"
+&gt;
+  &lt;h1&gt;&lt;slot name="title"&gt;&lt;/slot&gt;&lt;/h1&gt;
+  &lt;!-- rotating chevron --&gt;
+&lt;/div&gt;</code></pre>
+
+  <p><code>select-none</code> prevents the browser from selecting text when the user double-clicks to toggle.</p>
+
+  <h3>Rotating chevron</h3>
+  <pre><code>&lt;svg
+  class="transition-all duration-200"
+  :class="{
+    'rotate-180': tabOpened,           &lt;!-- points up when open --&gt;
+    'group-hover:text-slate-600': !tabOpened,
+  }"
+&gt;</code></pre>
+
+  <h3>Sticky header with solid background</h3>
+  <p>The header row is made sticky only when the tab is open, and given the same background colour as the open tab — so it acts as a clean mask as content scrolls beneath it.</p>
+  <pre><code>:class="{
+  'sticky top-9 z-10 bg-orange-100 dark:bg-gray-700 pb-2 mb-2 border-b-2': tabOpened
+}"</code></pre>
+
+  <div class="callout">
+    <strong>Why <code>top-9</code>?</strong> The nav bar is <code>h-9</code> (36px). Sticky elements use <code>top: X</code> to define where they "stick". Setting <code>top-9</code> means the tab header sticks just below the nav bar rather than sliding under it.
+  </div>
+
+
+  <!-- 7 -->
+  <h2>Modal / Feedback Dialog <span class="tag tag-style">Styling</span></h2>
+
+  <h3>Backdrop blur</h3>
+  <p>Added a full-screen overlay behind the dialog with a blur effect:</p>
+  <pre><code>&lt;div
+  class="fixed inset-0 z-[150] backdrop-blur-sm bg-black/30"
+  @click="tryClose"
+&gt;&lt;/div&gt;</code></pre>
+  <ul>
+    <li><code>inset-0</code> — stretches to cover the entire viewport</li>
+    <li><code>backdrop-blur-sm</code> — blurs everything behind this element</li>
+    <li><code>bg-black/30</code> — 30% opacity black overlay</li>
+    <li><code>@click="tryClose"</code> — clicking outside the dialog closes it</li>
+  </ul>
+
+  <h3>Why two sibling elements inside teleport?</h3>
+  <pre><code>&lt;teleport to="body"&gt;
+  &lt;div&gt;                 &lt;!-- wrapper needed: teleport only accepts one root --&gt;
+    &lt;div class="backdrop"&gt;&lt;/div&gt;
+    &lt;dialog&gt; ... &lt;/dialog&gt;
+  &lt;/div&gt;
+&lt;/teleport&gt;</code></pre>
+
+
+  <!-- 8 -->
+  <h2>Link Hover Styles <span class="tag tag-style">Styling</span></h2>
+
+  <p>Plain text links throughout the site were hard to identify. A global rule was added to underline them on hover:</p>
+  <pre><code>/* assets/css/main.css */
+a:not(.link):not(.card-link):hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.75;
+}
+
+/* Blue tint for links in dark mode */
+.dark a:not(.link):not(.card-link) {
+  color: rgb(147 197 253);
+}</code></pre>
+
+  <p>The <code>:not()</code> exclusions prevent this rule from affecting the nav links (<code>.link</code>) and the post cards (<code>.card-link</code>), which have their own hover behaviour.</p>
+
+
+  <!-- 9 -->
+  <h2>Feedback Form Fixes <span class="tag tag-fix">Bug Fix</span></h2>
+
+  <h3>Submit button not centred</h3>
+  <p><code>&lt;input type="submit"&gt;</code> is an inline element. <code>mx-auto</code> only centres block elements. The fix was to add <code>display: block</code>:</p>
+  <pre><code>&lt;input class="block mx-auto ..." type="submit" /&gt;</code></pre>
+
+  <h3>Hover bold causing layout shift</h3>
+  <p>The button had <code>hover:font-bold</code>. Bold text is wider than normal text, so hovering caused the button to expand and shift surrounding content. Removed it entirely — color transitions are sufficient visual feedback.</p>
+
+  <h3>Firebase URL moved to config</h3>
+  <p>The Firebase URL was hardcoded in the component. Moved it to <code>nuxt.config.js</code> so it can be set via environment variable:</p>
+  <pre><code>// nuxt.config.js
+publicRuntimeConfig: {
+  firebaseUrl: process.env.FIREBASE_URL || 'https://...'
+}
+
+// FeedbackForm.vue
+fetch(this.$config.firebaseUrl, { ... })</code></pre>
+
+
+  <!-- 10 -->
+  <h2>Favicon Fix <span class="tag tag-fix">Bug Fix</span></h2>
+
+  <p>The favicon wasn't showing on the deployed GitHub Pages site. Two problems:</p>
+
+  <table>
+    <tr><th>Problem</th><th>Fix</th></tr>
+    <tr>
+      <td>Path was <code>/favicon.ico?</code> (trailing <code>?</code> is invalid)</td>
+      <td>Removed the <code>?</code></td>
+    </tr>
+    <tr>
+      <td>Path was <code>/favicon.ico</code> but the site is served from <code>/blog-project/</code></td>
+      <td>Changed to <code>/blog-project/favicon.ico</code></td>
+    </tr>
+  </table>
+
+  <pre><code>// nuxt.config.js
+head: {
+  link: [
+    { rel: 'icon', type: 'image/x-icon', href: '/blog-project/favicon.ico' }
+  ]
+}</code></pre>
+
+
+  <!-- 11 -->
+  <h2>Renaming Perspectives → Posts <span class="tag tag-rename">Rename</span></h2>
+
+  <p>The "Perspectives" section was renamed to "Posts" throughout the codebase:</p>
+
+  <table>
+    <tr><th>Before</th><th>After</th></tr>
+    <tr><td><code>pages/perspectives.vue</code></td><td><code>pages/posts.vue</code></td></tr>
+    <tr><td><code>pages/perspectives/</code></td><td><code>pages/posts/</code></td></tr>
+    <tr><td><code>components/PerspectivesButton.vue</code></td><td><code>components/PostsButton.vue</code></td></tr>
+    <tr><td><code>components/PerspectivesNavBar.vue</code></td><td><code>components/PostsNavBar.vue</code></td></tr>
+    <tr><td>Route <code>/perspectives</code></td><td>Route <code>/posts</code></td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>How Nuxt routing works:</strong> Nuxt automatically generates routes from your file structure in the <code>pages/</code> folder. Renaming <code>perspectives.vue</code> → <code>posts.vue</code> automatically changes the route from <code>/perspectives</code> to <code>/posts</code>. No router config needed.
+  </div>
+
+
+  <!-- 12 -->
+  <h2>ESLint Setup <span class="tag tag-infra">Infrastructure</span></h2>
+
+  <p>ESLint (a code quality tool) was configured in <code>.eslintrc.js</code> but the packages were never actually installed, and there was no lint script. This was set up properly:</p>
+
+  <pre><code>// package.json
+"scripts": {
+  "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+}</code></pre>
+
+  <p>ESLint catches things like unused variables, missing props, and syntax errors before they become bugs in production.</p>
+
+
+  <!-- 13 -->
+  <h2>CI/CD Fixes <span class="tag tag-infra">Infrastructure</span></h2>
+
+  <h3>What is CI/CD?</h3>
+  <p><strong>CI (Continuous Integration)</strong> automatically runs checks (like lint and build) whenever you push code to GitHub. It's a safety net that catches breakage before it reaches the live site.</p>
+
+  <h3>Changes made to the workflow</h3>
+  <ul>
+    <li>Upgraded Node.js in CI from v14 → v24 to match the local development environment</li>
+    <li>Upgraded GitHub Actions steps from <code>v2</code> → <code>v4</code> (older versions were deprecated)</li>
+    <li>Re-enabled the lint step (it was commented out)</li>
+    <li>Added a <code>nuxt generate</code> step so CI verifies the site actually builds</li>
+  </ul>
+
+  <h3>How deployment works</h3>
+  <p>The site is hosted on GitHub Pages. Deployment is a two-step process run locally:</p>
+  <pre><code>npm run generate   # builds the static site into the dist/ folder
+npm run deploy     # pushes dist/ to the gh-pages branch on GitHub</code></pre>
+  <p>GitHub Pages then serves the <code>gh-pages</code> branch automatically.</p>
+
+  <hr style="margin-top:48px; border:none; border-top:2px solid #e2e8f0;" />
+  <p style="margin-top:20px; text-align:center; color:#a0aec0; font-size:0.85em;">
+    Generated with Claude Code &nbsp;·&nbsp; May 2026
+  </p>
+
+</div>
+</body>
+</html>
