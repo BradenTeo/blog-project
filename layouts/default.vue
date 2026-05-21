@@ -8,9 +8,9 @@
       class="sticky top-0 z-[100] h-9 flex items-center bg-slate-600 dark:bg-gray-900 px-3 relative"
     >
       <div class="absolute left-1/2 -translate-x-1/2 flex items-center space-x-1">
-        <nuxt-link to="/" class="link" exact> Home </nuxt-link>
-        <nuxt-link to="/buildprocess" class="link"> Build Process </nuxt-link>
-        <nuxt-link to="/posts" class="link"> Posts </nuxt-link>
+        <nuxt-link to="/" class="link whitespace-nowrap" exact> Home </nuxt-link>
+        <nuxt-link to="/buildprocess" class="link whitespace-nowrap"> Build Process </nuxt-link>
+        <nuxt-link to="/posts" class="link whitespace-nowrap"> Posts </nuxt-link>
       </div>
       <div class="ml-auto flex items-center space-x-1 flex-none">
         <span class="text-xs text-white hidden sm:inline">Light</span>
@@ -26,15 +26,15 @@
       </div>
     </nav>
 
-    <nuxt class="flex-1 dark:text-gray-100 pb-20" />
+    <nuxt class="flex-1 dark:text-gray-100 md:pb-20" />
 
     <ScrollToTop />
 
     <footer
-      class="fixed bottom-0 left-0 right-0 z-50 text-center bg-slate-600 dark:bg-gray-900 text-white py-2 bg-opacity-90 dark:bg-opacity-90"
+      class="md:fixed md:bottom-0 md:left-0 md:right-0 z-50 text-center bg-slate-600 dark:bg-gray-900 text-white py-2 bg-opacity-90 dark:bg-opacity-90"
     >
       <img
-        class="absolute bottom-0 left-[5%] md:left-[25%] lg:left-[30%] xl:left-[35%] 2xl:left-[40%] h-[60px]"
+        class="hidden md:block absolute bottom-0 left-[5%] md:left-[25%] lg:left-[30%] xl:left-[35%] 2xl:left-[40%] h-[60px]"
         src="~/assets/images/default/footer-img.gif"
         alt=""
         aria-hidden="true"
@@ -108,10 +108,18 @@ html {
   text-decoration-line: none;
   color: rgba(255, 255, 255, 0.65);
   font-weight: bold;
-  font-size: 0.875rem;
-  padding: 3px 12px;
+  font-size: 0.75rem;
+  padding: 3px 8px;
   border-radius: 6px;
+  white-space: nowrap;
   transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+@media (min-width: 640px) {
+  .link {
+    font-size: 0.875rem;
+    padding: 3px 12px;
+  }
 }
 
 .link:hover {

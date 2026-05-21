@@ -215,6 +215,10 @@
       <li>Renaming Perspectives → Posts</li>
       <li>ESLint Setup</li>
       <li>CI/CD Fixes</li>
+      <li>Mobile Optimisations</li>
+      <li>Feedback Form UI Redesign</li>
+      <li>Posts Sidebar Redesign</li>
+      <li>Cancer Journey — Color Consistency</li>
     </ol>
   </div>
 
@@ -581,6 +585,146 @@ head: {
   <pre><code>npm run generate   # builds the static site into the dist/ folder
 npm run deploy     # pushes dist/ to the gh-pages branch on GitHub</code></pre>
   <p>GitHub Pages then serves the <code>gh-pages</code> branch automatically.</p>
+
+  <!-- 14 -->
+  <h2>Mobile Optimisations <span class="tag tag-style">Styling</span></h2>
+
+  <h3>Footer — not fixed on mobile</h3>
+  <p>A fixed footer that's always visible is useful on desktop, but on a small phone screen it eats into precious content space. The fix uses responsive Tailwind prefixes so the footer is only pinned on medium screens and above:</p>
+  <pre><code>&lt;!-- Only fixed from md (768px) upwards --&gt;
+&lt;footer class="md:fixed md:bottom-0 md:left-0 md:right-0"&gt;
+
+&lt;!-- Main content only needs bottom padding on md+ --&gt;
+&lt;nuxt class="flex-1 md:pb-20" /&gt;</code></pre>
+  <p>The decorative footer gif was also hidden on mobile (<code>hidden md:block</code>) since it relied on absolute positioning inside the fixed footer.</p>
+
+  <h3>Nav link wrapping — "Build Process" on two rows</h3>
+  <p>On small screens the "Build Process" link was wrapping onto a second line. Two fixes combined to solve it:</p>
+  <ul>
+    <li><strong>Smaller font and padding on mobile</strong> via a CSS media query, scaling back up at <code>sm:</code> (640px)</li>
+    <li><strong><code>whitespace-nowrap</code></strong> added directly as a Tailwind class on each <code>&lt;nuxt-link&gt;</code> — this is more reliable than putting it in scoped CSS, because Vue 2's scoped styles may not always reach child component root elements</li>
+  </ul>
+  <pre><code>/* Scoped CSS in default.vue */
+.link {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+}
+
+@media (min-width: 640px) {
+  .link { font-size: 0.875rem; padding: 3px 12px; }
+}
+
+/* Template */
+&lt;nuxt-link class="link whitespace-nowrap"&gt;Build Process&lt;/nuxt-link&gt;</code></pre>
+
+  <h3>Home page update boxes — flush with screen edge</h3>
+  <p>On mobile, <code>mx-auto</code> on a block element with no explicit width just means "no margin" — the element fills the full viewport. Adding horizontal padding to the page's root <code>&lt;div&gt;</code> gives uniform breathing room to all content at once:</p>
+  <pre><code>&lt;!-- pages/index.vue root div --&gt;
+&lt;div class="px-4 md:px-0"&gt;
+  ...all content...
+&lt;/div&gt;</code></pre>
+
+  <h3>The overflow-x-hidden gotcha</h3>
+  <p>An attempt to prevent horizontal scroll by adding <code>overflow-x-hidden</code> to the root layout div broke all sticky tab headers. This is a well-known CSS trap:</p>
+  <div class="callout">
+    <strong>Why overflow breaks sticky:</strong> Setting any <code>overflow</code> value other than <code>visible</code> on an ancestor turns that element into the scroll container. Sticky elements then stick relative to that container — not the viewport. Since the root div wasn't scrolling (the page was), sticky elements appeared not to work at all.
+  </div>
+  <p>The fix was to remove <code>overflow-x-hidden</code> entirely. The actual causes of horizontal overflow (nav links wrapping, etc.) were resolved directly instead.</p>
+
+  <h3>Scroll-to-top button position</h3>
+  <p>The button was positioned <code>bottom-[76px]</code> to clear the fixed footer on desktop. On mobile where the footer is no longer fixed, it should sit closer to the screen edge:</p>
+  <pre><code>&lt;button class="fixed bottom-4 md:bottom-[76px] right-4"&gt;</code></pre>
+
+
+  <!-- 15 -->
+  <h2>Feedback Form UI Redesign <span class="tag tag-style">Styling</span></h2>
+
+  <h3>What changed visually</h3>
+  <ul>
+    <li>Removed the inner form border — the dialog already provides a container, so the extra border was visual noise</li>
+    <li>Labels moved above their inputs (stacked layout) instead of sitting to the side</li>
+    <li>Inputs have rounded corners, consistent border colour, and a focus ring on click</li>
+    <li>Textarea has <code>resize-none</code> to prevent users from dragging it to an ugly size</li>
+    <li>Submit changed from a bordered outline button to a filled slate button — clearer as a primary action</li>
+    <li>Error message now appears directly below the textarea with a red border on the field itself, rather than a floating italic line elsewhere</li>
+    <li>Thank-you state is warmer — two lines of text before the cat gif</li>
+  </ul>
+
+  <h3>Peeking image — absolute positioning trick</h3>
+  <p>The original image used <code>position: absolute; bottom: 0; left: 0</code> to sit at the bottom-left of the form, but it was positioned relative to the wrong ancestor. The new approach exploits how CSS resolves <code>position: absolute</code>:</p>
+  <div class="callout">
+    <strong>How CSS finds the containing block:</strong> An absolutely positioned element walks up the DOM tree and positions itself relative to the first ancestor that has <code>position</code> set to anything other than <code>static</code>. If the FeedbackForm's own root div has no <code>position</code>, the search continues up — and finds the <code>&lt;dialog&gt;</code> element, which has <code>position: fixed</code> (set in BaseDialog's scoped CSS).
+  </div>
+  <p>By <em>not</em> adding <code>relative</code> to the FeedbackForm root div, the image automatically positions itself relative to the modal dialog. Combined with <code>bottom-0 left-0</code>, it snaps to the modal's true bottom-left corner. The dialog's existing <code>overflow: hidden</code> clips the image cleanly at the modal edge, creating the peeking-from-below effect.</p>
+  <pre><code>&lt;img
+  class="absolute bottom-0 left-0 h-36 max-h-[52%] w-auto pointer-events-none"
+  src="peeking-small.png"
+/&gt;
+
+&lt;!-- The containing block chain:
+  img (absolute) → looks for positioned ancestor
+  → FeedbackForm root div (no position) → skip
+  → slot wrapper div (no position)      → skip
+  → dialog (position: fixed)            → FOUND ✓
+--&gt;</code></pre>
+  <p><code>max-h-[52%]</code> caps the image at just over half the dialog's height, so it peeks up from the bottom without covering the input fields. <code>pointer-events-none</code> ensures the image never blocks clicks on the form.</p>
+
+  <!-- 16 -->
+  <h2>Posts Sidebar Redesign <span class="tag tag-style">Styling</span></h2>
+
+  <h3>What changed</h3>
+  <p>The original sidebar was a semi-transparent gray box with a fixed height and a back-arrow icon on every link. It was replaced with a clean, minimal pill-style sidebar that matches the nav bar aesthetic:</p>
+  <ul>
+    <li>Removed the gray box background and fixed height</li>
+    <li>Added a small "POSTS" section label in uppercase tracking</li>
+    <li>Back-arrow chevron only on the "All Posts" link (not repeated on every item)</li>
+    <li>Horizontal divider between "All Posts" and the individual post links</li>
+    <li>Hover and active states use the same white-tint pill style as the nav bar</li>
+  </ul>
+
+  <h3>Light vs dark mode colors</h3>
+  <p>The original sidebar used pure white-based text (<code>rgba(255,255,255,0.65)</code>) that worked in dark mode but was nearly invisible on the site's light orange/slate gradient background. The fix uses separate color sets for each mode via <code>:global(.dark)</code> in scoped CSS:</p>
+  <pre><code>.sidebar-link {
+  color: rgb(71, 85, 105);  /* slate-600 — readable on light background */
+}
+
+:global(.dark) .sidebar-link {
+  color: rgba(255, 255, 255, 0.65);  /* white-tinted for dark background */
+}
+
+.sidebar-link:hover {
+  color: rgb(15, 23, 42);
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+:global(.dark) .sidebar-link:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.12);
+}</code></pre>
+
+  <div class="callout">
+    <strong>Why <code>:global(.dark)</code> in scoped CSS?</strong> Vue's scoped CSS adds a unique attribute (e.g. <code>data-v-xxxxxx</code>) to every selector, so a rule like <code>.dark .sidebar-link</code> would look for a <code>.dark</code> element <em>inside</em> the component — not on the <code>&lt;html&gt;</code> element. Wrapping the ancestor in <code>:global()</code> opts that part out of scoping, so it correctly targets the <code>dark</code> class on <code>&lt;html&gt;</code>.
+  </div>
+
+
+  <!-- 17 -->
+  <h2>Cancer Journey — Color Consistency <span class="tag tag-style">Styling</span></h2>
+
+  <h3>Problems fixed</h3>
+  <ul>
+    <li><strong>Subtitle heading</strong>: was <code>text-blue-800</code> — a blue from a completely different palette to the rest of the site's slate/gray theme. Changed to <code>text-slate-700 dark:text-gray-200</code>.</li>
+    <li><strong>Callout blocks (dark mode)</strong>: the "CVC line pros" and "IV lines cons" callouts used <code>dark:bg-orange-950</code> and <code>dark:bg-purple-950</code> — solid deep colours that felt visually heavy. Changed to <code>dark:bg-orange-900/30</code> and <code>dark:bg-purple-900/30</code>, using Tailwind's opacity modifier to give a subtle tint instead.</li>
+  </ul>
+
+  <h3>Tailwind opacity modifier</h3>
+  <p>Tailwind supports appending <code>/N</code> to any background color class to set its opacity, without needing a separate <code>opacity</code> property:</p>
+  <pre><code>&lt;!-- Before: solid deep background --&gt;
+&lt;div class="dark:bg-orange-950"&gt;
+
+&lt;!-- After: same hue but at 30% opacity — much more muted --&gt;
+&lt;div class="dark:bg-orange-900/30"&gt;</code></pre>
+  <p>This keeps the orange/purple color distinction between the two callouts (which is intentional — they're contrasting two points) while making them blend more naturally into the dark mode background.</p>
+
 
   <hr style="margin-top:48px; border:none; border-top:2px solid #e2e8f0;" />
   <p style="margin-top:20px; text-align:center; color:#a0aec0; font-size:0.85em;">

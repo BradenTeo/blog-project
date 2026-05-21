@@ -9,8 +9,7 @@
       <div class="pb-5 border-b-2">
         On this page, I've documented the steps I took to build this site in
         2022, so that you can follow along if you want to. But if you manage to
-        find better ways of creating such a website online, do let me know! :)<br />
-        (Tbh, I've been facing some errors when deploying the website recently 😓)
+        find better ways of creating such a website online, do let me know! :)
       </div>
 
       <h2 class="font-bold text-xl pt-5">Baby Steps</h2>
@@ -122,10 +121,8 @@
         <template #content>
           <ul class="list-disc list-inside marker:font-bold">
             <li><s>I was not able to get my favicon to show...</s> ✅ Fixed in 2026</li>
-            <li>
-              <s>Was not able to blur the backdrop for the feedback dialog pop-up</s> ✅ Fixed in 2026
-            </li>
-            <li>Some parts of the website looks a bit wonky on my phone.</li>
+            <li><s>Was not able to blur the backdrop for the feedback dialog pop-up</s> ✅ Fixed in 2026</li>
+            <li><s>Some parts of the website looks a bit wonky on my phone.</s> ✅ Fixed in 2026</li>
           </ul>
         </template>
       </ClickableTabVue>
@@ -143,6 +140,8 @@
           <li>Fixed a layout shift caused by the scrollbar appearing and disappearing</li>
           <li>Redesigned the nav tabs and content tabs for a cleaner look</li>
           <li>Added a scroll-to-top button on long pages</li>
+          <li>Redesigned the Posts page sidebar to match the nav bar aesthetic, with proper light/dark mode colors</li>
+          <li>Improved color consistency on the Cancer Journey page (subtitle, sidebar, and callout blocks)</li>
           <li>General bug fixes and UI polish throughout</li>
         </ul>
       </div>

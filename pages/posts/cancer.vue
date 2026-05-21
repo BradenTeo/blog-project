@@ -5,7 +5,7 @@
     </header>
 
     <div class="max-w-[680px] mx-auto w-auto lg:w-[680px]">
-      <h1 class="text-2xl text-blue-800 font-bold text-center py-4">
+      <h1 class="text-2xl text-slate-700 dark:text-gray-200 font-bold text-center py-4">
         My Cancer Journey (2022)
       </h1>
 
@@ -144,7 +144,7 @@
           <u>before my last treatment</u>. That meant using an IV line for my
           last treatment. Nevertheless, that one time gave me perspective:
           <br /><br />
-          <div class="bg-orange-100 dark:bg-orange-950 dark:text-gray-200">
+          <div class="bg-orange-100 dark:bg-orange-900/30 dark:text-gray-200">
             On one hand, I was actually getting real tired of the CVC line.
             <ul class="list-disc ml-[3ch]">
               <li>
@@ -166,7 +166,7 @@
             </ul>
           </div>
           <br />
-          <div class="bg-purple-100 dark:bg-purple-950 dark:text-gray-200">
+          <div class="bg-purple-100 dark:bg-purple-900/30 dark:text-gray-200">
             But on the other hand, IV lines suck... They're painful, and I also
             get a bruise around the area for days even after the line is
             removed.

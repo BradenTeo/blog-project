@@ -32,9 +32,9 @@
       v-if="!isParent"
       class="lg:flex lg:flex-row lg:justify-between sticky z-20 left-0 top-9"
     >
-      <PostsNavBar class="hidden lg:block" />
+      <PostsNavBar />
       <nuxt-child class="static" />
-      <div class="absolute-right sticky z-20 right-0 top-9 w-[19ch]"></div>
+      <div class="absolute-right sticky z-20 right-0 top-9 w-40"></div>
     </div>
   </div>
 </template>

@@ -8,12 +8,12 @@
       </h2>
 
       <div class="bg-white dark:bg-slate-800 dark:text-gray-100">
-        <div class="p-[5px]">
+        <div>
           <slot></slot>
         </div>
-        <div class="flex justify-end pb-[5px] pr-[10px]">
+        <div class="flex justify-end pb-3 pr-4">
           <button
-            class="px-3 py-1 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-150"
+            class="px-3 py-1 text-sm text-gray-500 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-150"
             autofocus
             @click="tryClose"
           >Close</button>

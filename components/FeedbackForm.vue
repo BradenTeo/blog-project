@@ -1,60 +1,64 @@
 <template>
-  <div>
+  <div class="px-4 pt-3 pb-2">
     <div v-if="!submitted">
-      <p class="pb-2">
-        Give me any kind of feedback you like :) <br />
-        It can be related to the website features or the content itself.
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+        Any kind of feedback is welcome — website, content, or just a message. I'll read it all :)
       </p>
 
-      <form
-        class="border-2 m-2 p-2 rounded-md dark:border-slate-500"
-        @submit.prevent="submitForm"
-      >
-        <div class="flex flex-col md:flex-row md:mb-4">
-          <p class="text-left">Name:</p>
+      <form @submit.prevent="submitForm" class="space-y-3">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
+            Name <span class="font-normal text-gray-400">(optional)</span>
+          </label>
           <input
             v-model.trim="name"
-            class="border-2 md:ml-2 w-full dark:bg-slate-700 dark:border-slate-500 dark:text-gray-100 dark:placeholder-gray-400"
             type="text"
-            placeholder="optional"
+            placeholder="Your name"
+            class="w-full px-3 py-2 text-sm border border-gray-300 dark:border-slate-500 rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 transition"
           />
         </div>
 
-        <div
-          class="flex flex-col md:flex-row mt-2"
-          :class="{ invalid: feedbackValidity === 'invalid' }"
-        >
-          <p class="text-left">Feedback:</p>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
+            Feedback <span class="text-red-400">*</span>
+          </label>
           <textarea
             v-model.trim="feedback"
-            class="border-2 md:ml-2 w-full h-32 dark:bg-slate-700 dark:border-slate-500 dark:text-gray-100 dark:placeholder-gray-400"
-            placeholder="What do you think of the website? Or what do you think of the content? Feel free to give suggestions! You can also write a normal message here, I'll read it all :)"
+            rows="4"
+            placeholder="What do you think? Suggestions, thoughts, or anything on your mind..."
+            class="w-full px-3 py-2 text-sm border rounded-lg bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:focus:ring-slate-500 transition resize-none"
+            :class="feedbackValidity === 'invalid'
+              ? 'border-red-400 dark:border-red-400'
+              : 'border-gray-300 dark:border-slate-500'"
           ></textarea>
+          <p v-if="feedbackValidity === 'invalid'" class="mt-1 text-xs text-red-500">
+            Please enter some feedback before submitting.
+          </p>
         </div>
 
-        <p v-if="feedbackValidity === 'invalid'" class="italic mx-auto">
-          Please enter your feedback before submitting~
-        </p>
+        <div class="flex justify-end mt-4">
+          <button
+            type="submit"
+            class="px-5 py-2 bg-slate-600 hover:bg-slate-700 dark:bg-slate-600 dark:hover:bg-slate-500 text-white text-sm font-semibold rounded-lg transition-colors duration-150"
+          >
+            Submit
+          </button>
+        </div>
 
         <img
-          class="h-40 absolute left-0 bottom-0"
+          class="absolute bottom-0 left-0 h-36 max-h-[52%] w-auto pointer-events-none select-none"
           src="~/assets/images/default/peeking-small.png"
           alt=""
           aria-hidden="true"
         />
-
-        <input
-          class="block mx-auto border-2 p-1 rounded-md w-[250px] hover:bg-slate-300 hover:text-black hover:border-black dark:border-gray-400 dark:text-gray-100 dark:hover:bg-slate-600 dark:hover:text-white transition-colors duration-150 mt-4"
-          type="submit"
-          value="Submit"
-        />
       </form>
     </div>
 
-    <div v-else>
-      <p>Thank you for your feedback!</p>
+    <div v-else class="text-center py-6">
+      <p class="font-semibold text-lg mb-1">Thank you! 🙏</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Your feedback means a lot.</p>
       <img
-        class="mx-auto w-[50%] max-w-[200px]"
+        class="mx-auto w-[50%] max-w-[180px]"
         src="~/assets/images/default/cat.gif"
         alt="Thank you cat animation"
       />

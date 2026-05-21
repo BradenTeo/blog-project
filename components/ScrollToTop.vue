@@ -2,7 +2,7 @@
   <transition name="fade">
     <button
       v-if="visible"
-      class="fixed bottom-[76px] right-4 z-40 bg-slate-600 dark:bg-gray-700 text-white p-2 rounded-full shadow-lg hover:bg-slate-800 dark:hover:bg-gray-500 transition-colors"
+      class="fixed bottom-4 md:bottom-[76px] right-4 z-40 bg-slate-600 dark:bg-gray-700 text-white p-2 rounded-full shadow-lg hover:bg-slate-800 dark:hover:bg-gray-500 transition-colors"
       aria-label="Back to top"
       @click="scrollToTop"
     >

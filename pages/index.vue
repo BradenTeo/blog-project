@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="px-4 md:px-0">
     <section>
       <Title title="Home" class="text-xl" />
     </section>
@@ -27,6 +27,8 @@
           <li>Redesigned nav bar and content tabs</li>
           <li>Added a scroll-to-top button on long pages</li>
           <li>Blurred backdrop when the feedback dialog is open</li>
+          <li>Improved mobile layout</li>
+          <li>Redesigned the Posts sidebar and improved color consistency on the Cancer Journey page</li>
           <li>Fixed the favicon and a bunch of other bugs</li>
         </ul>
       </div>
