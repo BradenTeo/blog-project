@@ -10,7 +10,7 @@
         description="I was diagnosed with Stage 2 Hodgkin's Lymphoma in 2022 😲...
                     But I'm currently in remission :)"
         :background-url="
-          require('~/assets/images/perspectives/hospital.jpg')
+          require('~/assets/images/posts/hospital.jpg')
         "
         weblink="cancer"
       />
@@ -19,13 +19,21 @@
         title="LifeHacks 🛠️"
         description="Random tips"
         :background-url="
-          require('~/assets/images/perspectives/random-stuff.png')
+          require('~/assets/images/posts/random-stuff.png')
         "
         weblink="lifehacks"
       />
     </div>
     <div v-if="isParent" class="italic text-sm mt-10 text-center text-slate-600">
       (Stay tuned for more...)
+    </div>
+    <div v-if="isParent" class="flex justify-center mt-4">
+      <img
+        class="h-28 rounded"
+        :src="require('~/assets/images/posts/yuru-yuri-slow.gif')"
+        alt=""
+        aria-hidden="true"
+      />
     </div>
 
     <div

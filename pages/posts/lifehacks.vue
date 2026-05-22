@@ -8,7 +8,7 @@
         <div>
           <img
             class="h-[1.5rem] float-left mt-[5px] mr-[8px]"
-            src="~/assets/images/lifehacks/libby.png"
+            src="~/assets/images/posts/lifehacks/libby.png"
             alt="Libby app logo"
           />
           <h2>Libby</h2>

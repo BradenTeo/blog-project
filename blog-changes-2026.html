@@ -219,6 +219,12 @@
       <li>Feedback Form UI Redesign</li>
       <li>Posts Sidebar Redesign</li>
       <li>Cancer Journey — Color Consistency</li>
+      <li>Homepage Redesign</li>
+      <li>Day / Night Mode Toggle</li>
+      <li>Nav Reorder &amp; "Behind the Scenes" Rename</li>
+      <li>ClickableTab — Modern Styling</li>
+      <li>PostsButton Redesign</li>
+      <li>Assets Folder Restructure</li>
     </ol>
   </div>
 
@@ -724,6 +730,171 @@ npm run deploy     # pushes dist/ to the gh-pages branch on GitHub</code></pre>
 &lt;!-- After: same hue but at 30% opacity — much more muted --&gt;
 &lt;div class="dark:bg-orange-900/30"&gt;</code></pre>
   <p>This keeps the orange/purple color distinction between the two callouts (which is intentional — they're contrasting two points) while making them blend more naturally into the dark mode background.</p>
+
+
+  <!-- 18 -->
+  <h2>Homepage Redesign <span class="tag tag-style">Styling</span></h2>
+
+  <h3>What changed</h3>
+  <p>The original homepage was just two update log boxes and a generic welcome message. It was replaced with a personal, homely layout:</p>
+  <ul>
+    <li>A circular profile photo (<span class="file">assets/images/home/profile.jpg</span>) with a "Hi, I'm Braden! ✏️" heading and a short personal intro sentence</li>
+    <li>A "Currently" card showing what's happening right now (bingeing Naruto, learning guitar, running more) with an animated gif in the bottom-right corner</li>
+    <li>The update log boxes were moved to the Behind the Scenes page where they belong</li>
+  </ul>
+
+  <h3>Circular profile photo with object-fit</h3>
+  <pre><code>&lt;img
+  class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white dark:border-gray-600"
+  :src="require('~/assets/images/home/profile.jpg')"
+  alt="Braden"
+/&gt;</code></pre>
+  <ul>
+    <li><code>rounded-full</code> — turns the square image into a circle</li>
+    <li><code>object-cover</code> — fills the circle by cropping the image, preserving aspect ratio</li>
+    <li><code>require()</code> is used instead of a plain <code>src</code> string so webpack can process the asset and include it in the build</li>
+  </ul>
+
+  <h3>Slowing down a GIF with gifsicle</h3>
+  <p>The yuru-yuri gif was playing too fast. GIF animation speed is baked into the file — CSS cannot control it. <code>gifsicle</code> (a command-line GIF editor) was used to rewrite each frame's delay:</p>
+  <pre><code># --delay 10 means 10/100s = 100ms per frame (original was 80ms)
+gifsicle --delay 10 yuru-yuri.gif -o yuru-yuri-slow.gif</code></pre>
+
+
+  <!-- 19 -->
+  <h2>Day / Night Mode Toggle <span class="tag tag-style">Styling</span></h2>
+
+  <h3>What changed</h3>
+  <p>The original toggle was a plain grey pill with a white dot. It was redesigned as a proper day/night switch:</p>
+  <ul>
+    <li>Light mode: <code>bg-slate-400</code> track, amber knob with a sun SVG icon</li>
+    <li>Dark mode: <code>bg-indigo-950</code> track, slate knob with a moon SVG icon, three tiny star dots visible on the right side of the track</li>
+    <li>Knob slides with <code>translate-x-7</code> transition</li>
+    <li>"Light" / "Dark" text labels removed — the icons make the state self-evident</li>
+  </ul>
+
+  <h3>Stars using opacity transition</h3>
+  <p>Rather than using <code>v-if</code> (which would cause the stars to pop in abruptly), they're always in the DOM but transition their opacity:</p>
+  <pre><code>&lt;span
+  class="absolute top-1 right-2 w-1 h-1 bg-white rounded-full transition-opacity duration-300"
+  :class="darkMode ? 'opacity-80' : 'opacity-0'"
+&gt;&lt;/span&gt;</code></pre>
+
+  <h3>Replacing text labels with self-documenting icons</h3>
+  <p>The previous design had "Light" and "Dark" text either side of the toggle. Once the knob shows a sun or moon, those labels are redundant. Removing them also freed up nav bar space on small screens.</p>
+
+
+  <!-- 20 -->
+  <h2>Nav Reorder &amp; "Behind the Scenes" Rename <span class="tag tag-rename">Rename</span></h2>
+
+  <h3>What changed</h3>
+  <table>
+    <tr><th>Before</th><th>After</th></tr>
+    <tr><td>Home → Build Process → Posts</td><td>Home → Posts → Behind the Scenes</td></tr>
+    <tr><td><code>pages/buildprocess.vue</code></td><td><code>pages/behind-the-scenes.vue</code></td></tr>
+    <tr><td>Route <code>/buildprocess</code></td><td>Route <code>/behind-the-scenes</code></td></tr>
+    <tr><td>Page title: "Build Process"</td><td>Page title: "Behind the Scenes"</td></tr>
+  </table>
+
+  <p>Posts was moved before Behind the Scenes because it's the primary content of the site — visitors should discover it first. "Build Process" was renamed to "Behind the Scenes" because it's more approachable and describes the page's content (site history + how it was built) better than a technical term.</p>
+
+  <h3>All the places that needed updating</h3>
+  <ul>
+    <li><span class="file">layouts/default.vue</span> — nav link text and <code>to</code> path</li>
+    <li><span class="file">pages/behind-the-scenes.vue</span> — file rename, <code>title</code> data property, <code>head()</code> meta tags</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Nuxt routing reminder:</strong> Renaming the file automatically changes the route. No router config is needed — Nuxt reads the <code>pages/</code> folder to generate routes.
+  </div>
+
+
+  <!-- 21 -->
+  <h2>ClickableTab — Modern Styling <span class="tag tag-style">Styling</span></h2>
+
+  <h3>What changed</h3>
+  <p>The original tab had a thick <code>border-4</code> that looked boxy and dated. The redesign gives it a lighter, card-like appearance:</p>
+  <ul>
+    <li><code>border-4</code> → <code>border-2</code> — thinner, more refined</li>
+    <li><code>rounded-lg</code> → <code>rounded-xl</code> — softer corners</li>
+    <li>Added <code>shadow-sm</code> base, deepening to <code>shadow-md</code> on hover/open — depth through shadow rather than thick borders</li>
+    <li>Closed state gains a faint <code>bg-white/20</code> background — tabs feel like cards rather than floating outlines</li>
+    <li>Background changed from opaque <code>bg-orange-100</code> to <code>bg-slate-100/50 backdrop-blur-sm</code> — frosted glass matching the site's translucent aesthetic</li>
+    <li>Transition changed from <code>transition-colors</code> to <code>transition-all</code> so shadow animates too</li>
+  </ul>
+
+  <h3>Full-width sticky header using negative margins</h3>
+  <p>The sticky tab header (visible when scrolling inside an open tab) previously had gaps on the left, right, and top because the parent had <code>p-4</code> padding. The fix uses negative margins to "break out" of the padding, then restores it with inner padding:</p>
+  <pre><code>/* Parent has p-4. The sticky header needs to fill edge to edge. */
+:class="{
+  'sticky top-9 z-10 -mx-4 -mt-4 px-4 pt-4 pb-2 rounded-t-md': tabOpened
+}"
+
+/* -mx-4 cancels the parent's left/right padding → reaches the border
+   -mt-4 cancels the parent's top padding → reaches the top border
+   px-4 + pt-4 restores inner spacing for the content */</code></pre>
+
+
+  <!-- 22 -->
+  <h2>PostsButton Redesign <span class="tag tag-style">Styling</span></h2>
+
+  <h3>What changed</h3>
+  <ul>
+    <li>Border: was <code>hover:border-black</code> → now <code>border-gray-300 hover:border-slate-600</code> (matches site palette)</li>
+    <li>Title: was a solid opaque badge → now frosted glass: <code>bg-white/20 backdrop-blur-md border border-white/40</code> with a double text shadow for readability</li>
+    <li>Description: was a dark badge → now plain text with a strong text shadow, sitting over the card's hover overlay</li>
+    <li>Hover effect: background image now darkens via <code>filter: brightness(0.45)</code> applied directly to the image div — guarantees edge-to-edge coverage since it uses the same <code>absolute inset-0</code> positioning</li>
+  </ul>
+
+  <h3>Why the separate overlay div didn't reach the edges</h3>
+  <p>An earlier attempt used a separate <code>z-[5]</code> div with <code>absolute inset-0</code> for the hover overlay. It appeared to leave small gaps at the edges. The root cause: the outer card had <code>p-2</code> padding, and while <code>inset-0</code> on an absolutely-positioned child should cover the full padding-box interior, browser rendering can leave sub-pixel gaps with <code>overflow: hidden</code> and border-radius.</p>
+  <p>The more reliable fix applies the darkening as a CSS filter directly on the image element, which already covers the full card by definition:</p>
+  <pre><code>.blur-effect {
+  filter: blur(8px);
+}
+
+/* Added separately so both can be applied together */
+.dim-effect {
+  filter: blur(8px) brightness(0.45);
+}</code></pre>
+
+  <h3>Double text shadow for legibility</h3>
+  <p>A single shadow can look thin. Stacking two shadows — one wide/soft for a halo, one tight/dark for crispness — gives much better readability over any background:</p>
+  <pre><code>class="[text-shadow:0_2px_8px_rgba(0,0,0,0.95),0_1px_3px_rgba(0,0,0,0.8)]"</code></pre>
+
+
+  <!-- 23 -->
+  <h2>Assets Folder Restructure <span class="tag tag-infra">Infrastructure</span></h2>
+
+  <h3>The problem</h3>
+  <p>The <span class="file">assets/images/</span> folder had grown organically with names like <code>aboutme/</code>, <code>perspectives/</code>, and <code>default/</code> that didn't reflect where the images were actually used. For example, <code>aboutme/yuru-yuri-slow.gif</code> was used on the Posts page, not anything about-me related.</p>
+
+  <h3>New structure</h3>
+  <table>
+    <tr><th>Folder</th><th>Used in</th></tr>
+    <tr><td><code>home/</code></td><td><span class="file">pages/index.vue</span> (profile photo, naruto gif)</td></tr>
+    <tr><td><code>posts/</code></td><td><span class="file">pages/posts.vue</span> (thumbnails, yuru-yuri gif)</td></tr>
+    <tr><td><code>posts/cancer/</code></td><td><span class="file">pages/posts/cancer.vue</span></td></tr>
+    <tr><td><code>posts/lifehacks/</code></td><td><span class="file">pages/posts/lifehacks.vue</span></td></tr>
+    <tr><td><code>behind-the-scenes/</code></td><td><span class="file">pages/behind-the-scenes.vue</span></td></tr>
+    <tr><td><code>layout/</code></td><td><span class="file">layouts/default.vue</span>, <span class="file">components/FeedbackForm.vue</span></td></tr>
+  </table>
+
+  <h3>Updating all references</h3>
+  <p>After moving the files, every image path in every <span class="file">.vue</span> file needed updating. The key files touched were:</p>
+  <ul>
+    <li><span class="file">pages/index.vue</span> — profile photo and naruto gif</li>
+    <li><span class="file">pages/posts.vue</span> — thumbnails and yuru-yuri gif</li>
+    <li><span class="file">pages/posts/cancer.vue</span> — 5 images</li>
+    <li><span class="file">pages/posts/lifehacks.vue</span> — libby.png</li>
+    <li><span class="file">pages/behind-the-scenes.vue</span> — success_quote.jpg</li>
+    <li><span class="file">layouts/default.vue</span> — footer gif</li>
+    <li><span class="file">components/FeedbackForm.vue</span> — peeking and cat gif</li>
+  </ul>
+
+  <div class="callout">
+    <strong>Verification:</strong> After updating all paths, a grep for the old folder names (<code>aboutme/</code>, <code>perspectives/</code>, <code>default/</code>, etc.) across all <code>.vue</code> files returned zero results — confirming no stale references remained.
+  </div>
 
 
   <hr style="margin-top:48px; border:none; border-top:2px solid #e2e8f0;" />

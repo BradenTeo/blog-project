@@ -82,7 +82,7 @@
               drugs, and to easily get blood samples.<br /><br />
               <img
                 class="max-w-[300px] md:max-w-[400px] mx-auto"
-                src="~/assets/images/cancer/cvc_line.jpg"
+                src="~/assets/images/posts/cancer/cvc_line.jpg"
                 alt="cvc line"
               /><br />
               Thankfully, the procedure for this was painless &#128519;.
@@ -98,7 +98,7 @@
 
           <img
             class="max-w-[300px] md:max-w-[400px] mx-auto"
-            src="~/assets/images/cancer/nccs.jpg"
+            src="~/assets/images/posts/cancer/nccs.jpg"
             alt="nccs"
           /><br />
 
@@ -191,14 +191,14 @@
           <img
             v-if="noLabel"
             class="max-w-[300px] md:max-w-[400px] mx-auto"
-            src="~/assets/images/cancer/radiotherapy.jpg"
+            src="~/assets/images/posts/cancer/radiotherapy.jpg"
             alt="radiotherapy"
             @click="label"
           />
           <img
             v-else
             class="max-w-[300px] md:max-w-[400px] mx-auto"
-            src="~/assets/images/cancer/radiotherapy_with_label.jpg"
+            src="~/assets/images/posts/cancer/radiotherapy_with_label.jpg"
             alt="radiotherapy"
             @click="label"
           />
@@ -268,7 +268,7 @@
 
             <img
               class="float-right w-[30%] pl-2"
-              src="~/assets/images/cancer/open_grassland.jpg"
+              src="~/assets/images/posts/cancer/open_grassland.jpg"
               alt="Open grassland with sparse vegetation"
               loading="lazy"
             />

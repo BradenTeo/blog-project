@@ -1,15 +1,15 @@
 <template>
   <div
-    class="group m-2 border-4 p-4 rounded-lg transition-colors duration-150"
+    class="group m-2 border-2 p-4 rounded-xl shadow-sm transition-all duration-200"
     :class="{
-      'border-slate-600 dark:border-gray-400 bg-orange-100 dark:bg-gray-700': tabOpened,
-      'border-gray-200 dark:border-gray-600 dark:bg-gray-800 hover:border-slate-600 dark:hover:border-gray-400': !tabOpened,
+      'border-slate-400 dark:border-gray-500 bg-slate-100/50 backdrop-blur-sm dark:bg-gray-700/80 shadow-md': tabOpened,
+      'border-gray-200/80 dark:border-gray-700 bg-white/20 dark:bg-gray-800/40 hover:border-slate-400 dark:hover:border-gray-500 hover:bg-white/40 dark:hover:bg-gray-700/60 hover:shadow-md': !tabOpened,
     }"
   >
     <div
       class="flex items-center justify-between cursor-pointer select-none"
       :class="{
-        'sticky top-9 z-10 bg-orange-100 dark:bg-gray-700 pb-2 mb-2 border-b-2 border-slate-300 dark:border-gray-600': tabOpened,
+        'sticky top-9 z-10 bg-slate-100/50 backdrop-blur-sm dark:bg-gray-700 -mx-4 -mt-4 px-4 pt-4 pb-2 mb-2 border-b-2 border-slate-300 dark:border-gray-600 rounded-t-md': tabOpened,
       }"
       @click="tabOpened = !tabOpened"
     >

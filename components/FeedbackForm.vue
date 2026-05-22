@@ -47,7 +47,7 @@
 
         <img
           class="absolute bottom-0 left-0 h-36 max-h-[52%] w-auto pointer-events-none select-none"
-          src="~/assets/images/default/peeking-small.png"
+          src="~/assets/images/layout/peeking-small.png"
           alt=""
           aria-hidden="true"
         />
@@ -59,7 +59,7 @@
       <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Your feedback means a lot.</p>
       <img
         class="mx-auto w-[50%] max-w-[180px]"
-        src="~/assets/images/default/cat.gif"
+        src="~/assets/images/layout/cat.gif"
         alt="Thank you cat animation"
       />
     </div>
