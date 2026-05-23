@@ -23,6 +23,15 @@
         "
         weblink="lifehacks"
       />
+
+      <PostsButtonVue
+        title="Anime Hall of Fame 🎌"
+        description="Every series I've rated 8/10 or above — in retro terminal style"
+        :background-url="
+          require('~/assets/images/posts/anime-bg.svg')
+        "
+        weblink="anime"
+      />
     </div>
     <div v-if="isParent" class="italic text-sm mt-10 text-center text-slate-600">
       (Stay tuned for more...)

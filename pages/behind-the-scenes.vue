@@ -40,6 +40,7 @@
               <li>Reordered nav: Home → Posts → Behind the Scenes</li>
               <li>Reorganised the assets folder structure to match page usage</li>
               <li>General bug fixes and UI polish throughout</li>
+              <li>Added an Anime Hall of Fame page — all series rated 8/10+ displayed in retro terminal style with a scrolling ticker</li>
             </ul>
           </div>
         </div>

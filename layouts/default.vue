@@ -55,7 +55,7 @@
         aria-hidden="true"
         loading="lazy"
       />
-      <p class="text-xs italic text-gray-300 mb-1">Website last updated: 23/05/26</p>
+      <p class="text-xs italic text-gray-300 mb-1">Website last updated: 24/05/26</p>
       <button
         class="mx-auto border-2 p-1 rounded-md w-[250px] hover:bg-slate-300 hover:text-black hover:border-black dark:border-gray-400 dark:hover:bg-gray-700 dark:hover:text-white transition-colors duration-150"
         @click="openDialog"

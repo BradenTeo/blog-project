@@ -22,6 +22,7 @@
 
     <nuxt-link to="/posts/cancer" class="sidebar-link">Cancer Journey</nuxt-link>
     <nuxt-link to="/posts/lifehacks" class="sidebar-link">LifeHacks</nuxt-link>
+    <nuxt-link to="/posts/anime" class="sidebar-link">Anime Hall of Fame</nuxt-link>
   </div>
 </template>
 
