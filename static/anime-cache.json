@@ -1,147 +1,5479 @@
 {
-  "fetchedAt": "2026-05-24T00:00:00.000Z",
+  "fetchedAt": "2026-05-23T18:55:44.988Z",
   "entries": [
-    { "title": "Aria the Origination", "score": 10, "malId": 1188, "imageUrl": "https://cdn.myanimelist.net/images/anime/1/188519l.jpg", "genres": ["Slice of Life", "Fantasy"] },
-    { "title": "Fate/stay night: Heaven's Feel III. spring song", "score": 10, "malId": 33049, "imageUrl": "https://cdn.myanimelist.net/images/anime/1/108007l.jpg", "genres": ["Fantasy", "Action"] },
-    { "title": "K-On!!", "score": 10, "malId": 7791, "imageUrl": "https://cdn.myanimelist.net/images/anime/10/76120l.jpg", "genres": ["Music", "Slice of Life", "Comedy"] },
-    { "title": "Puella Magi Madoka Magica the Movie: Rebellion", "score": 10, "malId": 11981, "imageUrl": "https://cdn.myanimelist.net/images/anime/11/75519l.jpg", "genres": ["Fantasy", "Thriller"] },
-    { "title": "Wolf Children", "score": 10, "malId": 13391, "imageUrl": "https://cdn.myanimelist.net/images/anime/6/40894l.jpg", "genres": ["Drama", "Fantasy"] },
-    { "title": "Amanchu!", "score": 9, "malId": 32011, "imageUrl": "", "genres": ["Slice of Life", "Comedy"] },
-    { "title": "Arakawa Under the Bridge x Bridge", "score": 9, "malId": 8675, "imageUrl": "", "genres": ["Comedy", "Slice of Life"] },
-    { "title": "Aria the Avvenire", "score": 9, "malId": 31706, "imageUrl": "", "genres": ["Slice of Life", "Fantasy"] },
-    { "title": "Bakemonogatari", "score": 9, "malId": 5081, "imageUrl": "", "genres": ["Fantasy", "Thriller"] },
-    { "title": "Barakamon", "score": 9, "malId": 22135, "imageUrl": "", "genres": ["Slice of Life", "Comedy"] },
-    { "title": "Bocchi the Rock!", "score": 9, "malId": 47917, "imageUrl": "", "genres": ["Music", "Slice of Life", "Comedy"] },
-    { "title": "Chainsaw Man: Reze Arc", "score": 9, "malId": 57057, "imageUrl": "", "genres": ["Action", "Thriller"] },
-    { "title": "Chihayafuru 2", "score": 9, "malId": 15583, "imageUrl": "", "genres": ["Sports", "Drama"] },
-    { "title": "Cyberpunk: Edgerunners", "score": 9, "malId": 42310, "imageUrl": "", "genres": ["Sci-Fi", "Action"] },
-    { "title": "Dandadan 2nd Season", "score": 9, "malId": 59322, "imageUrl": "", "genres": ["Action", "Comedy"] },
-    { "title": "Deca-Dence", "score": 9, "malId": 40091, "imageUrl": "", "genres": ["Sci-Fi", "Action"] },
-    { "title": "Demon Slayer: Mugen Train", "score": 9, "malId": 44081, "imageUrl": "", "genres": ["Action", "Fantasy"] },
-    { "title": "Demon Slayer: Swordsmith Village Arc", "score": 9, "malId": 51019, "imageUrl": "", "genres": ["Action", "Fantasy"] },
-    { "title": "Fate/Zero", "score": 9, "malId": 10087, "imageUrl": "", "genres": ["Fantasy", "Action"] },
-    { "title": "Fate/Zero 2nd Season", "score": 9, "malId": 11741, "imageUrl": "", "genres": ["Fantasy", "Action"] },
-    { "title": "Gintama: The Final Chapter - Yorozuya Forever", "score": 9, "malId": 15417, "imageUrl": "", "genres": ["Comedy", "Action"] },
-    { "title": "Haikyuu!! To the Top Part 2", "score": 9, "malId": 40748, "imageUrl": "", "genres": ["Sports"] },
-    { "title": "Haikyuu!! vs. Shiratorizawa", "score": 9, "malId": 32935, "imageUrl": "", "genres": ["Sports"] },
-    { "title": "Hajime no Ippo: New Challenger", "score": 9, "malId": 5258, "imageUrl": "", "genres": ["Sports", "Action"] },
-    { "title": "Hunter x Hunter (2011)", "score": 9, "malId": 11061, "imageUrl": "", "genres": ["Action", "Fantasy"] },
-    { "title": "Jujutsu Kaisen", "score": 9, "malId": 40748, "imageUrl": "", "genres": ["Action", "Fantasy"] },
-    { "title": "Kekkai Sensen & Beyond", "score": 9, "malId": 33255, "imageUrl": "", "genres": ["Action", "Comedy"] },
-    { "title": "Kill la Kill", "score": 9, "malId": 18679, "imageUrl": "", "genres": ["Action", "Comedy"] },
-    { "title": "Knights of Sidonia: Love Woven in the Stars", "score": 9, "malId": 35839, "imageUrl": "", "genres": ["Sci-Fi", "Action"] },
-    { "title": "Liz and the Blue Bird", "score": 9, "malId": 37101, "imageUrl": "", "genres": ["Music", "Drama"] },
-    { "title": "Look Back", "score": 9, "malId": 57882, "imageUrl": "", "genres": ["Drama"] },
-    { "title": "Made in Abyss: Dawn of the Deep Soul", "score": 9, "malId": 41161, "imageUrl": "", "genres": ["Fantasy", "Action"] },
-    { "title": "Maquia: When the Promised Flower Blooms", "score": 9, "malId": 35851, "imageUrl": "", "genres": ["Drama", "Fantasy"] },
-    { "title": "March Comes in Like a Lion Season 2", "score": 9, "malId": 35180, "imageUrl": "", "genres": ["Drama", "Sports"] },
-    { "title": "Mawaru Penguindrum", "score": 9, "malId": 10721, "imageUrl": "", "genres": ["Drama", "Fantasy"] },
-    { "title": "Mob Psycho 100 III", "score": 9, "malId": 50172, "imageUrl": "", "genres": ["Action", "Comedy"] },
-    { "title": "Monogatari Series: Second Season", "score": 9, "malId": 17074, "imageUrl": "", "genres": ["Fantasy", "Thriller"] },
-    { "title": "Mushishi: Hihamukage", "score": 9, "malId": 25991, "imageUrl": "", "genres": ["Fantasy", "Slice of Life"] },
-    { "title": "My Hero Academia: Final Season", "score": 9, "malId": 57535, "imageUrl": "", "genres": ["Action", "Fantasy"] },
-    { "title": "O Maidens in Your Savage Season", "score": 9, "malId": 38438, "imageUrl": "", "genres": ["Drama", "Slice of Life"] },
-    { "title": "Owarimonogatari 2nd Season", "score": 9, "malId": 35247, "imageUrl": "", "genres": ["Fantasy", "Thriller"] },
-    { "title": "Ping Pong the Animation", "score": 9, "malId": 20931, "imageUrl": "", "genres": ["Sports", "Drama"] },
-    { "title": "Ponyo", "score": 9, "malId": 2748, "imageUrl": "", "genres": ["Fantasy", "Drama"] },
-    { "title": "Puella Magi Madoka Magica", "score": 9, "malId": 9756, "imageUrl": "", "genres": ["Fantasy", "Thriller"] },
-    { "title": "Ranking of Kings", "score": 9, "malId": 49458, "imageUrl": "", "genres": ["Fantasy", "Drama"] },
-    { "title": "Silver Spoon 2nd Season", "score": 9, "malId": 19629, "imageUrl": "", "genres": ["Slice of Life", "Drama"] },
-    { "title": "Sound! Euphonium", "score": 9, "malId": 27989, "imageUrl": "", "genres": ["Music", "Slice of Life"] },
-    { "title": "Sound of the Sky Specials", "score": 9, "malId": 8546, "imageUrl": "", "genres": ["Slice of Life", "Sci-Fi"] },
-    { "title": "Steins;Gate", "score": 9, "malId": 9253, "imageUrl": "", "genres": ["Sci-Fi", "Thriller"] },
-    { "title": "Suzume", "score": 9, "malId": 50594, "imageUrl": "", "genres": ["Fantasy", "Drama"] },
-    { "title": "Takopii's Original Sin", "score": 9, "malId": 54796, "imageUrl": "", "genres": ["Horror", "Drama"] },
-    { "title": "The Apothecary Diaries", "score": 9, "malId": 52991, "imageUrl": "", "genres": ["Thriller", "Drama"] },
-    { "title": "The Disappearance of Haruhi Suzumiya", "score": 9, "malId": 4382, "imageUrl": "", "genres": ["Sci-Fi", "Thriller"] },
-    { "title": "The Garden of Words", "score": 9, "malId": 16782, "imageUrl": "", "genres": ["Drama", "Slice of Life"] },
-    { "title": "The Secret World of Arrietty", "score": 9, "malId": 8688, "imageUrl": "", "genres": ["Fantasy", "Drama"] },
-    { "title": "The Tatami Galaxy", "score": 9, "malId": 7785, "imageUrl": "", "genres": ["Drama", "Comedy"] },
-    { "title": "When Marnie Was There", "score": 9, "malId": 22135, "imageUrl": "", "genres": ["Drama", "Fantasy"] },
-    { "title": "Yuru Yuri Nachuyachumi!+", "score": 9, "malId": 30485, "imageUrl": "", "genres": ["Comedy", "Slice of Life"] },
-    { "title": "A Silent Voice", "score": 8, "malId": 28851, "imageUrl": "", "genres": ["Drama"] },
-    { "title": "Akira", "score": 8, "malId": 47, "imageUrl": "", "genres": ["Sci-Fi", "Action"] },
-    { "title": "Akudama Drive", "score": 8, "malId": 40709, "imageUrl": "", "genres": ["Sci-Fi", "Action"] },
-    { "title": "Aria the Animation", "score": 8, "malId": 477, "imageUrl": "", "genres": ["Slice of Life", "Fantasy"] },
-    { "title": "Ascendance of a Bookworm", "score": 8, "malId": 39232, "imageUrl": "", "genres": ["Fantasy", "Slice of Life"] },
-    { "title": "Astra Lost in Space", "score": 8, "malId": 39198, "imageUrl": "", "genres": ["Sci-Fi", "Action"] },
-    { "title": "Attack on Titan: The Final Season", "score": 8, "malId": 40028, "imageUrl": "", "genres": ["Action", "Fantasy"] },
-    { "title": "Blue Lock", "score": 8, "malId": 49596, "imageUrl": "", "genres": ["Sports"] },
-    { "title": "Castle in the Sky", "score": 8, "malId": 400, "imageUrl": "", "genres": ["Fantasy", "Action"] },
-    { "title": "Chainsaw Man", "score": 8, "malId": 44511, "imageUrl": "", "genres": ["Action", "Horror"] },
-    { "title": "Chihayafuru", "score": 8, "malId": 10800, "imageUrl": "", "genres": ["Sports", "Drama"] },
-    { "title": "Cowboy Bebop", "score": 8, "malId": 1, "imageUrl": "", "genres": ["Sci-Fi", "Action"] },
-    { "title": "Dandadan", "score": 8, "malId": 57334, "imageUrl": "", "genres": ["Action", "Comedy"] },
-    { "title": "Darker than Black: Gemini of the Meteor", "score": 8, "malId": 6438, "imageUrl": "", "genres": ["Action", "Sci-Fi"] },
-    { "title": "Death Parade", "score": 8, "malId": 28223, "imageUrl": "", "genres": ["Thriller", "Drama"] },
-    { "title": "Demon Slayer", "score": 8, "malId": 38000, "imageUrl": "", "genres": ["Action", "Fantasy"] },
-    { "title": "Dr. Stone", "score": 8, "malId": 38691, "imageUrl": "", "genres": ["Sci-Fi", "Action"] },
-    { "title": "Dungeon Meshi", "score": 8, "malId": 52701, "imageUrl": "", "genres": ["Fantasy", "Comedy"] },
-    { "title": "Durarara!!", "score": 8, "malId": 6746, "imageUrl": "", "genres": ["Thriller", "Action"] },
-    { "title": "FLCL", "score": 8, "malId": 227, "imageUrl": "", "genres": ["Sci-Fi", "Comedy"] },
-    { "title": "Food Wars!", "score": 8, "malId": 28171, "imageUrl": "", "genres": ["Slice of Life", "Comedy"] },
-    { "title": "Frieren: Beyond Journey's End", "score": 8, "malId": 52991, "imageUrl": "", "genres": ["Fantasy", "Slice of Life"] },
-    { "title": "From the New World", "score": 8, "malId": 13125, "imageUrl": "", "genres": ["Sci-Fi", "Thriller"] },
-    { "title": "Fullmetal Alchemist: Brotherhood", "score": 8, "malId": 5114, "imageUrl": "", "genres": ["Action", "Fantasy"] },
-    { "title": "Ga-Rei: Zero", "score": 8, "malId": 3426, "imageUrl": "", "genres": ["Action", "Thriller"] },
-    { "title": "Ghost in the Shell", "score": 8, "malId": 43, "imageUrl": "", "genres": ["Sci-Fi", "Thriller"] },
-    { "title": "Ghost in the Shell: SAC", "score": 8, "malId": 467, "imageUrl": "", "genres": ["Sci-Fi", "Thriller"] },
-    { "title": "Gintama'", "score": 8, "malId": 9989, "imageUrl": "", "genres": ["Comedy", "Action"] },
-    { "title": "Girls' Last Tour", "score": 8, "malId": 35838, "imageUrl": "", "genres": ["Sci-Fi", "Slice of Life"] },
-    { "title": "Grave of the Fireflies", "score": 8, "malId": 578, "imageUrl": "", "genres": ["Drama"] },
-    { "title": "Gurren Lagann: Lagann-hen", "score": 8, "malId": 4897, "imageUrl": "", "genres": ["Action", "Sci-Fi"] },
-    { "title": "Haikyuu!!", "score": 8, "malId": 20583, "imageUrl": "", "genres": ["Sports"] },
-    { "title": "Hajime no Ippo", "score": 8, "malId": 263, "imageUrl": "", "genres": ["Sports", "Action"] },
-    { "title": "Heavenly Delusion", "score": 8, "malId": 50785, "imageUrl": "", "genres": ["Sci-Fi", "Thriller"] },
-    { "title": "Hinamatsuri", "score": 8, "malId": 36733, "imageUrl": "", "genres": ["Comedy", "Slice of Life"] },
-    { "title": "Humanity Has Declined", "score": 8, "malId": 12815, "imageUrl": "", "genres": ["Comedy", "Sci-Fi"] },
-    { "title": "Hyouka", "score": 8, "malId": 12189, "imageUrl": "", "genres": ["Thriller", "Slice of Life"] },
-    { "title": "I Want to Eat Your Pancreas", "score": 8, "malId": 36098, "imageUrl": "", "genres": ["Drama"] },
-    { "title": "JoJo's Bizarre Adventure: Golden Wind", "score": 8, "malId": 37991, "imageUrl": "", "genres": ["Action"] },
-    { "title": "Jujutsu Kaisen 2nd Season", "score": 8, "malId": 51009, "imageUrl": "", "genres": ["Action", "Fantasy"] },
-    { "title": "K-On!", "score": 8, "malId": 5680, "imageUrl": "", "genres": ["Music", "Slice of Life", "Comedy"] },
-    { "title": "Kaiju No. 8", "score": 8, "malId": 57535, "imageUrl": "", "genres": ["Action", "Sci-Fi"] },
-    { "title": "Laid-Back Camp", "score": 8, "malId": 34798, "imageUrl": "", "genres": ["Slice of Life"] },
-    { "title": "Land of the Lustrous", "score": 8, "malId": 35557, "imageUrl": "", "genres": ["Fantasy", "Sci-Fi"] },
-    { "title": "Little Witch Academia", "score": 8, "malId": 33489, "imageUrl": "", "genres": ["Fantasy", "Comedy"] },
-    { "title": "Lycoris Recoil", "score": 8, "malId": 50709, "imageUrl": "", "genres": ["Action"] },
-    { "title": "Made in Abyss", "score": 8, "malId": 34599, "imageUrl": "", "genres": ["Fantasy", "Action"] },
-    { "title": "Mashle", "score": 8, "malId": 52588, "imageUrl": "", "genres": ["Comedy", "Fantasy"] },
-    { "title": "Mob Psycho 100 II", "score": 8, "malId": 36819, "imageUrl": "", "genres": ["Action", "Comedy"] },
-    { "title": "Monthly Girls' Nozaki-kun", "score": 8, "malId": 23289, "imageUrl": "", "genres": ["Comedy", "Slice of Life"] },
-    { "title": "Mushishi", "score": 8, "malId": 457, "imageUrl": "", "genres": ["Fantasy", "Slice of Life"] },
-    { "title": "Mushoku Tensei", "score": 8, "malId": 39535, "imageUrl": "", "genres": ["Fantasy"] },
-    { "title": "Natsume's Book of Friends", "score": 8, "malId": 3594, "imageUrl": "", "genres": ["Fantasy", "Slice of Life"] },
-    { "title": "Nausicaä of the Valley of the Wind", "score": 8, "malId": 1462, "imageUrl": "", "genres": ["Fantasy", "Sci-Fi"] },
-    { "title": "Neon Genesis Evangelion", "score": 8, "malId": 30, "imageUrl": "", "genres": ["Sci-Fi", "Drama"] },
-    { "title": "Odd Taxi", "score": 8, "malId": 46002, "imageUrl": "", "genres": ["Thriller"] },
-    { "title": "Oshi no Ko", "score": 8, "malId": 52034, "imageUrl": "", "genres": ["Drama", "Thriller"] },
-    { "title": "Perfect Blue", "score": 8, "malId": 431, "imageUrl": "", "genres": ["Thriller", "Horror"] },
-    { "title": "Planetes", "score": 8, "malId": 1546, "imageUrl": "", "genres": ["Sci-Fi", "Drama"] },
-    { "title": "Princess Mononoke", "score": 8, "malId": 164, "imageUrl": "", "genres": ["Fantasy", "Action"] },
-    { "title": "Psycho-Pass", "score": 8, "malId": 13601, "imageUrl": "", "genres": ["Sci-Fi", "Thriller"] },
-    { "title": "Rainbow", "score": 8, "malId": 7785, "imageUrl": "", "genres": ["Drama"] },
-    { "title": "ReLIFE", "score": 8, "malId": 32091, "imageUrl": "", "genres": ["Drama", "Slice of Life"] },
-    { "title": "Revolutionary Girl Utena", "score": 8, "malId": 440, "imageUrl": "", "genres": ["Fantasy", "Drama"] },
-    { "title": "Samurai Champloo", "score": 8, "malId": 205, "imageUrl": "", "genres": ["Action"] },
-    { "title": "School-Live!", "score": 8, "malId": 27761, "imageUrl": "", "genres": ["Horror", "Slice of Life"] },
-    { "title": "Shadows House", "score": 8, "malId": 40897, "imageUrl": "", "genres": ["Thriller", "Fantasy"] },
-    { "title": "Shirobako", "score": 8, "malId": 25835, "imageUrl": "", "genres": ["Slice of Life", "Drama"] },
-    { "title": "Showa Genroku Rakugo Shinju", "score": 8, "malId": 28735, "imageUrl": "", "genres": ["Drama"] },
-    { "title": "Sound of the Sky", "score": 8, "malId": 6682, "imageUrl": "", "genres": ["Slice of Life", "Sci-Fi"] },
-    { "title": "Spice and Wolf II", "score": 8, "malId": 5341, "imageUrl": "", "genres": ["Fantasy", "Drama"] },
-    { "title": "Spirited Away", "score": 8, "malId": 199, "imageUrl": "", "genres": ["Fantasy", "Drama"] },
-    { "title": "Spy x Family Season 2", "score": 8, "malId": 53255, "imageUrl": "", "genres": ["Action", "Comedy"] },
-    { "title": "Summer Wars", "score": 8, "malId": 6267, "imageUrl": "", "genres": ["Sci-Fi", "Drama"] },
-    { "title": "The Tale of the Princess Kaguya", "score": 8, "malId": 19221, "imageUrl": "", "genres": ["Drama", "Fantasy"] },
-    { "title": "Tiger & Bunny", "score": 8, "malId": 9893, "imageUrl": "", "genres": ["Action", "Sci-Fi"] },
-    { "title": "To Your Eternity", "score": 8, "malId": 41025, "imageUrl": "", "genres": ["Fantasy", "Drama"] },
-    { "title": "Toradora!", "score": 8, "malId": 4224, "imageUrl": "", "genres": ["Drama", "Comedy"] },
-    { "title": "Trigun Stampede", "score": 8, "malId": 49642, "imageUrl": "", "genres": ["Action", "Sci-Fi"] },
-    { "title": "Vinland Saga Season 2", "score": 8, "malId": 49387, "imageUrl": "", "genres": ["Drama", "Action"] },
-    { "title": "Violet Evergarden", "score": 8, "malId": 33352, "imageUrl": "", "genres": ["Drama", "Fantasy"] },
-    { "title": "Wandering Son", "score": 8, "malId": 8146, "imageUrl": "", "genres": ["Drama", "Slice of Life"] },
-    { "title": "Yuki Yuna is a Hero", "score": 8, "malId": 25519, "imageUrl": "", "genres": ["Fantasy", "Drama"] },
-    { "title": "Yuru Yuri", "score": 8, "malId": 10495, "imageUrl": "", "genres": ["Comedy", "Slice of Life"] }
+    {
+      "title": "Aria the Origination",
+      "score": 10,
+      "malId": 3297,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1431/132867l.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Fate/stay night Movie: Heaven's Feel - III. Spring Song",
+      "score": 10,
+      "malId": 33050,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1142/112957l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "K-On!!",
+      "score": 10,
+      "malId": 7791,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/76121l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Mahou Shoujo Madoka★Magica Movie 3: Hangyaku no Monogatari",
+      "score": 10,
+      "malId": 11981,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/54231l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Ookami Kodomo no Ame to Yuki",
+      "score": 10,
+      "malId": 12355,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/35721l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "3-gatsu no Lion 2nd Season",
+      "score": 9,
+      "malId": 35180,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/88469l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Amanchu!",
+      "score": 9,
+      "malId": 31771,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/80810l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Araburu Kisetsu no Otome-domo yo.",
+      "score": 9,
+      "malId": 38753,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1622/111483l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Arakawa Under the Bridge x Bridge",
+      "score": 9,
+      "malId": 9074,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1851/98621l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Aria the Avvenire",
+      "score": 9,
+      "malId": 29893,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/74338l.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Bakemonogatari",
+      "score": 9,
+      "malId": 5081,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/75274l.jpg",
+      "genres": [
+        "Thriller",
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Barakamon",
+      "score": 9,
+      "malId": 22789,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1426/111248l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Bocchi the Rock!",
+      "score": 9,
+      "malId": 47917,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1448/127956l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Boku no Hero Academia: Final Season",
+      "score": 9,
+      "malId": 60098,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1959/151055l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "Chainsaw Man Movie: Reze-hen",
+      "score": 9,
+      "malId": 57555,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1763/150638l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Chihayafuru 2",
+      "score": 9,
+      "malId": 14397,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/47435l.jpg",
+      "genres": [
+        "Drama",
+        "Sports"
+      ]
+    },
+    {
+      "title": "Cyberpunk: Edgerunners",
+      "score": 9,
+      "malId": 42310,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1818/126435l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Dandadan 2nd Season",
+      "score": 9,
+      "malId": 60543,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1721/149001l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Deca-Dence",
+      "score": 9,
+      "malId": 40056,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1787/132772l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Fate/Zero",
+      "score": 9,
+      "malId": 10087,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1887/117644l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fate/Zero 2nd Season",
+      "score": 9,
+      "malId": 11741,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1522/117645l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Gake no Ue no Ponyo",
+      "score": 9,
+      "malId": 2890,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1331/138727l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Gin no Saji 2nd Season",
+      "score": 9,
+      "malId": 19363,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/8/57995l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Gintama Movie 2: Kanketsu-hen - Yorozuya yo Eien Nare",
+      "score": 9,
+      "malId": 15335,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/51723l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Haikyuu!! Karasuno Koukou vs. Shiratorizawa Gakuen Koukou",
+      "score": 9,
+      "malId": 32935,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/81992l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Haikyuu!! To the Top Part 2",
+      "score": 9,
+      "malId": 40776,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1453/106768l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Hajime no Ippo: New Challenger",
+      "score": 9,
+      "malId": 5258,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/8/56617l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Hibike! Euphonium",
+      "score": 9,
+      "malId": 27989,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1517/142072l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Hunter x Hunter (2011)",
+      "score": 9,
+      "malId": 11061,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1337/99013l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Jujutsu Kaisen",
+      "score": 9,
+      "malId": 40748,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1171/109222l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Karigurashi no Arrietty",
+      "score": 9,
+      "malId": 7711,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1974/116417l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kekkai Sensen & Beyond",
+      "score": 9,
+      "malId": 34451,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/88282l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kill la Kill",
+      "score": 9,
+      "malId": 18679,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1464/111943l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimetsu no Yaiba Movie: Mugen Ressha-hen",
+      "score": 9,
+      "malId": 40456,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1704/106947l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimetsu no Yaiba: Katanakaji no Sato-hen",
+      "score": 9,
+      "malId": 51019,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1765/135099l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kotonoha no Niwa",
+      "score": 9,
+      "malId": 16782,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1597/112995l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kusuriya no Hitorigoto",
+      "score": 9,
+      "malId": 54492,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1708/138033l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Liz to Aoi Tori",
+      "score": 9,
+      "malId": 35677,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1638/93032l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Look Back",
+      "score": 9,
+      "malId": 58125,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1716/142633l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Made in Abyss Movie 3: Fukaki Tamashii no Reimei",
+      "score": 9,
+      "malId": 36862,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1803/117183l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Mahou Shoujo Madoka★Magica",
+      "score": 9,
+      "malId": 9756,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/55225l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Mawaru Penguindrum",
+      "score": 9,
+      "malId": 10721,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/30238l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mob Psycho 100 III",
+      "score": 9,
+      "malId": 50172,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1228/125011l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Monogatari Series: Second Season",
+      "score": 9,
+      "malId": 17074,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1807/121534l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushishi: Hihamukage",
+      "score": 9,
+      "malId": 21329,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1559/147521l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Omoide no Marnie",
+      "score": 9,
+      "malId": 21557,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/64293l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Ousama Ranking",
+      "score": 9,
+      "malId": 40834,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1347/117616l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Owarimonogatari 2nd Season",
+      "score": 9,
+      "malId": 35247,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/87322l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Ping Pong the Animation",
+      "score": 9,
+      "malId": 22135,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1586/146565l.jpg",
+      "genres": [
+        "Drama",
+        "Sports"
+      ]
+    },
+    {
+      "title": "Sayonara no Asa ni Yakusoku no Hana wo Kazarou",
+      "score": 9,
+      "malId": 35851,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/89556l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Sidonia no Kishi: Ai Tsumugu Hoshi",
+      "score": 9,
+      "malId": 35759,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1222/108354l.jpg",
+      "genres": [
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "So Ra No Wo To Specials",
+      "score": 9,
+      "malId": 8197,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/20884l.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Steins;Gate",
+      "score": 9,
+      "malId": 9253,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1935/127974l.jpg",
+      "genres": [
+        "Drama",
+        "Sci-Fi",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Suzume no Tojimari",
+      "score": 9,
+      "malId": 50594,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1598/128450l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Suzumiya Haruhi no Shoushitsu",
+      "score": 9,
+      "malId": 7311,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1248/112352l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Takopii no Genzai",
+      "score": 9,
+      "malId": 60489,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1182/149879l.jpg",
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Yojouhan Shinwa Taikei",
+      "score": 9,
+      "malId": 7785,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1633/123689l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Yuru Yuri Nachuyachumi!+",
+      "score": 9,
+      "malId": 30902,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1278/149931l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "[Oshi no Ko]",
+      "score": 8,
+      "malId": 52034,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1812/134736l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "[Oshi no Ko]",
+      "score": 8,
+      "malId": 52034,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1812/134736l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "[Oshi no Ko]",
+      "score": 8,
+      "malId": 52034,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1812/134736l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "[Oshi no Ko] 2nd Season",
+      "score": 8,
+      "malId": 55791,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1006/143302l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "[Oshi no Ko] 2nd Season",
+      "score": 8,
+      "malId": 55791,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1006/143302l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "[Oshi no Ko] 2nd Season",
+      "score": 8,
+      "malId": 55791,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1006/143302l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "[Oshi no Ko] 3rd Season",
+      "score": 8,
+      "malId": 60058,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1979/153329l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "[Oshi no Ko] 3rd Season",
+      "score": 8,
+      "malId": 60058,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1979/153329l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "[Oshi no Ko] 3rd Season",
+      "score": 8,
+      "malId": 60058,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1979/153329l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Akira",
+      "score": 8,
+      "malId": 47,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1408/114012l.jpg",
+      "genres": [
+        "Action",
+        "Horror",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Akudama Drive",
+      "score": 8,
+      "malId": 41433,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1468/109172l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Akudama Drive",
+      "score": 8,
+      "malId": 41433,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1468/109172l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Akudama Drive",
+      "score": 8,
+      "malId": 41433,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1468/109172l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Amanchu!: Yakusoku no Natsu to Atarashii Omoide no Koto",
+      "score": 8,
+      "malId": 33818,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/87338l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Amanchu!: Yakusoku no Natsu to Atarashii Omoide no Koto",
+      "score": 8,
+      "malId": 33818,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/87338l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Amanchu!: Yakusoku no Natsu to Atarashii Omoide no Koto",
+      "score": 8,
+      "malId": 33818,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/87338l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Aria the Animation",
+      "score": 8,
+      "malId": 477,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/77620l.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Aria the Natural",
+      "score": 8,
+      "malId": 962,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/77621l.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Aria the Origination: Sono Choppiri Himitsu no Basho ni...",
+      "score": 8,
+      "malId": 4772,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/15053l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Aria the Origination: Sono Choppiri Himitsu no Basho ni...",
+      "score": 8,
+      "malId": 4772,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/15053l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Aria the OVA: Arietta",
+      "score": 8,
+      "malId": 2563,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/77622l.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Baccano!",
+      "score": 8,
+      "malId": 2251,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/14547l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Baccano! Specials",
+      "score": 8,
+      "malId": 3901,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/9129l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Baccano! Specials",
+      "score": 8,
+      "malId": 3901,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/9129l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Blue Lock",
+      "score": 8,
+      "malId": 49596,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1258/126929l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Blue Lock",
+      "score": 8,
+      "malId": 49596,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1258/126929l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Blue Lock",
+      "score": 8,
+      "malId": 49596,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1258/126929l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Cardcaptor Sakura Movie 2: Fuuin Sareta Card",
+      "score": 8,
+      "malId": 372,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1652/90326l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Chainsaw Man",
+      "score": 8,
+      "malId": 44511,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1806/126216l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Chainsaw Man",
+      "score": 8,
+      "malId": 44511,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1806/126216l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Chainsaw Man",
+      "score": 8,
+      "malId": 44511,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1806/126216l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Chihayafuru",
+      "score": 8,
+      "malId": 10800,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1959/156735l.jpg",
+      "genres": [
+        "Drama",
+        "Sports"
+      ]
+    },
+    {
+      "title": "Chihayafuru",
+      "score": 8,
+      "malId": 10800,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1959/156735l.jpg",
+      "genres": [
+        "Drama",
+        "Sports"
+      ]
+    },
+    {
+      "title": "Chihayafuru 3",
+      "score": 8,
+      "malId": 37379,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1898/110709l.jpg",
+      "genres": [
+        "Drama",
+        "Sports"
+      ]
+    },
+    {
+      "title": "Chihayafuru 3",
+      "score": 8,
+      "malId": 37379,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1898/110709l.jpg",
+      "genres": [
+        "Drama",
+        "Sports"
+      ]
+    },
+    {
+      "title": "Chihayafuru 3",
+      "score": 8,
+      "malId": 37379,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1898/110709l.jpg",
+      "genres": [
+        "Drama",
+        "Sports"
+      ]
+    },
+    {
+      "title": "Claymore",
+      "score": 8,
+      "malId": 1818,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/21834l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Cowboy Bebop",
+      "score": 8,
+      "malId": 1,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/19644l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Cowboy Bebop: Tengoku no Tobira",
+      "score": 8,
+      "malId": 5,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1439/93480l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Dandadan",
+      "score": 8,
+      "malId": 57334,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1584/143719l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Dandadan",
+      "score": 8,
+      "malId": 57334,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1584/143719l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Dandadan",
+      "score": 8,
+      "malId": 57334,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1584/143719l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Darker than Black: Ryuusei no Gemini",
+      "score": 8,
+      "malId": 6573,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1189/134110l.jpg",
+      "genres": [
+        "Action",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Darker than Black: Ryuusei no Gemini",
+      "score": 8,
+      "malId": 6573,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1189/134110l.jpg",
+      "genres": [
+        "Action",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Darwin's Game",
+      "score": 8,
+      "malId": 38656,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1016/107222l.jpg",
+      "genres": [
+        "Action",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Darwin's Game",
+      "score": 8,
+      "malId": 38656,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1016/107222l.jpg",
+      "genres": [
+        "Action",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Darwin's Game",
+      "score": 8,
+      "malId": 38656,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1016/107222l.jpg",
+      "genres": [
+        "Action",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Death Billiards",
+      "score": 8,
+      "malId": 14353,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/48721l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Death Billiards",
+      "score": 8,
+      "malId": 14353,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/48721l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Death Note",
+      "score": 8,
+      "malId": 1535,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1079/138100l.jpg",
+      "genres": [
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Death Parade",
+      "score": 8,
+      "malId": 28223,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/71553l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Death Parade",
+      "score": 8,
+      "malId": 28223,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/71553l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Dr. Stone",
+      "score": 8,
+      "malId": 38691,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1613/102576l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Dr. Stone",
+      "score": 8,
+      "malId": 38691,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1613/102576l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Dr. Stone",
+      "score": 8,
+      "malId": 38691,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1613/102576l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Dungeon Meshi",
+      "score": 8,
+      "malId": 52701,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1711/142478l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Dungeon Meshi",
+      "score": 8,
+      "malId": 52701,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1711/142478l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Dungeon Meshi",
+      "score": 8,
+      "malId": 52701,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1711/142478l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Durarara!!",
+      "score": 8,
+      "malId": 6746,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/71772l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Durarara!!",
+      "score": 8,
+      "malId": 6746,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/71772l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Durarara!! Specials",
+      "score": 8,
+      "malId": 8408,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/28684l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Durarara!! Specials",
+      "score": 8,
+      "malId": 8408,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/28684l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Durarara!!x2 Shou: Watashi no Kokoro wa Nabe Moyou",
+      "score": 8,
+      "malId": 30191,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/72248l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Durarara!!x2 Shou: Watashi no Kokoro wa Nabe Moyou",
+      "score": 8,
+      "malId": 30191,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/72248l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Ergo Proxy",
+      "score": 8,
+      "malId": 790,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1183/136187l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Eve no Jikan",
+      "score": 8,
+      "malId": 3167,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/19480l.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Eve no Jikan (Movie)",
+      "score": 8,
+      "malId": 7465,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/27711l.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Eve no Jikan (Movie)",
+      "score": 8,
+      "malId": 7465,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/27711l.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Fate/stay night Movie: Heaven's Feel - II. Lost Butterfly",
+      "score": 8,
+      "malId": 33049,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1974/98158l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fate/stay night Movie: Heaven's Feel - II. Lost Butterfly",
+      "score": 8,
+      "malId": 33049,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1974/98158l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fate/stay night: Unlimited Blade Works",
+      "score": 8,
+      "malId": 22297,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/67333l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fate/stay night: Unlimited Blade Works",
+      "score": 8,
+      "malId": 22297,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/67333l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fate/stay night: Unlimited Blade Works 2nd Season",
+      "score": 8,
+      "malId": 28701,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1881/124810l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fate/stay night: Unlimited Blade Works 2nd Season",
+      "score": 8,
+      "malId": 28701,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1881/124810l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fate/strange Fake",
+      "score": 8,
+      "malId": 55830,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1752/150192l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fate/strange Fake",
+      "score": 8,
+      "malId": 55830,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1752/150192l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fate/strange Fake",
+      "score": 8,
+      "malId": 55830,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1752/150192l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "FLCL",
+      "score": 8,
+      "malId": 227,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/77356l.jpg",
+      "genres": [
+        "Comedy",
+        "Sci-Fi",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "score": 8,
+      "malId": 5114,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1208/94745l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "score": 8,
+      "malId": 5114,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1208/94745l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fumetsu no Anata e",
+      "score": 8,
+      "malId": 41025,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1880/118484l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fumetsu no Anata e",
+      "score": 8,
+      "malId": 41025,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1880/118484l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Fumetsu no Anata e",
+      "score": 8,
+      "malId": 41025,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1880/118484l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Ga-Rei: Zero",
+      "score": 8,
+      "malId": 4725,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/83975l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Ga-Rei: Zero",
+      "score": 8,
+      "malId": 4725,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/83975l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Gakkougurashi!",
+      "score": 8,
+      "malId": 24765,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1798/91548l.jpg",
+      "genres": [
+        "Horror",
+        "Thriller",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Gakkougurashi!",
+      "score": 8,
+      "malId": 24765,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1798/91548l.jpg",
+      "genres": [
+        "Horror",
+        "Thriller",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Gekkan Shoujo Nozaki-kun",
+      "score": 8,
+      "malId": 23289,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/66083l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Gekkan Shoujo Nozaki-kun",
+      "score": 8,
+      "malId": 23289,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/66083l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Gekkan Shoujo Nozaki-kun Specials",
+      "score": 8,
+      "malId": 27633,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/66871l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Gekkan Shoujo Nozaki-kun Specials",
+      "score": 8,
+      "malId": 27633,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/66871l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Gintama",
+      "score": 8,
+      "malId": 918,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/73274l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Gintama'",
+      "score": 8,
+      "malId": 9969,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/50361l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Gintama'",
+      "score": 8,
+      "malId": 9969,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/50361l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Gintama°: Aizome Kaori-hen",
+      "score": 8,
+      "malId": 32366,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1962/133573l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Gintama°: Aizome Kaori-hen",
+      "score": 8,
+      "malId": 32366,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1962/133573l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Guimi Zhi Zhu: Xiaochou Pian",
+      "score": 8,
+      "malId": 49818,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1952/149229l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Guimi Zhi Zhu: Xiaochou Pian",
+      "score": 8,
+      "malId": 49818,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1952/149229l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Guimi Zhi Zhu: Xiaochou Pian",
+      "score": 8,
+      "malId": 49818,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1952/149229l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Haikyuu!!",
+      "score": 8,
+      "malId": 20583,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/76014l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Haikyuu!!",
+      "score": 8,
+      "malId": 20583,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/76014l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Haikyuu!! Movie: Gomisuteba no Kessen",
+      "score": 8,
+      "malId": 52742,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1665/140360l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Haikyuu!! Movie: Gomisuteba no Kessen",
+      "score": 8,
+      "malId": 52742,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1665/140360l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Haikyuu!! Movie: Gomisuteba no Kessen",
+      "score": 8,
+      "malId": 52742,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1665/140360l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Haikyuu!! Second Season",
+      "score": 8,
+      "malId": 28891,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/76662l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Haikyuu!! Second Season",
+      "score": 8,
+      "malId": 28891,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/76662l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Haikyuu!! To the Top",
+      "score": 8,
+      "malId": 38883,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1813/105367l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Haikyuu!! To the Top",
+      "score": 8,
+      "malId": 38883,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1813/105367l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Haikyuu!! To the Top",
+      "score": 8,
+      "malId": 38883,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1813/105367l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Hajime no Ippo",
+      "score": 8,
+      "malId": 263,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/86334l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Hajime no Ippo: Boxer no Kobushi",
+      "score": 8,
+      "malId": 12069,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/84664l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Hajime no Ippo: Boxer no Kobushi",
+      "score": 8,
+      "malId": 12069,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/84664l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Hajime no Ippo: Champion Road",
+      "score": 8,
+      "malId": 264,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1521/137978l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Hajime no Ippo: Mashiba vs. Kimura",
+      "score": 8,
+      "malId": 265,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/64737l.jpg",
+      "genres": [
+        "Sports"
+      ]
+    },
+    {
+      "title": "Hakozume: Kouban Joshi no Gyakushuu",
+      "score": 8,
+      "malId": 49519,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1302/119917l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Hakozume: Kouban Joshi no Gyakushuu",
+      "score": 8,
+      "malId": 49519,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1302/119917l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Hakozume: Kouban Joshi no Gyakushuu",
+      "score": 8,
+      "malId": 49519,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1302/119917l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Hanamonogatari",
+      "score": 8,
+      "malId": 21855,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/65755l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Hanamonogatari",
+      "score": 8,
+      "malId": 21855,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/65755l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Hanayamata",
+      "score": 8,
+      "malId": 21681,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1963/90831l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Hanayamata",
+      "score": 8,
+      "malId": 21681,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1963/90831l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Hellsing Ultimate",
+      "score": 8,
+      "malId": 777,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1012/143965l.jpg",
+      "genres": [
+        "Action",
+        "Horror",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Hibike! Euphonium 2",
+      "score": 8,
+      "malId": 31988,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/81155l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Hibike! Euphonium 2",
+      "score": 8,
+      "malId": 31988,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/81155l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Hibike! Euphonium Movie 2: Todoketai Melody",
+      "score": 8,
+      "malId": 35082,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/88024l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Hibike! Euphonium Movie 2: Todoketai Melody",
+      "score": 8,
+      "malId": 35082,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/88024l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Hibike! Euphonium Movie 2: Todoketai Melody",
+      "score": 8,
+      "malId": 35082,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/88024l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Hibike! Euphonium: Kakedasu Monaka",
+      "score": 8,
+      "malId": 31665,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/77322l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Hibike! Euphonium: Kakedasu Monaka",
+      "score": 8,
+      "malId": 31665,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/77322l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Hikaru ga Shinda Natsu",
+      "score": 8,
+      "malId": 58913,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1104/148614l.jpg",
+      "genres": [
+        "Horror",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Hikaru ga Shinda Natsu",
+      "score": 8,
+      "malId": 58913,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1104/148614l.jpg",
+      "genres": [
+        "Horror",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Hikaru ga Shinda Natsu",
+      "score": 8,
+      "malId": 58913,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1104/148614l.jpg",
+      "genres": [
+        "Horror",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Hinamatsuri",
+      "score": 8,
+      "malId": 36296,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1580/93526l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Hinamatsuri",
+      "score": 8,
+      "malId": 36296,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1580/93526l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Hinamatsuri",
+      "score": 8,
+      "malId": 36296,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1580/93526l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Hisone to Maso-tan",
+      "score": 8,
+      "malId": 36884,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1539/91169l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Hisone to Maso-tan",
+      "score": 8,
+      "malId": 36884,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1539/91169l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Hisone to Maso-tan",
+      "score": 8,
+      "malId": 36884,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1539/91169l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen",
+      "score": 8,
+      "malId": 39468,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1582/101697l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen",
+      "score": 8,
+      "malId": 39468,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1582/101697l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen",
+      "score": 8,
+      "malId": 39468,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1582/101697l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen 2nd Season",
+      "score": 8,
+      "malId": 40815,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1464/107998l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen 2nd Season",
+      "score": 8,
+      "malId": 40815,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1464/107998l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Honzuki no Gekokujou: Shisho ni Naru Tame ni wa Shudan wo Erandeiraremasen 2nd Season",
+      "score": 8,
+      "malId": 40815,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1464/107998l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Hotaru no Haka",
+      "score": 8,
+      "malId": 578,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1485/141208l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Hourou Musuko",
+      "score": 8,
+      "malId": 8426,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/53945l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Hourou Musuko",
+      "score": 8,
+      "malId": 8426,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/53945l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Houseki no Kuni",
+      "score": 8,
+      "malId": 35557,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/88293l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Houseki no Kuni",
+      "score": 8,
+      "malId": 35557,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/88293l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Houseki no Kuni",
+      "score": 8,
+      "malId": 35557,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/88293l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Hyakuemu.",
+      "score": 8,
+      "malId": 58919,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1259/151080l.jpg",
+      "genres": [
+        "Drama",
+        "Sports"
+      ]
+    },
+    {
+      "title": "Hyakuemu.",
+      "score": 8,
+      "malId": 58919,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1259/151080l.jpg",
+      "genres": [
+        "Drama",
+        "Sports"
+      ]
+    },
+    {
+      "title": "Hyakuemu.",
+      "score": 8,
+      "malId": 58919,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1259/151080l.jpg",
+      "genres": [
+        "Drama",
+        "Sports"
+      ]
+    },
+    {
+      "title": "Hyouka",
+      "score": 8,
+      "malId": 12189,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/50521l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Hyouka",
+      "score": 8,
+      "malId": 12189,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/50521l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Hyouka: Motsubeki Mono wa",
+      "score": 8,
+      "malId": 13469,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/50363l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Hyouka: Motsubeki Mono wa",
+      "score": 8,
+      "malId": 13469,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/50363l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Innocence",
+      "score": 8,
+      "malId": 468,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/75628l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Jigokuraku 2nd Season",
+      "score": 8,
+      "malId": 55825,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1772/154456l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Jigokuraku 2nd Season",
+      "score": 8,
+      "malId": 55825,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1772/154456l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Jigokuraku 2nd Season",
+      "score": 8,
+      "malId": 55825,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1772/154456l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Jinrui wa Suitai Shimashita",
+      "score": 8,
+      "malId": 10357,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/50345l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Jinrui wa Suitai Shimashita",
+      "score": 8,
+      "malId": 10357,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/50345l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 5: Ougon no Kaze",
+      "score": 8,
+      "malId": 37991,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1882/94989l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 5: Ougon no Kaze",
+      "score": 8,
+      "malId": 37991,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1882/94989l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 5: Ougon no Kaze",
+      "score": 8,
+      "malId": 37991,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1882/94989l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 6: Stone Ocean",
+      "score": 8,
+      "malId": 48661,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1896/119844l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 6: Stone Ocean",
+      "score": 8,
+      "malId": 48661,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1896/119844l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 6: Stone Ocean",
+      "score": 8,
+      "malId": 48661,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1896/119844l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 6: Stone Ocean Part 2",
+      "score": 8,
+      "malId": 51367,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1051/121959l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 6: Stone Ocean Part 2",
+      "score": 8,
+      "malId": 51367,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1051/121959l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 6: Stone Ocean Part 2",
+      "score": 8,
+      "malId": 51367,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1051/121959l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 6: Stone Ocean Part 3",
+      "score": 8,
+      "malId": 53273,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1233/128920l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 6: Stone Ocean Part 3",
+      "score": 8,
+      "malId": 53273,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1233/128920l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "JoJo no Kimyou na Bouken Part 6: Stone Ocean Part 3",
+      "score": 8,
+      "malId": 53273,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1233/128920l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "Joukamachi no Dandelion",
+      "score": 8,
+      "malId": 28387,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/82559l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Joukamachi no Dandelion",
+      "score": 8,
+      "malId": 28387,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/82559l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Jujutsu Kaisen 2nd Season",
+      "score": 8,
+      "malId": 51009,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1792/138022l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Jujutsu Kaisen 2nd Season",
+      "score": 8,
+      "malId": 51009,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1792/138022l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Jujutsu Kaisen 2nd Season",
+      "score": 8,
+      "malId": 51009,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1792/138022l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Jujutsu Kaisen: Shimetsu Kaiyuu - Zenpen",
+      "score": 8,
+      "malId": 57658,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1659/154920l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Jujutsu Kaisen: Shimetsu Kaiyuu - Zenpen",
+      "score": 8,
+      "malId": 57658,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1659/154920l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Jujutsu Kaisen: Shimetsu Kaiyuu - Zenpen",
+      "score": 8,
+      "malId": 57658,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1659/154920l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "K-On!",
+      "score": 8,
+      "malId": 5680,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/76120l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "K-On!",
+      "score": 8,
+      "malId": 5680,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/76120l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "K-On! Movie",
+      "score": 8,
+      "malId": 9617,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/76233l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "K-On! Movie",
+      "score": 8,
+      "malId": 9617,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/76233l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "K-On!!: Keikaku!",
+      "score": 8,
+      "malId": 9734,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/26965l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "K-On!!: Keikaku!",
+      "score": 8,
+      "malId": 9734,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/26965l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Kaguya-hime no Monogatari",
+      "score": 8,
+      "malId": 16664,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1935/93606l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kaguya-hime no Monogatari",
+      "score": 8,
+      "malId": 16664,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1935/93606l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kaijuu 8-gou",
+      "score": 8,
+      "malId": 52588,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1370/140362l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Kaijuu 8-gou",
+      "score": 8,
+      "malId": 52588,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1370/140362l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Kaijuu 8-gou",
+      "score": 8,
+      "malId": 52588,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1370/140362l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Kanata no Astra",
+      "score": 8,
+      "malId": 39198,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1784/106428l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Kanata no Astra",
+      "score": 8,
+      "malId": 39198,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1784/106428l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Kanata no Astra",
+      "score": 8,
+      "malId": 39198,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1784/106428l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Kara no Kyoukai Movie 1: Fukan Fuukei",
+      "score": 8,
+      "malId": 2593,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/21741l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Kara no Kyoukai Movie 3: Tsuukaku Zanryuu",
+      "score": 8,
+      "malId": 3783,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/21735l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Kara no Kyoukai Movie 3: Tsuukaku Zanryuu",
+      "score": 8,
+      "malId": 3783,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/21735l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Kara no Kyoukai Movie 4: Garan no Dou",
+      "score": 8,
+      "malId": 4280,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/21736l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Kara no Kyoukai Movie 4: Garan no Dou",
+      "score": 8,
+      "malId": 4280,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/21736l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Kara no Kyoukai Movie 5: Mujun Rasen",
+      "score": 8,
+      "malId": 4282,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/75851l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Kara no Kyoukai Movie 5: Mujun Rasen",
+      "score": 8,
+      "malId": 4282,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/75851l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Kara no Kyoukai Movie 7: Satsujin Kousatsu (Go)",
+      "score": 8,
+      "malId": 5205,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/56619l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Thriller",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kara no Kyoukai Movie 7: Satsujin Kousatsu (Go)",
+      "score": 8,
+      "malId": 5205,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/56619l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Thriller",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kara no Kyoukai Movie: Mirai Fukuin",
+      "score": 8,
+      "malId": 14807,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/56621l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kara no Kyoukai Movie: Mirai Fukuin",
+      "score": 8,
+      "malId": 14807,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/56621l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kaze no Tani no Nausicaä",
+      "score": 8,
+      "malId": 572,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/75914l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kidou Senshi Gundam: Tekketsu no Orphans 2nd Season",
+      "score": 8,
+      "malId": 33051,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/80899l.jpg",
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Kidou Senshi Gundam: Tekketsu no Orphans 2nd Season",
+      "score": 8,
+      "malId": 33051,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/80899l.jpg",
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Kill la Kill Specials",
+      "score": 8,
+      "malId": 21659,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1964/122317l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kill la Kill Specials",
+      "score": 8,
+      "malId": 21659,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1964/122317l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimetsu no Yaiba",
+      "score": 8,
+      "malId": 38000,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1286/99889l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimetsu no Yaiba",
+      "score": 8,
+      "malId": 38000,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1286/99889l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimetsu no Yaiba",
+      "score": 8,
+      "malId": 38000,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1286/99889l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimetsu no Yaiba Movie 1: Mugenjou-hen - Akaza Sairai",
+      "score": 8,
+      "malId": 59192,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1681/148216l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimetsu no Yaiba Movie 1: Mugenjou-hen - Akaza Sairai",
+      "score": 8,
+      "malId": 59192,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1681/148216l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimetsu no Yaiba Movie 1: Mugenjou-hen - Akaza Sairai",
+      "score": 8,
+      "malId": 59192,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1681/148216l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimetsu no Yaiba: Yuukaku-hen",
+      "score": 8,
+      "malId": 47778,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1908/120036l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimetsu no Yaiba: Yuukaku-hen",
+      "score": 8,
+      "malId": 47778,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1908/120036l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimetsu no Yaiba: Yuukaku-hen",
+      "score": 8,
+      "malId": 47778,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1908/120036l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimi no Koe wo Todoketai",
+      "score": 8,
+      "malId": 33218,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/86704l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kimi no Koe wo Todoketai",
+      "score": 8,
+      "malId": 33218,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/86704l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kimi no Koe wo Todoketai",
+      "score": 8,
+      "malId": 33218,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/86704l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kimi no Na wa.",
+      "score": 8,
+      "malId": 32281,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/87048l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kimi no Na wa.",
+      "score": 8,
+      "malId": 32281,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/87048l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kimi no Suizou wo Tabetai",
+      "score": 8,
+      "malId": 36098,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1768/93291l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kimi no Suizou wo Tabetai",
+      "score": 8,
+      "malId": 36098,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1768/93291l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kimi no Suizou wo Tabetai",
+      "score": 8,
+      "malId": 36098,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1768/93291l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kimi to, Nami ni Noretara",
+      "score": 8,
+      "malId": 38594,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1893/99701l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimi to, Nami ni Noretara",
+      "score": 8,
+      "malId": 38594,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1893/99701l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kimi to, Nami ni Noretara",
+      "score": 8,
+      "malId": 38594,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1893/99701l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kizumonogatari I: Tekketsu-hen",
+      "score": 8,
+      "malId": 9260,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1783/112810l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kizumonogatari I: Tekketsu-hen",
+      "score": 8,
+      "malId": 9260,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1783/112810l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kizumonogatari II: Nekketsu-hen",
+      "score": 8,
+      "malId": 31757,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1981/112812l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kizumonogatari II: Nekketsu-hen",
+      "score": 8,
+      "malId": 31757,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1981/112812l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kizumonogatari III: Reiketsu-hen",
+      "score": 8,
+      "malId": 31758,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1084/112813l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kizumonogatari III: Reiketsu-hen",
+      "score": 8,
+      "malId": 31758,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1084/112813l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kobayashi-san Chi no Maid Dragon S",
+      "score": 8,
+      "malId": 39247,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1252/115539l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kobayashi-san Chi no Maid Dragon S",
+      "score": 8,
+      "malId": 39247,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1252/115539l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kobayashi-san Chi no Maid Dragon S",
+      "score": 8,
+      "malId": 39247,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1252/115539l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kobayashi-san Chi no Maid Dragon: Valentine, Soshite Onsen! - Amari Kitai Shinaide Kudasai",
+      "score": 8,
+      "malId": 35363,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/88486l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kobayashi-san Chi no Maid Dragon: Valentine, Soshite Onsen! - Amari Kitai Shinaide Kudasai",
+      "score": 8,
+      "malId": 35363,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/88486l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kobayashi-san Chi no Maid Dragon: Valentine, Soshite Onsen! - Amari Kitai Shinaide Kudasai",
+      "score": 8,
+      "malId": 35363,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/88486l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Koe no Katachi",
+      "score": 8,
+      "malId": 28851,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1122/96435l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Koe no Katachi",
+      "score": 8,
+      "malId": 28851,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1122/96435l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Kono Subarashii Sekai ni Shukufuku wo!",
+      "score": 8,
+      "malId": 30831,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1895/142748l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kono Subarashii Sekai ni Shukufuku wo!",
+      "score": 8,
+      "malId": 30831,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1895/142748l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Konohana Kitan",
+      "score": 8,
+      "malId": 35241,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/88431l.jpg",
+      "genres": [
+        "Fantasy",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Konohana Kitan",
+      "score": 8,
+      "malId": 35241,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/88431l.jpg",
+      "genres": [
+        "Fantasy",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Konohana Kitan",
+      "score": 8,
+      "malId": 35241,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/88431l.jpg",
+      "genres": [
+        "Fantasy",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Koukaku Kidoutai",
+      "score": 8,
+      "malId": 43,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/10/82594l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Koukaku Kidoutai: Stand Alone Complex",
+      "score": 8,
+      "malId": 467,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/50857l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Koukaku Kidoutai: Stand Alone Complex - Solid State Society",
+      "score": 8,
+      "malId": 1566,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/85128l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Koukaku Kidoutai: Stand Alone Complex 2nd GIG",
+      "score": 8,
+      "malId": 801,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1646/135390l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Koyomimonogatari",
+      "score": 8,
+      "malId": 32268,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/77744l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Koyomimonogatari",
+      "score": 8,
+      "malId": 32268,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/77744l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Kusuriya no Hitorigoto 2nd Season",
+      "score": 8,
+      "malId": 58514,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1025/147458l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Kusuriya no Hitorigoto 2nd Season",
+      "score": 8,
+      "malId": 58514,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1025/147458l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Kusuriya no Hitorigoto 2nd Season",
+      "score": 8,
+      "malId": 58514,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1025/147458l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Little Witch Academia",
+      "score": 8,
+      "malId": 14349,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1890/147903l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Little Witch Academia",
+      "score": 8,
+      "malId": 14349,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1890/147903l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Log Horizon 2nd Season",
+      "score": 8,
+      "malId": 23321,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/68097l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Log Horizon 2nd Season",
+      "score": 8,
+      "malId": 23321,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/68097l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Lycoris Recoil",
+      "score": 8,
+      "malId": 50709,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1261/127311l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "Lycoris Recoil",
+      "score": 8,
+      "malId": 50709,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1261/127311l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "Lycoris Recoil",
+      "score": 8,
+      "malId": 50709,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1261/127311l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "Made in Abyss",
+      "score": 8,
+      "malId": 34599,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/86733l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Made in Abyss",
+      "score": 8,
+      "malId": 34599,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/86733l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Made in Abyss",
+      "score": 8,
+      "malId": 34599,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/86733l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Made in Abyss: Retsujitsu no Ougonkyou",
+      "score": 8,
+      "malId": 41084,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1864/122519l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Made in Abyss: Retsujitsu no Ougonkyou",
+      "score": 8,
+      "malId": 41084,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1864/122519l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Made in Abyss: Retsujitsu no Ougonkyou",
+      "score": 8,
+      "malId": 41084,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1864/122519l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Mahou Shoujo Madoka★Magica Movie 1: Hajimari no Monogatari",
+      "score": 8,
+      "malId": 11977,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/42331l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Mahou Shoujo Madoka★Magica Movie 1: Hajimari no Monogatari",
+      "score": 8,
+      "malId": 11977,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/42331l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Mahou Shoujo Madoka★Magica Movie 2: Eien no Monogatari",
+      "score": 8,
+      "malId": 11979,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/42265l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Mahou Shoujo Madoka★Magica Movie 2: Eien no Monogatari",
+      "score": 8,
+      "malId": 11979,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/42265l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Mashle",
+      "score": 8,
+      "malId": 52211,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1218/135107l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mashle",
+      "score": 8,
+      "malId": 52211,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1218/135107l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mashle",
+      "score": 8,
+      "malId": 52211,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1218/135107l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mashle: Shinkakusha Kouho Senbatsu Shiken-hen",
+      "score": 8,
+      "malId": 55813,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1912/140804l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mashle: Shinkakusha Kouho Senbatsu Shiken-hen",
+      "score": 8,
+      "malId": 55813,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1912/140804l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mashle: Shinkakusha Kouho Senbatsu Shiken-hen",
+      "score": 8,
+      "malId": 55813,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1912/140804l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mimi wo Sumaseba",
+      "score": 8,
+      "malId": 585,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1764/138714l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Mob Psycho 100 II",
+      "score": 8,
+      "malId": 37510,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1918/96303l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mob Psycho 100 II",
+      "score": 8,
+      "malId": 37510,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1918/96303l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mob Psycho 100 II",
+      "score": 8,
+      "malId": 37510,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1918/96303l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mononoke Hime",
+      "score": 8,
+      "malId": 164,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1355/147277l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushishi",
+      "score": 8,
+      "malId": 457,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/73862l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushishi Zoku Shou",
+      "score": 8,
+      "malId": 21939,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/58533l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushishi Zoku Shou",
+      "score": 8,
+      "malId": 21939,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/58533l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushishi Zoku Shou 2nd Season",
+      "score": 8,
+      "malId": 24701,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/68095l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushishi Zoku Shou 2nd Season",
+      "score": 8,
+      "malId": 24701,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/68095l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushishi Zoku Shou: Suzu no Shizuku",
+      "score": 8,
+      "malId": 28957,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/72689l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushishi Zoku Shou: Suzu no Shizuku",
+      "score": 8,
+      "malId": 28957,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/72689l.jpg",
+      "genres": [
+        "Thriller",
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei II: Isekai Ittara Honki Dasu",
+      "score": 8,
+      "malId": 51179,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1898/138005l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei II: Isekai Ittara Honki Dasu",
+      "score": 8,
+      "malId": 51179,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1898/138005l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei II: Isekai Ittara Honki Dasu",
+      "score": 8,
+      "malId": 51179,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1898/138005l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei II: Isekai Ittara Honki Dasu - Shugo Jutsushi Fitz",
+      "score": 8,
+      "malId": 55818,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1627/136934l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei II: Isekai Ittara Honki Dasu - Shugo Jutsushi Fitz",
+      "score": 8,
+      "malId": 55818,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1627/136934l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei II: Isekai Ittara Honki Dasu - Shugo Jutsushi Fitz",
+      "score": 8,
+      "malId": 55818,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1627/136934l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2",
+      "score": 8,
+      "malId": 55888,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1876/141251l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2",
+      "score": 8,
+      "malId": 55888,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1876/141251l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2",
+      "score": 8,
+      "malId": 55888,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1876/141251l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+      "score": 8,
+      "malId": 39535,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1530/117776l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+      "score": 8,
+      "malId": 39535,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1530/117776l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+      "score": 8,
+      "malId": 39535,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1530/117776l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei: Isekai Ittara Honki Dasu Part 2",
+      "score": 8,
+      "malId": 45576,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1028/117777l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei: Isekai Ittara Honki Dasu Part 2",
+      "score": 8,
+      "malId": 45576,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1028/117777l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Mushoku Tensei: Isekai Ittara Honki Dasu Part 2",
+      "score": 8,
+      "malId": 45576,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1028/117777l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou",
+      "score": 8,
+      "malId": 4081,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1681/108439l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou",
+      "score": 8,
+      "malId": 4081,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1681/108439l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou Go",
+      "score": 8,
+      "malId": 32983,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/81755l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou Go",
+      "score": 8,
+      "malId": 32983,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/81755l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou Go Specials",
+      "score": 8,
+      "malId": 34534,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/84887l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou Go Specials",
+      "score": 8,
+      "malId": 34534,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/84887l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou Go Specials",
+      "score": 8,
+      "malId": 34534,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/84887l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou San",
+      "score": 8,
+      "malId": 10379,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/8/82394l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou San",
+      "score": 8,
+      "malId": 10379,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/8/82394l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou Shi",
+      "score": 8,
+      "malId": 11665,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/37449l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou Shi",
+      "score": 8,
+      "malId": 11665,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/37449l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou: Itsuka Yuki no Hi ni",
+      "score": 8,
+      "malId": 20651,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/79742l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Natsume Yuujinchou: Itsuka Yuki no Hi ni",
+      "score": 8,
+      "malId": 20651,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/11/79742l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "New Game!!",
+      "score": 8,
+      "malId": 34914,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/86790l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "New Game!!",
+      "score": 8,
+      "malId": 34914,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/86790l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "New Game!!",
+      "score": 8,
+      "malId": 34914,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/86790l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Odd Taxi",
+      "score": 8,
+      "malId": 46102,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1981/113348l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Odd Taxi",
+      "score": 8,
+      "malId": 46102,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1981/113348l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Odd Taxi",
+      "score": 8,
+      "malId": 46102,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1981/113348l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "One Outs",
+      "score": 8,
+      "malId": 5040,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/21065l.jpg",
+      "genres": [
+        "Sports",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "One Outs",
+      "score": 8,
+      "malId": 5040,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/21065l.jpg",
+      "genres": [
+        "Sports",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "One Piece Fan Letter",
+      "score": 8,
+      "malId": 60022,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1455/146229l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "One Piece Fan Letter",
+      "score": 8,
+      "malId": 60022,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1455/146229l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "One Piece Fan Letter",
+      "score": 8,
+      "malId": 60022,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1455/146229l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "One Punch Man",
+      "score": 8,
+      "malId": 30276,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/76049l.jpg",
+      "genres": [
+        "Action",
+        "Comedy"
+      ]
+    },
+    {
+      "title": "One Punch Man",
+      "score": 8,
+      "malId": 30276,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/76049l.jpg",
+      "genres": [
+        "Action",
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Ookami to Koushinryou II: Ookami to Kohakuiro no Yuuutsu",
+      "score": 8,
+      "malId": 6007,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/13070l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Ookami to Koushinryou II: Ookami to Kohakuiro no Yuuutsu",
+      "score": 8,
+      "malId": 6007,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/13070l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Owarimonogatari",
+      "score": 8,
+      "malId": 31181,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/8/76479l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Owarimonogatari",
+      "score": 8,
+      "malId": 31181,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/8/76479l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Paprika",
+      "score": 8,
+      "malId": 1943,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1929/93629l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Perfect Blue",
+      "score": 8,
+      "malId": 437,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1254/134212l.jpg",
+      "genres": [
+        "Drama",
+        "Horror",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Planetes",
+      "score": 8,
+      "malId": 329,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1209/142900l.jpg",
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Psycho-Pass",
+      "score": 8,
+      "malId": 13601,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1314/142015l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Psycho-Pass",
+      "score": 8,
+      "malId": 13601,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1314/142015l.jpg",
+      "genres": [
+        "Action",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Rainbow: Nisha Rokubou no Shichinin",
+      "score": 8,
+      "malId": 6114,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/72697l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Rainbow: Nisha Rokubou no Shichinin",
+      "score": 8,
+      "malId": 6114,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/72697l.jpg",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Re:␣Hamatora",
+      "score": 8,
+      "malId": 23421,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/75641l.jpg",
+      "genres": [
+        "Action",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Re:␣Hamatora",
+      "score": 8,
+      "malId": 23421,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/75641l.jpg",
+      "genres": [
+        "Action",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "ReLIFE",
+      "score": 8,
+      "malId": 30015,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/82149l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "ReLIFE",
+      "score": 8,
+      "malId": 30015,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/82149l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Sakasama no Patema",
+      "score": 8,
+      "malId": 12477,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/52415l.jpg",
+      "genres": [
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Sakasama no Patema",
+      "score": 8,
+      "malId": 12477,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/52415l.jpg",
+      "genres": [
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Samurai Champloo",
+      "score": 8,
+      "malId": 205,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1370/135212l.jpg",
+      "genres": [
+        "Action",
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Sayonara Zetsubou Sensei Special",
+      "score": 8,
+      "malId": 10469,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/75518l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Sayonara Zetsubou Sensei Special",
+      "score": 8,
+      "malId": 10469,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/75518l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Sen to Chihiro no Kamikakushi",
+      "score": 8,
+      "malId": 199,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/79597l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Senki Zesshou Symphogear AXZ",
+      "score": 8,
+      "malId": 32836,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/86584l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Senki Zesshou Symphogear AXZ",
+      "score": 8,
+      "malId": 32836,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/86584l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Senyuu.",
+      "score": 8,
+      "malId": 15751,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/44858l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Senyuu.",
+      "score": 8,
+      "malId": 15751,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/44858l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Senyuu. 2",
+      "score": 8,
+      "malId": 18523,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/51879l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Senyuu. 2",
+      "score": 8,
+      "malId": 18523,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/51879l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Shadows House",
+      "score": 8,
+      "malId": 43439,
+      "imageUrl": "https://cdn.myanimelist.net/r/192x272/images/anime/1424/113342.jpg?s=95e00d85b0cb3b34b57297b295012569",
+      "genres": []
+    },
+    {
+      "title": "Shadows House",
+      "score": 8,
+      "malId": 43439,
+      "imageUrl": "https://cdn.myanimelist.net/r/192x272/images/anime/1424/113342.jpg?s=95e00d85b0cb3b34b57297b295012569",
+      "genres": []
+    },
+    {
+      "title": "Shadows House",
+      "score": 8,
+      "malId": 43439,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1424/113342l.jpg",
+      "genres": [
+        "Fantasy",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shinchou Yuusha: Kono Yuusha ga Ore Tueee Kuse ni Shinchou Sugiru",
+      "score": 8,
+      "malId": 38659,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1715/103419l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Shinchou Yuusha: Kono Yuusha ga Ore Tueee Kuse ni Shinchou Sugiru",
+      "score": 8,
+      "malId": 38659,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1715/103419l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Shinchou Yuusha: Kono Yuusha ga Ore Tueee Kuse ni Shinchou Sugiru",
+      "score": 8,
+      "malId": 38659,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1715/103419l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin Season 3 Part 2",
+      "score": 8,
+      "malId": 38524,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1517/100633l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin Season 3 Part 2",
+      "score": 8,
+      "malId": 38524,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1517/100633l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin Season 3 Part 2",
+      "score": 8,
+      "malId": 38524,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1517/100633l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin: The Final Season",
+      "score": 8,
+      "malId": 40028,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1000/110531l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin: The Final Season",
+      "score": 8,
+      "malId": 40028,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1000/110531l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin: The Final Season",
+      "score": 8,
+      "malId": 40028,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1000/110531l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin: The Final Season - Kanketsu-hen",
+      "score": 8,
+      "malId": 51535,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1279/131078l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin: The Final Season - Kanketsu-hen",
+      "score": 8,
+      "malId": 51535,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1279/131078l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin: The Final Season - Kanketsu-hen",
+      "score": 8,
+      "malId": 51535,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1279/131078l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin: The Final Season Part 2",
+      "score": 8,
+      "malId": 48583,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1948/120625l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin: The Final Season Part 2",
+      "score": 8,
+      "malId": 48583,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1948/120625l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shingeki no Kyojin: The Final Season Part 2",
+      "score": 8,
+      "malId": 48583,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1948/120625l.jpg",
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shinseiki Evangelion",
+      "score": 8,
+      "malId": 30,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1314/108941l.jpg",
+      "genres": [
+        "Drama",
+        "Sci-Fi",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shinseiki Evangelion Movie: Air/Magokoro wo, Kimi ni",
+      "score": 8,
+      "malId": 32,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1404/98182l.jpg",
+      "genres": [
+        "Drama",
+        "Sci-Fi",
+        "Thriller"
+      ]
+    },
+    {
+      "title": "Shinsekai yori",
+      "score": 8,
+      "malId": 13125,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1549/136389l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Horror",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Shinsekai yori",
+      "score": 8,
+      "malId": 13125,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1549/136389l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy",
+        "Horror",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Shirobako",
+      "score": 8,
+      "malId": 25835,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1460/141897l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Shirobako",
+      "score": 8,
+      "malId": 25835,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1460/141897l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Shokugeki no Souma",
+      "score": 8,
+      "malId": 28171,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1444/148976l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Shokugeki no Souma",
+      "score": 8,
+      "malId": 28171,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1444/148976l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Shoujo Kakumei Utena: Adolescence Mokushiroku",
+      "score": 8,
+      "malId": 441,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1268/107516l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Shoujo Shuumatsu Ryokou",
+      "score": 8,
+      "malId": 35838,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/88321l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Shoujo Shuumatsu Ryokou",
+      "score": 8,
+      "malId": 35838,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/88321l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Shoujo Shuumatsu Ryokou",
+      "score": 8,
+      "malId": 35838,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/88321l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Shouwa Genroku Rakugo Shinjuu",
+      "score": 8,
+      "malId": 28735,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1354/124768l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Shouwa Genroku Rakugo Shinjuu",
+      "score": 8,
+      "malId": 28735,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1354/124768l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "So Ra No Wo To",
+      "score": 8,
+      "malId": 6802,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/81654l.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "So Ra No Wo To",
+      "score": 8,
+      "malId": 6802,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/81654l.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Sousou no Frieren",
+      "score": 8,
+      "malId": 52991,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1015/138006l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Sousou no Frieren",
+      "score": 8,
+      "malId": 52991,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1015/138006l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Sousou no Frieren",
+      "score": 8,
+      "malId": 52991,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1015/138006l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Sousou no Frieren 2nd Season",
+      "score": 8,
+      "malId": 59978,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1921/154528l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Sousou no Frieren 2nd Season",
+      "score": 8,
+      "malId": 59978,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1921/154528l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Sousou no Frieren 2nd Season",
+      "score": 8,
+      "malId": 59978,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1921/154528l.jpg",
+      "genres": [
+        "Drama",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Spy x Family Season 2",
+      "score": 8,
+      "malId": 53887,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1506/138982l.jpg",
+      "genres": [
+        "Action",
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Spy x Family Season 2",
+      "score": 8,
+      "malId": 53887,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1506/138982l.jpg",
+      "genres": [
+        "Action",
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Spy x Family Season 2",
+      "score": 8,
+      "malId": 53887,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1506/138982l.jpg",
+      "genres": [
+        "Action",
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Steins;Gate Movie: Fuka Ryouiki no Déjà vu",
+      "score": 8,
+      "malId": 11577,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1611/112806l.jpg",
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Steins;Gate Movie: Fuka Ryouiki no Déjà vu",
+      "score": 8,
+      "malId": 11577,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1611/112806l.jpg",
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Steins;Gate: Oukoubakko no Poriomania",
+      "score": 8,
+      "malId": 10863,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1805/123188l.jpg",
+      "genres": [
+        "Comedy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Steins;Gate: Oukoubakko no Poriomania",
+      "score": 8,
+      "malId": 10863,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1805/123188l.jpg",
+      "genres": [
+        "Comedy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Stranger: Mukou Hadan",
+      "score": 8,
+      "malId": 2418,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/87066l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "Summer Wars",
+      "score": 8,
+      "malId": 5681,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1593/116751l.jpg",
+      "genres": [
+        "Comedy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Summer Wars",
+      "score": 8,
+      "malId": 5681,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1593/116751l.jpg",
+      "genres": [
+        "Comedy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Suzumiya Haruhi no Yuuutsu",
+      "score": 8,
+      "malId": 849,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1470/137929l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tanaka-kun wa Itsumo Kedaruge",
+      "score": 8,
+      "malId": 32093,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1189/111994l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Tanaka-kun wa Itsumo Kedaruge",
+      "score": 8,
+      "malId": 32093,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1189/111994l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Tengen Toppa Gurren Lagann",
+      "score": 8,
+      "malId": 2001,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/5123l.jpg",
+      "genres": [
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tengen Toppa Gurren Lagann Movie 2: Lagann-hen",
+      "score": 8,
+      "malId": 4565,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/19698l.jpg",
+      "genres": [
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tengen Toppa Gurren Lagann Movie 2: Lagann-hen",
+      "score": 8,
+      "malId": 4565,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/19698l.jpg",
+      "genres": [
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tengoku Daimakyou",
+      "score": 8,
+      "malId": 53393,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1121/133132l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tengoku Daimakyou",
+      "score": 8,
+      "malId": 53393,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1121/133132l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tengoku Daimakyou",
+      "score": 8,
+      "malId": 53393,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1121/133132l.jpg",
+      "genres": [
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tenkuu no Shiro Laputa",
+      "score": 8,
+      "malId": 513,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/5/37799l.jpg",
+      "genres": [
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Tensei shitara Slime Datta Ken",
+      "score": 8,
+      "malId": 37430,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1069/123309l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Tensei shitara Slime Datta Ken",
+      "score": 8,
+      "malId": 37430,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1069/123309l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Tensei shitara Slime Datta Ken",
+      "score": 8,
+      "malId": 37430,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1069/123309l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Tiger & Bunny",
+      "score": 8,
+      "malId": 9941,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/29466l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tiger & Bunny",
+      "score": 8,
+      "malId": 9941,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/29466l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tiger & Bunny Movie 2: The Rising",
+      "score": 8,
+      "malId": 12017,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/56915l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tiger & Bunny Movie 2: The Rising",
+      "score": 8,
+      "malId": 12017,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/56915l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Thriller",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Toaru Kagaku no Railgun T",
+      "score": 8,
+      "malId": 38481,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1819/103287l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Toaru Kagaku no Railgun T",
+      "score": 8,
+      "malId": 38481,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1819/103287l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Toaru Kagaku no Railgun T",
+      "score": 8,
+      "malId": 38481,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1819/103287l.jpg",
+      "genres": [
+        "Action",
+        "Fantasy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Toki wo Kakeru Shoujo",
+      "score": 8,
+      "malId": 2236,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1/2432l.jpg",
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tokyo Revengers: Seiya Kessen-hen",
+      "score": 8,
+      "malId": 50608,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1773/132313l.jpg",
+      "genres": [
+        "Action",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Tokyo Revengers: Seiya Kessen-hen",
+      "score": 8,
+      "malId": 50608,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1773/132313l.jpg",
+      "genres": [
+        "Action",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Tokyo Revengers: Seiya Kessen-hen",
+      "score": 8,
+      "malId": 50608,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1773/132313l.jpg",
+      "genres": [
+        "Action",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Tonari no Seki-kun",
+      "score": 8,
+      "malId": 18139,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/55489l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Tonari no Seki-kun",
+      "score": 8,
+      "malId": 18139,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/9/55489l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Toradora!",
+      "score": 8,
+      "malId": 4224,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/22128l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Toradora!",
+      "score": 8,
+      "malId": 4224,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/22128l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Trigun Stampede",
+      "score": 8,
+      "malId": 52093,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1426/129194l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Trigun Stampede",
+      "score": 8,
+      "malId": 52093,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1426/129194l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Trigun Stampede",
+      "score": 8,
+      "malId": 52093,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1426/129194l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Tsumiki no Ie",
+      "score": 8,
+      "malId": 5365,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1063/117013l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Tsumiki no Ie",
+      "score": 8,
+      "malId": 5365,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1063/117013l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Tu Bian Yingxiong X",
+      "score": 8,
+      "malId": 53447,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1492/150628l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "Tu Bian Yingxiong X",
+      "score": 8,
+      "malId": 53447,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1492/150628l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "Tu Bian Yingxiong X",
+      "score": 8,
+      "malId": 53447,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1492/150628l.jpg",
+      "genres": [
+        "Action"
+      ]
+    },
+    {
+      "title": "Uchuu Patrol Luluco",
+      "score": 8,
+      "malId": 32681,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/79073l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Uchuu Patrol Luluco",
+      "score": 8,
+      "malId": 32681,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/79073l.jpg",
+      "genres": [
+        "Action",
+        "Comedy",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Urara Meirochou",
+      "score": 8,
+      "malId": 32924,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/84119l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Urara Meirochou",
+      "score": 8,
+      "malId": 32924,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/6/84119l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Vinland Saga Season 2",
+      "score": 8,
+      "malId": 49387,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1170/124312l.jpg",
+      "genres": [
+        "Action",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Vinland Saga Season 2",
+      "score": 8,
+      "malId": 49387,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1170/124312l.jpg",
+      "genres": [
+        "Action",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Vinland Saga Season 2",
+      "score": 8,
+      "malId": 49387,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1170/124312l.jpg",
+      "genres": [
+        "Action",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Violet Evergarden",
+      "score": 8,
+      "malId": 33352,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1795/95088l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Violet Evergarden",
+      "score": 8,
+      "malId": 33352,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1795/95088l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Violet Evergarden",
+      "score": 8,
+      "malId": 33352,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1795/95088l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "World Trigger",
+      "score": 8,
+      "malId": 24405,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1783/106843l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "World Trigger",
+      "score": 8,
+      "malId": 24405,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1783/106843l.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "title": "Yahari Ore no Seishun Love Comedy wa Machigatteiru.",
+      "score": 8,
+      "malId": 14813,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1786/120117l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Yahari Ore no Seishun Love Comedy wa Machigatteiru.",
+      "score": 8,
+      "malId": 14813,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1786/120117l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Yahari Ore no Seishun Love Comedy wa Machigatteiru. Zoku OVA",
+      "score": 8,
+      "malId": 33161,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/84052l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Yahari Ore no Seishun Love Comedy wa Machigatteiru. Zoku OVA",
+      "score": 8,
+      "malId": 33161,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/84052l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Yahari Ore no Seishun Love Comedy wa Machigatteiru. Zoku OVA",
+      "score": 8,
+      "malId": 33161,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/13/84052l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Yondemasu yo, Azazel-san. Z",
+      "score": 8,
+      "malId": 16241,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/48957l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Yondemasu yo, Azazel-san. Z",
+      "score": 8,
+      "malId": 16241,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/3/48957l.jpg",
+      "genres": [
+        "Comedy",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Yoru wa Mijikashi Arukeyo Otome",
+      "score": 8,
+      "malId": 34537,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/86940l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Yoru wa Mijikashi Arukeyo Otome",
+      "score": 8,
+      "malId": 34537,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/86940l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Yoru wa Mijikashi Arukeyo Otome",
+      "score": 8,
+      "malId": 34537,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/86940l.jpg",
+      "genres": [
+        "Comedy",
+        "Drama"
+      ]
+    },
+    {
+      "title": "Yuru Camp△",
+      "score": 8,
+      "malId": 34798,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/89877l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Yuru Camp△",
+      "score": 8,
+      "malId": 34798,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/89877l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Yuru Camp△",
+      "score": 8,
+      "malId": 34798,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/89877l.jpg",
+      "genres": [
+        "Slice of Life"
+      ]
+    },
+    {
+      "title": "Yuru Yuri",
+      "score": 8,
+      "malId": 10495,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/75173l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Yuru Yuri",
+      "score": 8,
+      "malId": 10495,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/12/75173l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Yuru Yuri Nachuyachumi!",
+      "score": 8,
+      "malId": 23225,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/73281l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Yuru Yuri Nachuyachumi!",
+      "score": 8,
+      "malId": 23225,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/2/73281l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Yuru Yuri San☆Hai!",
+      "score": 8,
+      "malId": 30279,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/76667l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Yuru Yuri San☆Hai!",
+      "score": 8,
+      "malId": 30279,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/7/76667l.jpg",
+      "genres": [
+        "Comedy"
+      ]
+    },
+    {
+      "title": "Yuuki Yuuna wa Yuusha de Aru",
+      "score": 8,
+      "malId": 25519,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/8/77057l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Yuuki Yuuna wa Yuusha de Aru",
+      "score": 8,
+      "malId": 25519,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/8/77057l.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "title": "Zoku Natsume Yuujinchou",
+      "score": 8,
+      "malId": 5300,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/79738l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Zoku Natsume Yuujinchou",
+      "score": 8,
+      "malId": 5300,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/4/79738l.jpg",
+      "genres": [
+        "Slice of Life",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Zoku Owarimonogatari",
+      "score": 8,
+      "malId": 36999,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1022/96168l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Zoku Owarimonogatari",
+      "score": 8,
+      "malId": 36999,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1022/96168l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Fantasy"
+      ]
+    },
+    {
+      "title": "Zoku Owarimonogatari",
+      "score": 8,
+      "malId": 36999,
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1022/96168l.jpg",
+      "genres": [
+        "Comedy",
+        "Thriller",
+        "Fantasy"
+      ]
+    }
   ]
 }
