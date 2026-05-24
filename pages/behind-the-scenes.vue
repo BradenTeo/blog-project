@@ -44,6 +44,13 @@
               <li>Anime page now auto-updates weekly via GitHub Actions: fetches the rated list from MyAnimeList, pulls cover art and genre tags from the Jikan API, and commits a JSON cache — no redeploy needed, data loads at runtime</li>
               <li>Anime page visual upgrades: tier title glow effects, animated card border sweep, custom Naruto cursor, cursor spotlight glow, cover art zoom on hover, and a lightbox modal on click</li>
               <li>Anime fetch optimised: the weekly GitHub Actions run now skips Jikan API calls for entries already in the cache (typically seconds instead of ~2 minutes), and fetches new entries 3 at a time in parallel instead of one by one</li>
+              <li>Anime cards upgraded: all tiers now show cover art, genre pills (wrapping to multiple rows), episode count, and a MAL link; the 8/10 tier was previously a plain text list</li>
+              <li>Anime cache extended with synopsis, episode count, and type (TV / Movie / etc.) fetched from Jikan</li>
+              <li>Lightbox redesigned: full cover art, synopsis, genre tags, episode count, MAL link, and prev/next navigation with keyboard arrow key support</li>
+              <li>Added a search bar on the anime page to filter entries by title, stacking with the existing genre filter</li>
+              <li>Replaced the animated card border sweep with a simple hover glow effect</li>
+              <li>Renamed <code>PostsButton</code> → <code>PostCard</code> and <code>ClickableTab</code> → <code>AccordionSection</code> to better reflect what each component actually is</li>
+              <li>Replaced the anime post card background (two hand-crafted SVGs for dark/light mode) with a single Studio Ghibli photo; removed the yuru-yuri gif from the Posts page</li>
             </ul>
           </div>
         </div>
@@ -69,7 +76,7 @@
         </ol>
       </div>
 
-      <ClickableTabVue class="pb-5" :open="true" @click.native="showPara = !showPara">
+      <AccordionSection class="pb-5" :open="true" @click.native="showPara = !showPara">
         <template #title>Details of my experience</template>
         <template #content>
           Web development probably seems pretty simple and straightforward at
@@ -100,7 +107,7 @@
             <li>Learn from others! -- Udemy, Youtube videos etc.</li>
           </ol>
         </template>
-      </ClickableTabVue>
+      </AccordionSection>
 
       <h2 class="font-bold text-xl pt-2 border-t-2">Resources I used</h2>
       <div class="pb-5 pt-1">
@@ -137,7 +144,7 @@
         </a>
       </div>
 
-      <ClickableTabVue class="pb-5" :open="true">
+      <AccordionSection class="pb-5" :open="true">
         <template #title>How I set up this Project</template>
         <template #content>
           <ol class="list-decimal list-inside marker:font-bold">
@@ -154,9 +161,9 @@
             <li>Follow the guide to setup Tailwind CSS</li>
           </ol>
         </template>
-      </ClickableTabVue>
+      </AccordionSection>
 
-      <ClickableTabVue class="pb-5" :open="true">
+      <AccordionSection class="pb-5" :open="true">
         <template #title>Shortcomings</template>
         <template #content>
           <ul class="list-disc list-inside marker:font-bold">
@@ -165,7 +172,7 @@
             <li><s>Some parts of the website looks a bit wonky on my phone.</s> ✅ Fixed in 2026</li>
           </ul>
         </template>
-      </ClickableTabVue>
+      </AccordionSection>
 
       <div class="p-5">
         <img
@@ -180,11 +187,11 @@
 </template>
 
 <script>
-import ClickableTabVue from '~/components/ClickableTab.vue'
+import AccordionSection from '~/components/AccordionSection.vue'
 export default {
   name: 'BuildProcessPage',
   components: {
-    ClickableTabVue,
+    AccordionSection,
   },
   layout: 'default',
   data() {

@@ -34,6 +34,16 @@
           </div>
         </div>
 
+        <!-- Search -->
+        <div class="mb-4">
+          <input
+            v-model="searchQuery"
+            type="text"
+            placeholder="SEARCH TITLES..."
+            class="anime-search w-full"
+          />
+        </div>
+
         <!-- Genre filter -->
         <div class="mb-5">
           <div class="text-green-700 dark:text-green-800 text-xs mb-2 tracking-widest">FILTER BY GENRE:</div>
@@ -60,14 +70,33 @@
 
         <!-- No results -->
         <div v-if="!loading && visibleCount === 0" class="text-green-700 dark:text-green-800 text-xs text-center py-6 tracking-widest">
-          NO ENTRIES FOUND FOR THIS GENRE
+          NO ENTRIES FOUND
         </div>
 
         <!-- Lightbox -->
         <transition name="lb">
           <div v-if="lightbox" class="lightbox-overlay" @click="lightbox = null">
-            <img :src="lightbox.img" :alt="lightbox.title" class="lightbox-img" @click.stop />
-            <div class="lightbox-title vt323">{{ lightbox.title }}</div>
+            <div class="lightbox-card" @click.stop>
+              <img :src="lightbox.img" :alt="lightbox.title" class="lightbox-img" />
+              <div class="lightbox-body">
+                <div class="flex items-start justify-between gap-2">
+                  <div class="lightbox-title vt323">{{ lightbox.title }}</div>
+                  <a :href="`https://myanimelist.net/anime/${lightbox.malId}`" target="_blank" rel="noopener" class="mal-link flex-shrink-0 mt-1">MAL ↗</a>
+                </div>
+                <div class="lightbox-meta">
+                  <span class="ep-label">{{ episodeLabel(lightbox) }}</span>
+                  <div class="flex flex-wrap gap-1">
+                    <span v-for="genre in lightbox.genres" :key="genre" class="genre-tag">{{ genre }}</span>
+                  </div>
+                </div>
+                <p v-if="lightbox.synopsis" class="lightbox-synopsis">{{ lightbox.synopsis }}</p>
+              </div>
+              <div class="lightbox-nav">
+                <button class="lb-nav-btn" :disabled="lightboxIndex <= 0" @click="navigateLightbox(-1)">‹ PREV</button>
+                <span class="lb-nav-count">{{ lightboxIndex + 1 }} / {{ allVisibleAnime.length }}</span>
+                <button class="lb-nav-btn" :disabled="lightboxIndex >= allVisibleAnime.length - 1" @click="navigateLightbox(1)">NEXT ›</button>
+              </div>
+            </div>
           </div>
         </transition>
 
@@ -93,7 +122,13 @@
               </div>
               <div class="flex-1 min-w-0">
                 <div class="vt323 text-rose-700 dark:text-[#f9aabb] text-lg leading-tight">{{ anime.title }}</div>
-                <div class="genre-tag mt-1">{{ anime.genres.join(' · ') }}</div>
+                <div class="flex flex-wrap gap-1 mt-1">
+                  <span v-for="genre in anime.genres" :key="genre" class="genre-tag">{{ genre }}</span>
+                </div>
+                <div class="flex items-center justify-between mt-1">
+                  <div class="ep-label">{{ episodeLabel(anime) }}</div>
+                  <a :href="`https://myanimelist.net/anime/${anime.malId}`" target="_blank" rel="noopener" class="mal-link" @click.stop>MAL ↗</a>
+                </div>
               </div>
             </div>
           </div>
@@ -123,7 +158,13 @@
               </div>
               <div class="flex-1 min-w-0">
                 <div class="vt323 text-amber-700 dark:text-amber-200 text-lg leading-tight">{{ anime.title }}</div>
-                <div class="genre-tag mt-1">{{ anime.genres.join(' · ') }}</div>
+                <div class="flex flex-wrap gap-1 mt-1">
+                  <span v-for="genre in anime.genres" :key="genre" class="genre-tag">{{ genre }}</span>
+                </div>
+                <div class="flex items-center justify-between mt-1">
+                  <div class="ep-label">{{ episodeLabel(anime) }}</div>
+                  <a :href="`https://myanimelist.net/anime/${anime.malId}`" target="_blank" rel="noopener" class="mal-link" @click.stop>MAL ↗</a>
+                </div>
               </div>
             </div>
           </div>
@@ -138,7 +179,7 @@
           <!-- Scrolling ticker (only when showing all) -->
           <template v-if="selectedGenre === 'all'">
             <div class="overflow-hidden border border-slate-300 dark:border-slate-600/40 rounded bg-slate-100 dark:bg-black/40 py-2 mb-3">
-              <div class="ticker-track text-slate-500 dark:text-slate-400 text-xs whitespace-nowrap">
+              <div class="ticker-track text-slate-500 dark:text-slate-400 text-xs whitespace-nowrap" :style="{ animationDuration: tickerDuration }">
                 <span v-for="(anime, i) in tier8Doubled" :key="i" class="inline-block px-3">
                   {{ anime.title }}&nbsp;·
                 </span>
@@ -148,30 +189,49 @@
               <summary class="text-slate-500 text-xs cursor-pointer hover:text-slate-800 dark:hover:text-slate-300 transition-colors select-none py-1">
                 ▶ SHOW FULL LIST ({{ filteredTier8.length }} entries)
               </summary>
-              <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-x-6">
+              <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div
                   v-for="anime in filteredTier8"
                   :key="anime.title"
-                  class="flex items-center gap-2 py-0.5 px-1 rounded text-slate-600 dark:text-slate-400 text-xs cursor-default"
+                  class="tier-8-card flex items-center gap-3 p-3 rounded-lg"
+                  @click="lightbox = anime"
                 >
-                  <span class="text-slate-400 dark:text-slate-600 flex-shrink-0">▶</span>
-                  <span>{{ anime.title }}</span>
-                  <span class="genre-tag ml-auto flex-shrink-0">{{ anime.genres.join(' · ') }}</span>
+                  <div v-if="anime.img" class="img-wrap">
+                    <img :src="anime.img" :alt="anime.title" class="cover-art object-cover" width="48" height="68" loading="lazy" />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="vt323 text-slate-600 dark:text-slate-300 text-lg leading-tight">{{ anime.title }}</div>
+                    <div class="flex flex-wrap gap-1 mt-1">
+                      <span v-for="genre in anime.genres" :key="genre" class="genre-tag">{{ genre }}</span>
+                    </div>
+                    <div class="flex items-center justify-between mt-1">
+                      <div class="ep-label">{{ episodeLabel(anime) }}</div>
+                      <a :href="`https://myanimelist.net/anime/${anime.malId}`" target="_blank" rel="noopener" class="mal-link" @click.stop>MAL ↗</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </details>
           </template>
 
-          <!-- Static list (when a genre is selected) -->
+          <!-- Card grid (when a genre is selected) -->
           <template v-else>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div
                 v-for="anime in filteredTier8"
                 :key="anime.title"
-                class="flex items-center gap-2 py-1 px-1 rounded text-slate-600 dark:text-slate-400 text-xs cursor-default"
+                class="tier-8-card flex items-center gap-3 p-3 rounded-lg"
+                @click="lightbox = anime"
               >
-                <span class="text-slate-400 dark:text-slate-600 flex-shrink-0">▶</span>
-                <span>{{ anime.title }}</span>
+                <div v-if="anime.img" class="img-wrap">
+                  <img :src="anime.img" :alt="anime.title" class="cover-art object-cover" width="48" height="68" loading="lazy" />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="vt323 text-slate-600 dark:text-slate-300 text-lg leading-tight">{{ anime.title }}</div>
+                  <div class="flex flex-wrap gap-1 mt-1">
+                    <span v-for="genre in anime.genres" :key="genre" class="genre-tag">{{ genre }}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </template>
@@ -200,6 +260,7 @@ export default {
   data() {
     return {
       selectedGenre: 'all',
+      searchQuery: '',
       genres: GENRES,
       loading: true,
       lightbox: null,
@@ -229,26 +290,44 @@ export default {
       return this.tier10Data.length + this.tier9.length + this.tier8.length
     },
     filteredTier10() {
-      if (this.selectedGenre === 'all') return this.tier10Data
-      return this.tier10Data.filter(a => a.genres.includes(this.selectedGenre))
+      let list = this.selectedGenre === 'all' ? this.tier10Data : this.tier10Data.filter(a => a.genres.includes(this.selectedGenre))
+      if (this.searchQuery) list = list.filter(a => a.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
+      return list
     },
     filteredTier9() {
-      if (this.selectedGenre === 'all') return this.tier9
-      return this.tier9.filter(a => a.genres.includes(this.selectedGenre))
+      let list = this.selectedGenre === 'all' ? this.tier9 : this.tier9.filter(a => a.genres.includes(this.selectedGenre))
+      if (this.searchQuery) list = list.filter(a => a.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
+      return list
     },
     filteredTier8() {
-      if (this.selectedGenre === 'all') return this.tier8
-      return this.tier8.filter(a => a.genres.includes(this.selectedGenre))
+      let list = this.selectedGenre === 'all' ? this.tier8 : this.tier8.filter(a => a.genres.includes(this.selectedGenre))
+      if (this.searchQuery) list = list.filter(a => a.title.toLowerCase().includes(this.searchQuery.toLowerCase()))
+      return list
     },
     visibleCount() {
       return this.filteredTier10.length + this.filteredTier9.length + this.filteredTier8.length
     },
+    allVisibleAnime() {
+      return [...this.filteredTier10, ...this.filteredTier9, ...this.filteredTier8]
+    },
+    lightboxIndex() {
+      if (!this.lightbox) return -1
+      return this.allVisibleAnime.findIndex(a => a.malId === this.lightbox.malId)
+    },
     tier8Doubled() {
       return [...this.tier8, ...this.tier8]
     },
+    tickerDuration() {
+      return `${Math.max(60, this.tier8.length * 2)}s`
+    },
   },
   mounted() {
-    this._escHandler = (e) => { if (e.key === 'Escape') this.lightbox = null }
+    this._escHandler = (e) => {
+      if (!this.lightbox) return
+      if (e.key === 'Escape') this.lightbox = null
+      if (e.key === 'ArrowRight') this.navigateLightbox(1)
+      if (e.key === 'ArrowLeft') this.navigateLightbox(-1)
+    }
     window.addEventListener('keydown', this._escHandler)
     fetch(CACHE_URL)
       .then(res => (res.ok ? res.json() : null))
@@ -260,7 +339,9 @@ export default {
         this.tier9 = cache.entries
           .filter(e => e.score === 9)
           .map(e => ({ ...e, img: e.imageUrl }))
-        this.tier8 = cache.entries.filter(e => e.score === 8)
+        this.tier8 = cache.entries
+          .filter(e => e.score === 8)
+          .map(e => ({ ...e, img: e.imageUrl }))
         this.fetchedAt = new Date(cache.fetchedAt).toLocaleDateString('en-GB', {
           day: '2-digit', month: 'short', year: 'numeric',
         })
@@ -281,6 +362,15 @@ export default {
       this.glowX = e.clientX - rect.left
       this.glowY = e.clientY - rect.top
     },
+    episodeLabel(anime) {
+      if (anime.type === 'Movie') return 'Movie'
+      if (anime.episodes) return `${anime.episodes} ep${anime.episodes === 1 ? '' : 's'}`
+      return '? eps'
+    },
+    navigateLightbox(dir) {
+      const next = this.allVisibleAnime[this.lightboxIndex + dir]
+      if (next) this.lightbox = next
+    },
   },
 }
 </script>
@@ -288,7 +378,7 @@ export default {
 <style scoped>
 .anime-window,
 .anime-window * {
-  cursor: url('/blog-project/naruto-cursor-32.png') 12 16, auto;
+  cursor: url('/blog-project/naruto-cursor-32.png') 6 2, auto;
 }
 
 .anime-window {
@@ -300,31 +390,117 @@ export default {
   inset: 0;
   background: rgba(0, 0, 0, 0.82);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
   z-index: 999;
+  padding: 24px;
+}
+
+.lightbox-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  width: min(380px, 92vw);
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.7);
 }
 
 .lightbox-img {
-  max-width: min(320px, 90vw);
-  max-height: 80vh;
+  width: 100%;
   border-radius: 8px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
   object-fit: contain;
+}
+
+.lightbox-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .lightbox-title {
   color: #e2e8f0;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   letter-spacing: 0.05em;
-  text-align: center;
-  max-width: 90vw;
+}
+
+.lightbox-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lightbox-synopsis {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #94a3b8;
 }
 
 .lb-enter-active, .lb-leave-active { transition: opacity 0.2s ease; }
 .lb-enter, .lb-leave-to { opacity: 0; }
+
+.anime-search {
+  background: transparent;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-family: inherit;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: #166534;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.anime-search::placeholder { color: rgba(74, 222, 128, 0.4); }
+.anime-search:focus { border-color: rgba(74, 222, 128, 0.7); }
+.dark .anime-search { color: #4ade80; border-color: rgba(74, 222, 128, 0.2); }
+.dark .anime-search::placeholder { color: rgba(74, 222, 128, 0.25); }
+.dark .anime-search:focus { border-color: rgba(74, 222, 128, 0.5); }
+
+.mal-link {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.15s ease;
+}
+.mal-link:hover { color: #3b82f6; }
+
+.lightbox-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 4px;
+}
+.lb-nav-btn {
+  font-family: inherit;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  color: #94a3b8;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.lb-nav-btn:hover:not(:disabled) { color: #e2e8f0; border-color: rgba(255, 255, 255, 0.35); }
+.lb-nav-btn:disabled { opacity: 0.25; cursor: default; }
+.lb-nav-count {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: #475569;
+}
 
 .cursor-glow {
   position: absolute;
@@ -385,12 +561,21 @@ export default {
   color: #15803d;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  white-space: nowrap;
 }
 .dark .genre-tag {
   background-color: rgba(74, 222, 128, 0.08);
   border-color: rgba(74, 222, 128, 0.2);
   color: #166534;
+}
+
+.ep-label {
+  font-size: 0.6rem;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.dark .ep-label {
+  color: #475569;
 }
 
 .tier-title-ruby {
@@ -403,53 +588,37 @@ export default {
   text-shadow: 0 0 8px rgba(148, 163, 184, 0.5), 0 0 22px rgba(148, 163, 184, 0.2);
 }
 
-.tier-10-card {
+.tier-10-card,
+.tier-9-card,
+.tier-8-card {
   position: relative;
-  border: 1px solid rgba(232, 64, 96, 0.22);
   overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tier-10-card {
+  border: 1px solid rgba(232, 64, 96, 0.22);
+}
+.tier-10-card:hover {
+  box-shadow: 0 0 14px rgba(232, 64, 96, 0.35);
+  border-color: rgba(232, 64, 96, 0.55);
 }
 
 .tier-9-card {
-  position: relative;
   border: 1px solid rgba(245, 158, 11, 0.22);
-  background: linear-gradient(135deg, rgba(148, 163, 184, 0.07) 0%, rgba(226, 232, 240, 0.02) 100%);
-  overflow: hidden;
+}
+.tier-9-card:hover {
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.35);
+  border-color: rgba(245, 158, 11, 0.55);
 }
 
-.tier-10-card::after,
-.tier-9-card::after {
-  content: '';
-  position: absolute;
-  left: -10%;
-  top: 0;
-  width: 120%;
-  height: 65%;
-  pointer-events: none;
-  transform: translateY(-100%);
+.tier-8-card {
+  border: 1px solid rgba(148, 163, 184, 0.2);
 }
-
-.tier-10-card::after {
-  background: radial-gradient(ellipse 55% 100% at 50% 0%, rgba(232, 64, 96, 0.09) 0%, transparent 100%);
-  animation: rubySwipe 3.5s ease-in-out infinite;
-}
-
-.tier-9-card::after {
-  background: radial-gradient(ellipse 55% 100% at 50% 0%, rgba(245, 158, 11, 0.09) 0%, transparent 100%);
-  animation: goldSwipe 3.5s ease-in-out infinite;
-}
-
-@keyframes rubySwipe {
-  0%   { transform: translateY(-100%); opacity: 0; }
-  12%  { opacity: 1; }
-  88%  { opacity: 0.7; }
-  100% { transform: translateY(260%); opacity: 0; }
-}
-
-@keyframes goldSwipe {
-  0%   { transform: translateY(-100%); opacity: 0; }
-  12%  { opacity: 1; }
-  88%  { opacity: 0.7; }
-  100% { transform: translateY(260%); opacity: 0; }
+.tier-8-card:hover {
+  box-shadow: 0 0 14px rgba(148, 163, 184, 0.3);
+  border-color: rgba(148, 163, 184, 0.5);
 }
 
 .img-wrap {
@@ -467,15 +636,10 @@ export default {
   transition: transform 0.3s ease, filter 0.2s ease;
 }
 
-.tier-10-card:hover .cover-art,
-.tier-9-card:hover .cover-art {
-  transform: scale(1.15);
-  filter: brightness(1.05) saturate(1.05);
-}
 
 .ticker-track {
   width: max-content;
-  animation: ticker 60s linear infinite;
+  animation: ticker linear infinite;
 }
 
 @keyframes ticker {

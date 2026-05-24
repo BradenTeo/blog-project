@@ -41,6 +41,7 @@
 
 <script>
 export default {
+  name: 'AccordionSection',
   props: {
     open: {
       type: Boolean,

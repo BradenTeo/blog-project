@@ -228,6 +228,8 @@
       <li>Anime Page — Auto-Update Pipeline</li>
       <li>Anime Page — Visual Polish</li>
       <li>Anime Fetch — Cache-Aware &amp; Parallel Jikan Calls</li>
+      <li>Anime Page — Card &amp; Lightbox Upgrades</li>
+      <li>Component Renames &amp; Asset Cleanup</li>
     </ol>
   </div>
 
@@ -1070,6 +1072,49 @@ for (let i = 0; i &lt; toFetch.length; i += BATCH) {
 
   <h3>Cache passthrough</h3>
   <p>Cached entries aren't frozen entirely — their <code>title</code> and <code>score</code> are always refreshed from the MAL list (in case of a re-rate), while the heavier Jikan-sourced fields (<code>imageUrl</code>, <code>genres</code>) are reused from cache. This means score changes show up immediately on the next weekly run without a full re-fetch.</p>
+
+  <h2>Anime Page — Card &amp; Lightbox Upgrades <span class="tag tag-style">Styling</span></h2>
+
+  <h3>Genre tags as individual pills</h3>
+  <p>Genre data was previously joined into a single string (<code>Action · Drama</code>) inside one element with <code>white-space: nowrap</code>. Each genre is now its own <code>&lt;span class="genre-tag"&gt;</code> inside a <code>flex flex-wrap gap-1</code> container, so anime with many genres wrap naturally to a second row instead of overflowing.</p>
+
+  <h3>Tier 8 cover art</h3>
+  <p>The 8/10 tier was previously a plain text list. It now uses the same card layout as tiers 9 and 10 — cover art, title, genre pills, and episode count — with a subtle slate border glow on hover. The data mapping bug (<code>.map(e =&gt; ({ ...e, img: e.imageUrl }))</code> was missing for tier 8) was also fixed so images actually render.</p>
+
+  <h3>Episode count and type</h3>
+  <p>The Jikan fetch now stores <code>episodes</code> and <code>type</code> for every entry. Each card shows a small label below the genre pills: <code>12 eps</code> for TV series, <code>1 ep</code> for singles, or <code>Movie</code> for films. The label sits left-aligned, with the MAL link pushed to the right in the same row via <code>justify-between</code>.</p>
+
+  <h3>MAL link on cards</h3>
+  <p>Every card now has a small <code>MAL ↗</code> link that opens the anime's MyAnimeList page in a new tab. It uses <code>@click.stop</code> so clicking it doesn't also trigger the lightbox. The URL is dynamic: <code>https://myanimelist.net/anime/{{ malId }}</code>.</p>
+
+  <h3>Synopsis in cache and lightbox</h3>
+  <p>The Jikan fetch stores <code>synopsis</code> alongside the other fields. The cache-aware skip condition was extended to also re-fetch entries that are missing <code>type</code> or <code>synopsis</code>, so a single normal run populates the new fields without needing a full refresh every time.</p>
+
+  <h3>Lightbox redesign</h3>
+  <p>The lightbox was rebuilt from a centered image + title column into a portrait card: full-width cover art at the top (no cropping — <code>object-fit: contain</code>), then title, episode count, genre pills, synopsis, and a PREV / NEXT nav bar with a position counter. Clicking outside or pressing Escape closes it; left/right arrow keys navigate between entries without closing.</p>
+
+  <h3>Search bar</h3>
+  <p>A monospace search input above the genre filter lets users type to filter all three tiers simultaneously by title. It stacks with the genre filter — searching "ghost" while the Drama filter is active returns only Drama anime whose titles contain "ghost". The no-results message and visible count update reactively.</p>
+
+  <h3>Ticker speed fix</h3>
+  <p>The tier 8 scrolling ticker had a fixed <code>60s</code> animation duration regardless of how many titles were in it. More entries = longer content = faster apparent speed. The duration is now computed as <code>tier8.length × 2s</code> (min 60s), keeping the pixel-per-second rate constant at ~80 px/s no matter how many 8/10 entries exist.</p>
+
+  <h3>Hover glow replaces sweep animation</h3>
+  <p>The <code>::after</code> pseudo-element that swept a radial gradient downward across cards on a loop was removed. Cards now respond to hover with a simple <code>box-shadow</code> glow and brighter border, fading in over 0.2s — less distracting, more intentional.</p>
+
+  <h2>Component Renames &amp; Asset Cleanup <span class="tag tag-rename">Rename</span></h2>
+
+  <h3>PostsButton → PostCard</h3>
+  <p><code>components/PostsButton.vue</code> was renamed to <code>components/PostCard.vue</code> (component <code>name</code>: <code>PostCard</code>). The old name described its location rather than what it is — it's a card that links to a post, not a button. Imports and template tags updated in <code>pages/posts.vue</code>.</p>
+
+  <h3>ClickableTab → AccordionSection</h3>
+  <p><code>components/ClickableTab.vue</code> was renamed to <code>components/AccordionSection.vue</code> (component <code>name</code>: <code>AccordionSection</code>). The old name described the interaction rather than the element — it's an expandable accordion section with a title slot and a content slot. Imports and template tags updated in <code>pages/behind-the-scenes.vue</code> and <code>pages/posts/cancer.vue</code>.</p>
+
+  <h3>Anime post card background</h3>
+  <p>The two hand-crafted SVG backgrounds for the anime card on the Posts page (<code>anime-bg.svg</code> dark and <code>anime-bg-light.svg</code> light) were replaced with a single Studio Ghibli photo (<code>Studio-Ghibli.jpg</code>). The <code>MutationObserver</code> that watched the <code>&lt;html&gt;</code> class to switch between them was also removed from <code>posts.vue</code> along with the <code>isDark</code> data property and the <code>animeBg</code> computed.</p>
+
+  <h3>Yuru-yuri gif removed</h3>
+  <p>The decorative yuru-yuri gif at the bottom of the Posts landing page was removed from the template and both asset files (<code>yuru-yuri.gif</code> and <code>yuru-yuri-slow.gif</code>) were deleted.</p>
 
   <hr style="margin-top:48px; border:none; border-top:2px solid #e2e8f0;" />
   <p style="margin-top:20px; text-align:center; color:#a0aec0; font-size:0.85em;">

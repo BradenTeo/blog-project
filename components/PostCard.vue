@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'PostsButtonVue',
+  name: 'PostCard',
   props: {
     title: {
       type: String,

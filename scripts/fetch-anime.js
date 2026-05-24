@@ -104,10 +104,13 @@ async function fetchAnimeDetails(malId) {
     return {
       genres: (data.data?.genres || []).map((g) => g.name),
       imageUrl: data.data?.images?.jpg?.large_image_url || '',
+      episodes: data.data?.episodes ?? null,
+      type: data.data?.type ?? null,
+      synopsis: data.data?.synopsis ?? null,
     }
   } catch (e) {
     console.warn(`  Could not fetch details for id ${malId}: ${e.message}`)
-    return { genres: [], imageUrl: '' }
+    return { genres: [], imageUrl: '', episodes: null, type: null, synopsis: null }
   }
 }
 
@@ -153,7 +156,7 @@ async function main() {
   const existingCache = loadExistingCache()
   const toFetch = list.filter((e) => {
     const hit = existingCache.get(e.anime_id)
-    return !hit || !hit.imageUrl || hit.genres.length === 0
+    return !hit || !hit.imageUrl || hit.genres.length === 0 || hit.type == null || hit.synopsis == null
   })
   const cacheHits = list.length - toFetch.length
   console.log(`Cache hits: ${cacheHits} | Jikan fetches needed: ${toFetch.length}\n`)
@@ -169,6 +172,9 @@ async function main() {
         malId: e.anime_id,
         imageUrl: details.imageUrl || e.anime_image_path || '',
         genres: mapGenres(details.genres),
+        episodes: details.episodes,
+        type: details.type,
+        synopsis: details.synopsis,
       }
     }
     const cached = existingCache.get(e.anime_id)

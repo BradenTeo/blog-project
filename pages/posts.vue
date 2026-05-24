@@ -5,7 +5,7 @@
     </header>
 
     <div v-if="isParent" class="flex flex-wrap justify-center mt-4">
-      <PostsButtonVue
+      <PostCard
         title="Cancer Journey (2022) 🩺"
         description="I was diagnosed with Stage 2 Hodgkin's Lymphoma in 2022 😲...
                     But I'm currently in remission :)"
@@ -15,7 +15,7 @@
         weblink="cancer"
       />
 
-      <PostsButtonVue
+      <PostCard
         title="LifeHacks 🛠️"
         description="Random tips"
         :background-url="
@@ -24,23 +24,15 @@
         weblink="lifehacks"
       />
 
-      <PostsButtonVue
+      <PostCard
         title="Anime Hall of Fame 🎌"
         description="Every series I've rated 8/10 or above — in retro terminal style"
-        :background-url="animeBg"
+        :background-url="require('~/assets/images/posts/Studio-Ghibli.jpg')"
         weblink="anime"
       />
     </div>
     <div v-if="isParent" class="italic text-sm mt-10 text-center text-slate-600">
       (Stay tuned for more...)
-    </div>
-    <div v-if="isParent" class="flex justify-center mt-4">
-      <img
-        class="h-28 rounded"
-        :src="require('~/assets/images/posts/yuru-yuri-slow.gif')"
-        alt=""
-        aria-hidden="true"
-      />
     </div>
 
     <div
@@ -55,30 +47,19 @@
 </template>
 
 <script>
-import PostsButtonVue from '~/components/PostsButton.vue'
+import PostCard from '~/components/PostCard.vue'
 import PostsNavBar from '~/components/PostsNavBar.vue'
 export default {
   name: 'PostsPage',
   components: {
-    PostsButtonVue,
+    PostCard,
     PostsNavBar,
   },
   layout: 'default',
   data() {
     return {
       title: 'Posts',
-      isDark: false,
     }
-  },
-  mounted() {
-    this.isDark = document.documentElement.classList.contains('dark')
-    this._mo = new MutationObserver(() => {
-      this.isDark = document.documentElement.classList.contains('dark')
-    })
-    this._mo.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
-  },
-  beforeDestroy() {
-    if (this._mo) this._mo.disconnect()
   },
   head() {
     return {
@@ -92,11 +73,6 @@ export default {
   computed: {
     isParent() {
       return this.$route.path === '/posts'
-    },
-    animeBg() {
-      return this.isDark
-        ? require('~/assets/images/posts/anime-bg.svg')
-        : require('~/assets/images/posts/anime-bg-light.svg')
     },
   },
 }

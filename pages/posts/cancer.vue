@@ -13,7 +13,7 @@
         Hint: Click on the arrow buttons to expand and collapse the tabs~
       </i> -->
 
-      <ClickableTabVue :open="true">
+      <AccordionSection :open="true">
         <template #title> &#10071; Disclaimer &#10071; </template>
         <template #content>
           1 in 4 people in Singapore will be diagnosed with cancer some time in
@@ -37,9 +37,9 @@
           experiences too!) Hopefully I've made it readable and fun to read
           through :)
         </template>
-      </ClickableTabVue>
+      </AccordionSection>
 
-      <ClickableTabVue>
+      <AccordionSection>
         <template #title> What went Down </template>
         <template #content>
           In February of 2022, I noticed a few lumps forming on my left shoulder
@@ -245,9 +245,9 @@
           In the next section, I will go into more detail for some of the stuff
           I glossed over in this section.
         </template>
-      </ClickableTabVue>
+      </AccordionSection>
 
-      <ClickableTabVue>
+      <AccordionSection>
         <template #title>Struggles during Chemo</template>
         <template #content>
           <h2 class="font-bold underline">Physical</h2>
@@ -342,9 +342,9 @@
             Eternity" by John Bevere.
           </p>
         </template>
-      </ClickableTabVue>
+      </AccordionSection>
 
-      <ClickableTabVue>
+      <AccordionSection>
         <template #title>Acknowledgements</template>
         <template #content>
           I'm not someone who expresses his gratitude nearly enough, but I'm
@@ -423,9 +423,9 @@
             </li>
           </ul>
         </template>
-      </ClickableTabVue>
+      </AccordionSection>
 
-      <ClickableTabVue>
+      <AccordionSection>
         <template #title>Others</template>
         <template #content>
           One thing that irked me was how little the school offered to help me
@@ -497,19 +497,18 @@
           complications.
           <br /><br />
         </template>
-      </ClickableTabVue>
+      </AccordionSection>
     </div>
   </div>
 </template>
 
 <script>
 // import DefaultTabVue from '~/components/DefaultTab.vue'
-import ClickableTabVue from '~/components/ClickableTab.vue'
+import AccordionSection from '~/components/AccordionSection.vue'
 export default {
   name: 'CancerPage',
   components: {
-    // DefaultTabVue,
-    ClickableTabVue,
+    AccordionSection,
   },
   layout: 'default',
   data() {
