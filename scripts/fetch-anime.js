@@ -83,15 +83,19 @@ async function getWithRetry(url, retries = 3) {
 
 async function fetchMalList() {
   const all = []
+  // order=1 (alphabetical) is stable — no ties that cause duplicate pages.
+  // status=7 fetches all statuses; we filter to completed (status===2) in code.
   for (let offset = 0; ; offset += 100) {
-    const url = `https://myanimelist.net/animelist/${MAL_USER}/load.json?status=2&order=4&offset=${offset}`
+    const url = `https://myanimelist.net/animelist/${MAL_USER}/load.json?status=7&order=1&offset=${offset}`
     const batch = await get(url)
     if (!Array.isArray(batch.body) || batch.body.length === 0) break
     all.push(...batch.body)
     if (batch.body.length < 100) break
     await sleep(500)
   }
-  return all.filter((e) => e.score >= 8)
+  // Deduplicate by anime_id as a safety net against any remaining pagination issues
+  const unique = [...new Map(all.map((e) => [e.anime_id, e])).values()]
+  return unique.filter((e) => e.status === 2 && e.score >= 8)
 }
 
 async function fetchAnimeDetails(malId) {
