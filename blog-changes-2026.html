@@ -227,6 +227,7 @@
       <li>Assets Folder Restructure</li>
       <li>Anime Page — Auto-Update Pipeline</li>
       <li>Anime Page — Visual Polish</li>
+      <li>Anime Fetch — Cache-Aware &amp; Parallel Jikan Calls</li>
     </ol>
   </div>
 
@@ -1041,6 +1042,34 @@ window.addEventListener('keydown', this._escHandler)
 window.removeEventListener('keydown', this._escHandler)</code></pre>
   <p>A Vue <code>&lt;transition name="lb"&gt;</code> fades the overlay in and out over 0.2s. The <code>@click.stop</code> on the image prevents clicks on the image itself from closing the lightbox.</p>
 
+
+  <h2>Anime Fetch — Cache-Aware &amp; Parallel Jikan Calls <span class="tag tag-infra">Infrastructure</span></h2>
+
+  <h3>The problem</h3>
+  <p>The weekly GitHub Actions run called the Jikan API for every anime in the list — all ~280 of them — even though on a typical week only 1–2 new series are added. At ~400 ms per sequential call this took around 2 minutes per run.</p>
+
+  <h3>Fix 1 — cache-aware fetching</h3>
+  <p>On startup, <code>loadExistingCache()</code> reads the current <code>anime-cache.json</code> into a <code>Map</code> keyed by <code>malId</code>. Any entry that already has an <code>imageUrl</code> and at least one genre is skipped entirely — its existing data is passed straight through. Jikan is only called for genuinely new entries:</p>
+  <pre><code>const toFetch = list.filter((e) => {
+  const hit = existingCache.get(e.anime_id)
+  return !hit || !hit.imageUrl || hit.genres.length === 0
+})</code></pre>
+  <p>A typical weekly run now prints something like <code>Cache hits: 279 | Jikan fetches needed: 1</code> and finishes in a few seconds instead of two minutes.</p>
+
+  <h3>Fix 2 — parallel Jikan calls</h3>
+  <p>For entries that <em>do</em> need fetching (new additions, or a forced full refresh), <code>fetchDetailsInParallel()</code> groups them into batches of 3 and fires each batch with <code>Promise.all</code>, then waits 1.1 s before the next batch. This keeps throughput at ≈ 2.7 req/s — safely under Jikan's 3 req/s limit — while being 3× faster than the old one-at-a-time approach:</p>
+  <pre><code>const BATCH = 3
+const BATCH_GAP_MS = 1100
+
+for (let i = 0; i &lt; toFetch.length; i += BATCH) {
+  const batch = toFetch.slice(i, i + BATCH)
+  const batchResults = await Promise.all(batch.map((e) => fetchAnimeDetails(e.anime_id)))
+  batch.forEach((e, j) => results.set(e.anime_id, batchResults[j]))
+  if (i + BATCH &lt; toFetch.length) await sleep(BATCH_GAP_MS)
+}</code></pre>
+
+  <h3>Cache passthrough</h3>
+  <p>Cached entries aren't frozen entirely — their <code>title</code> and <code>score</code> are always refreshed from the MAL list (in case of a re-rate), while the heavier Jikan-sourced fields (<code>imageUrl</code>, <code>genres</code>) are reused from cache. This means score changes show up immediately on the next weekly run without a full re-fetch.</p>
 
   <hr style="margin-top:48px; border:none; border-top:2px solid #e2e8f0;" />
   <p style="margin-top:20px; text-align:center; color:#a0aec0; font-size:0.85em;">

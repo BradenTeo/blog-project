@@ -115,25 +115,65 @@ function mapGenres(malGenres) {
   return [...new Set(malGenres.map((g) => GENRE_MAP[g]).filter(Boolean))]
 }
 
+function loadExistingCache() {
+  try {
+    const raw = fs.readFileSync(OUT, 'utf8')
+    const parsed = JSON.parse(raw)
+    return new Map((parsed.entries || []).map((e) => [e.malId, e]))
+  } catch {
+    return new Map()
+  }
+}
+
+// Fetch Jikan details for multiple entries in parallel batches of 3,
+// staying within Jikan's 3 req/s and 60 req/min limits.
+async function fetchDetailsInParallel(toFetch) {
+  const BATCH = 3
+  const BATCH_GAP_MS = 1100 // 3 req per 1.1 s ≈ 2.7 req/s
+  const results = new Map()
+
+  for (let i = 0; i < toFetch.length; i += BATCH) {
+    const batch = toFetch.slice(i, i + BATCH)
+    process.stdout.write(
+      `  Fetching Jikan [${i + 1}–${Math.min(i + BATCH, toFetch.length)}/${toFetch.length}]...\n`
+    )
+    const batchResults = await Promise.all(batch.map((e) => fetchAnimeDetails(e.anime_id)))
+    batch.forEach((e, j) => results.set(e.anime_id, batchResults[j]))
+    if (i + BATCH < toFetch.length) await sleep(BATCH_GAP_MS)
+  }
+
+  return results
+}
+
 async function main() {
   console.log(`Fetching MAL list for ${MAL_USER}...`)
   const list = await fetchMalList()
-  console.log(`Found ${list.length} entries rated 8+\n`)
+  console.log(`Found ${list.length} entries rated 8+`)
 
-  const entries = []
-  for (let i = 0; i < list.length; i++) {
-    const e = list[i]
-    process.stdout.write(`[${i + 1}/${list.length}] ${e.anime_title} (score: ${e.score})\n`)
-    const details = await fetchAnimeDetails(e.anime_id)
-    await sleep(400) // stay under Jikan's 3 req/s limit
-    entries.push({
-      title: e.anime_title,
-      score: e.score,
-      malId: e.anime_id,
-      imageUrl: details.imageUrl || e.anime_image_path || '',
-      genres: mapGenres(details.genres),
-    })
-  }
+  const existingCache = loadExistingCache()
+  const toFetch = list.filter((e) => {
+    const hit = existingCache.get(e.anime_id)
+    return !hit || !hit.imageUrl || hit.genres.length === 0
+  })
+  const cacheHits = list.length - toFetch.length
+  console.log(`Cache hits: ${cacheHits} | Jikan fetches needed: ${toFetch.length}\n`)
+
+  const freshDetails = toFetch.length > 0 ? await fetchDetailsInParallel(toFetch) : new Map()
+
+  const entries = list.map((e) => {
+    if (freshDetails.has(e.anime_id)) {
+      const details = freshDetails.get(e.anime_id)
+      return {
+        title: e.anime_title,
+        score: e.score,
+        malId: e.anime_id,
+        imageUrl: details.imageUrl || e.anime_image_path || '',
+        genres: mapGenres(details.genres),
+      }
+    }
+    const cached = existingCache.get(e.anime_id)
+    return { ...cached, title: e.anime_title, score: e.score }
+  })
 
   // Sort: score desc, then title asc
   entries.sort((a, b) => b.score - a.score || a.title.localeCompare(b.title))

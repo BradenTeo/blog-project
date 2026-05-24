@@ -43,6 +43,7 @@
               <li>Added an Anime Hall of Fame page — all series rated 8/10+ displayed in retro terminal style with a scrolling ticker</li>
               <li>Anime page now auto-updates weekly via GitHub Actions: fetches the rated list from MyAnimeList, pulls cover art and genre tags from the Jikan API, and commits a JSON cache — no redeploy needed, data loads at runtime</li>
               <li>Anime page visual upgrades: tier title glow effects, animated card border sweep, custom Naruto cursor, cursor spotlight glow, cover art zoom on hover, and a lightbox modal on click</li>
+              <li>Anime fetch optimised: the weekly GitHub Actions run now skips Jikan API calls for entries already in the cache (typically seconds instead of ~2 minutes), and fetches new entries 3 at a time in parallel instead of one by one</li>
             </ul>
           </div>
         </div>
