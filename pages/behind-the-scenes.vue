@@ -6,6 +6,8 @@
 
     <div class="max-w-[680px] mx-auto text-justify py-[24px] px-[24px]">
 
+      <p class="text-sm text-slate-500 dark:text-gray-400 mb-5 -mt-2 italic">BTS — Behind the Scenes</p>
+
       <!-- INTRO -->
       <h2 class="font-bold text-xl">What's here?</h2>
       <div class="pb-5 border-b-2">
@@ -26,31 +28,15 @@
             I mostly just described what I wanted in plain English and the AI handled the implementation.
             Here's what changed:
             <ul class="list-disc list-inside marker:font-bold mt-1">
-              <li>Added a dark / light mode toggle (now a day/night switch with sun, moon, and stars)</li>
+              <li>Added a dark / light mode toggle</li>
               <li>Fixed the favicon not showing on GitHub Pages</li>
-              <li>Added a blurred backdrop to the feedback dialog</li>
-              <li>Fixed a layout shift caused by the scrollbar appearing and disappearing</li>
-              <li>Redesigned the nav bar and expandable content tabs for a cleaner, more modern look</li>
               <li>Added a scroll-to-top button on long pages</li>
-              <li>Redesigned the Posts page sidebar to match the nav bar aesthetic, with proper light/dark mode colors</li>
-              <li>Improved color consistency on the Cancer Journey page (subtitle, sidebar, and callout blocks)</li>
               <li>Revamped the homepage with a personal intro, profile photo, and "Currently" section</li>
-              <li>Redesigned the Posts page cards with frosted glass titles and a hover effect</li>
-              <li>Renamed "Build Process" to "Behind the Scenes" and reorganised its content</li>
-              <li>Reordered nav: Home → Posts → Behind the Scenes</li>
-              <li>Reorganised the assets folder structure to match page usage</li>
-              <li>General bug fixes and UI polish throughout</li>
-              <li>Added an Anime Hall of Fame page — all series rated 8/10+ displayed in retro terminal style with a scrolling ticker</li>
-              <li>Anime page now auto-updates weekly via GitHub Actions: fetches the rated list from MyAnimeList, pulls cover art and genre tags from the Jikan API, and commits a JSON cache — no redeploy needed, data loads at runtime</li>
-              <li>Anime page visual upgrades: tier title glow effects, animated card border sweep, custom Naruto cursor, cursor spotlight glow, cover art zoom on hover, and a lightbox modal on click</li>
-              <li>Anime fetch optimised: the weekly GitHub Actions run now skips Jikan API calls for entries already in the cache (typically seconds instead of ~2 minutes), and fetches new entries 3 at a time in parallel instead of one by one</li>
-              <li>Anime cards upgraded: all tiers now show cover art, genre pills (wrapping to multiple rows), episode count, and a MAL link; the 8/10 tier was previously a plain text list</li>
-              <li>Anime cache extended with synopsis, episode count, and type (TV / Movie / etc.) fetched from Jikan</li>
-              <li>Lightbox redesigned: full cover art, synopsis, genre tags, episode count, MAL link, and prev/next navigation with keyboard arrow key support</li>
-              <li>Added a search bar on the anime page to filter entries by title, stacking with the existing genre filter</li>
-              <li>Replaced the animated card border sweep with a simple hover glow effect</li>
-              <li>Renamed <code>PostsButton</code> → <code>PostCard</code> and <code>ClickableTab</code> → <code>AccordionSection</code> to better reflect what each component actually is</li>
-              <li>Replaced the anime post card background (two hand-crafted SVGs for dark/light mode) with a single Studio Ghibli photo; removed the yuru-yuri gif from the Posts page</li>
+              <li>Added an Anime Hall of Fame page — all series rated 8/10+ with cover art, genre tags, episode count, and MAL links</li>
+              <li>Anime page auto-updates weekly: pulls the rated list from MyAnimeList and cover art from the Jikan API automatically — no manual updates needed</li>
+              <li>Anime entries are searchable by title and filterable by genre</li>
+              <li>Clicking an anime card opens a popup with the full synopsis, genres, and episode info; use ← / → to browse entries, ↑ / ↓ to scroll, or Escape / tap outside to close</li>
+              <li>Renamed the nav link "Behind the Scenes" to "BTS"</li>
             </ul>
           </div>
         </div>

@@ -1,6 +1,38 @@
 <template>
   <div class="max-w-[720px] mx-auto px-4 py-6">
 
+    <!-- Lightbox — outside overflow-hidden terminal so position:fixed works correctly -->
+    <transition name="lb">
+      <div v-if="lightbox" class="lightbox-overlay" :style="{ paddingTop: lightboxTop + 'px', paddingBottom: lightboxBottom + 'px' }" @click="lightbox = null">
+        <button class="lb-close-btn" aria-label="Close" @click="lightbox = null">✕</button>
+        <div ref="lbCard" class="lightbox-card" :class="lightbox.score >= 10 ? 'glow-ruby' : lightbox.score >= 9 ? 'glow-gold' : 'glow-silver'" :style="{ maxHeight: lightboxMaxHeight + 'px' }" @click.stop>
+          <div class="lightbox-img-col">
+            <img :src="lightbox.img" :alt="lightbox.title" class="lightbox-img" />
+          </div>
+          <div ref="lbContent" class="lightbox-content">
+            <div class="lightbox-body">
+              <div class="flex items-start justify-between gap-2">
+                <div class="lightbox-title vt323">{{ lightbox.title }}</div>
+                <a :href="`https://myanimelist.net/anime/${lightbox.malId}`" target="_blank" rel="noopener" class="mal-link flex-shrink-0 mt-1">MAL ↗</a>
+              </div>
+              <div class="lightbox-meta">
+                <span class="ep-label">{{ episodeLabel(lightbox) }}</span>
+                <div class="flex flex-wrap gap-1">
+                  <span v-for="genre in lightbox.genres" :key="genre" class="genre-tag">{{ genre }}</span>
+                </div>
+              </div>
+              <p v-if="lightbox.synopsis" class="lightbox-synopsis">{{ lightbox.synopsis }}</p>
+            </div>
+            <div class="lightbox-nav">
+              <button class="lb-nav-btn" :disabled="lightboxIndex <= 0" @click="navigateLightbox(-1)">‹ PREV</button>
+              <span class="lb-nav-count">{{ lightboxIndex + 1 }} / {{ allVisibleAnime.length }}</span>
+              <button class="lb-nav-btn" :disabled="lightboxIndex >= allVisibleAnime.length - 1" @click="navigateLightbox(1)">NEXT ›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+
     <!-- Terminal frame -->
     <div
       ref="animeWindow"
@@ -73,32 +105,6 @@
           NO ENTRIES FOUND
         </div>
 
-        <!-- Lightbox -->
-        <transition name="lb">
-          <div v-if="lightbox" class="lightbox-overlay" @click="lightbox = null">
-            <div class="lightbox-card" @click.stop>
-              <img :src="lightbox.img" :alt="lightbox.title" class="lightbox-img" />
-              <div class="lightbox-body">
-                <div class="flex items-start justify-between gap-2">
-                  <div class="lightbox-title vt323">{{ lightbox.title }}</div>
-                  <a :href="`https://myanimelist.net/anime/${lightbox.malId}`" target="_blank" rel="noopener" class="mal-link flex-shrink-0 mt-1">MAL ↗</a>
-                </div>
-                <div class="lightbox-meta">
-                  <span class="ep-label">{{ episodeLabel(lightbox) }}</span>
-                  <div class="flex flex-wrap gap-1">
-                    <span v-for="genre in lightbox.genres" :key="genre" class="genre-tag">{{ genre }}</span>
-                  </div>
-                </div>
-                <p v-if="lightbox.synopsis" class="lightbox-synopsis">{{ lightbox.synopsis }}</p>
-              </div>
-              <div class="lightbox-nav">
-                <button class="lb-nav-btn" :disabled="lightboxIndex <= 0" @click="navigateLightbox(-1)">‹ PREV</button>
-                <span class="lb-nav-count">{{ lightboxIndex + 1 }} / {{ allVisibleAnime.length }}</span>
-                <button class="lb-nav-btn" :disabled="lightboxIndex >= allVisibleAnime.length - 1" @click="navigateLightbox(1)">NEXT ›</button>
-              </div>
-            </div>
-          </div>
-        </transition>
 
         <!-- Tier 10 — cover art cards -->
         <div v-if="filteredTier10.length > 0" class="mb-6">
@@ -264,6 +270,9 @@ export default {
       genres: GENRES,
       loading: true,
       lightbox: null,
+      lightboxTop: 8,
+      lightboxBottom: 8,
+      lightboxMaxHeight: 600,
       tier10Data: [],
       tier9: [],
       tier8: [],
@@ -284,6 +293,28 @@ export default {
         { hid: 'og:title', property: 'og:title', content: "Anime Hall of Fame | Braden's Journal" },
       ],
     }
+  },
+  watch: {
+    lightbox(val) {
+      if (val) {
+        document.documentElement.style.overflow = 'hidden'
+        document.body.style.overflow = 'hidden'
+        ;['#site-header', 'nav', 'footer'].forEach(sel => {
+          const el = document.querySelector(sel)
+          if (el) el.style.display = 'none'
+        })
+        this._measureLightboxBounds()
+        window.addEventListener('scroll', this._onScroll, { passive: true })
+      } else {
+        document.documentElement.style.overflow = ''
+        document.body.style.overflow = ''
+        ;['#site-header', 'nav', 'footer'].forEach(sel => {
+          const el = document.querySelector(sel)
+          if (el) el.style.display = ''
+        })
+        window.removeEventListener('scroll', this._onScroll)
+      }
+    },
   },
   computed: {
     totalCount() {
@@ -324,10 +355,19 @@ export default {
   mounted() {
     this._escHandler = (e) => {
       if (!this.lightbox) return
-      if (e.key === 'Escape') this.lightbox = null
-      if (e.key === 'ArrowRight') this.navigateLightbox(1)
-      if (e.key === 'ArrowLeft') this.navigateLightbox(-1)
+      if (e.key === 'Escape') { this.lightbox = null; return }
+      if (e.key === 'ArrowRight') { this.navigateLightbox(1); return }
+      if (e.key === 'ArrowLeft') { this.navigateLightbox(-1); return }
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault()
+        const delta = e.key === 'ArrowDown' ? 80 : -80
+        const content = this.$refs.lbContent
+        const card = this.$refs.lbCard
+        const target = content && content.scrollHeight > content.clientHeight ? content : card
+        if (target) target.scrollBy({ top: delta, behavior: 'smooth' })
+      }
     }
+    this._onScroll = () => { if (this.lightbox) this._measureLightboxBounds() }
     window.addEventListener('keydown', this._escHandler)
     fetch(CACHE_URL)
       .then(res => (res.ok ? res.json() : null))
@@ -350,9 +390,22 @@ export default {
       .finally(() => { this.loading = false })
   },
   beforeDestroy() {
+    document.documentElement.style.overflow = ''
+    document.body.style.overflow = ''
+    ;['#site-header', 'nav', 'footer'].forEach(sel => {
+      const el = document.querySelector(sel)
+      if (el) el.style.display = ''
+    })
     window.removeEventListener('keydown', this._escHandler)
+    window.removeEventListener('scroll', this._onScroll)
   },
   methods: {
+    _measureLightboxBounds() {
+      const h = window.innerHeight
+      this.lightboxTop = 8
+      this.lightboxBottom = 8
+      this.lightboxMaxHeight = h - 16
+    },
     genreCount(genre) {
       return [...this.tier10Data, ...this.tier9, ...this.tier8]
         .filter(a => a.genres.includes(genre)).length
@@ -389,43 +442,165 @@ export default {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.82);
+  z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
-  padding: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .lightbox-card {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  background: #1a1a2e;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 20px;
+  padding-bottom: 24px;
   width: min(380px, 92vw);
-  max-height: 88vh;
   overflow-y: auto;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
+  scrollbar-color: #94a3b8 #e2e8f0;
+  scrollbar-width: thin;
+}
+.lb-close-btn {
+  display: none;
+}
+@media (max-width: 759px) {
+  .lb-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 0.8rem;
+    cursor: pointer;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    transition: background 0.15s ease;
+  }
+  .lb-close-btn:hover { background: rgba(0, 0, 0, 0.65); }
+  .dark .lb-close-btn {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .dark .lb-close-btn:hover { background: rgba(255, 255, 255, 0.25); }
+}
+
+.dark .lightbox-card {
+  background: #1a1a2e;
+  border-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.7);
+  scrollbar-color: #334155 #0f0f1a;
+}
+
+
+.lightbox-card.glow-ruby  { border-color: rgba(232, 64, 96, 0.6);  box-shadow: 0 0 24px rgba(232, 64, 96, 0.4),  0 12px 48px rgba(0,0,0,0.35); }
+.lightbox-card.glow-gold  { border-color: rgba(245, 158, 11, 0.6); box-shadow: 0 0 24px rgba(245, 158, 11, 0.4), 0 12px 48px rgba(0,0,0,0.35); }
+.lightbox-card.glow-silver{ border-color: rgba(148, 163, 184, 0.55); box-shadow: 0 0 24px rgba(148, 163, 184, 0.35), 0 12px 48px rgba(0,0,0,0.35); }
+.dark .lightbox-card.glow-ruby  { border-color: rgba(232, 64, 96, 0.55);  box-shadow: 0 0 28px rgba(232, 64, 96, 0.45),  0 12px 48px rgba(0,0,0,0.7); }
+.dark .lightbox-card.glow-gold  { border-color: rgba(245, 158, 11, 0.55); box-shadow: 0 0 28px rgba(245, 158, 11, 0.45), 0 12px 48px rgba(0,0,0,0.7); }
+.dark .lightbox-card.glow-silver{ border-color: rgba(148, 163, 184, 0.5);  box-shadow: 0 0 28px rgba(148, 163, 184, 0.35), 0 12px 48px rgba(0,0,0,0.7); }
+
+.lightbox-card::-webkit-scrollbar { width: 6px; }
+.lightbox-card::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 4px; }
+.lightbox-card::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+.lightbox-card::-webkit-scrollbar-thumb:hover { background: #64748b; }
+.dark .lightbox-card::-webkit-scrollbar-track { background: #0f0f1a; }
+.dark .lightbox-card::-webkit-scrollbar-thumb { background: #334155; }
+.dark .lightbox-card::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+.lightbox-img-col {
+  flex-shrink: 0;
 }
 
 .lightbox-img {
   width: 100%;
   border-radius: 8px;
   object-fit: contain;
+  display: block;
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 14px;
+  min-width: 0;
 }
 
 .lightbox-body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 1;
 }
 
+/* Wide-screen: image left, text right.
+   Breakpoint ≈ 2× the image column width (min(380px,50%) at 760px ≈ 356px → 2×356 ≈ 712px ≈ viewport 760px) */
+@media (min-width: 760px) {
+  .lightbox-card {
+    flex-direction: row;
+    align-items: stretch;
+    width: min(92vw, 900px);
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+  }
+  .lightbox-img-col {
+    width: min(380px, 50%);
+    flex-shrink: 0;
+    background: #edf0f4;
+    border-radius: 12px 0 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .dark .lightbox-img-col {
+    background: #111128;
+  }
+  .lightbox-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0;
+  }
+  .lightbox-content {
+    overflow-y: auto;
+    padding: 20px 20px 24px;
+    scrollbar-color: #94a3b8 #e2e8f0;
+    scrollbar-width: thin;
+  }
+  .dark .lightbox-content {
+    scrollbar-color: #334155 #0f0f1a;
+  }
+  .lightbox-content::-webkit-scrollbar { width: 6px; }
+  .lightbox-content::-webkit-scrollbar-track { background: #e2e8f0; }
+  .lightbox-content::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+  .lightbox-content::-webkit-scrollbar-thumb:hover { background: #64748b; }
+  .dark .lightbox-content::-webkit-scrollbar-track { background: #0f0f1a; }
+  .dark .lightbox-content::-webkit-scrollbar-thumb { background: #334155; }
+  .dark .lightbox-content::-webkit-scrollbar-thumb:hover { background: #475569; }
+}
+
+
 .lightbox-title {
-  color: #e2e8f0;
+  color: #1e293b;
   font-size: 1.4rem;
   letter-spacing: 0.05em;
+}
+.dark .lightbox-title {
+  color: #e2e8f0;
 }
 
 .lightbox-meta {
@@ -438,6 +613,9 @@ export default {
 .lightbox-synopsis {
   font-size: 0.82rem;
   line-height: 1.65;
+  color: #475569;
+}
+.dark .lightbox-synopsis {
   color: #94a3b8;
 }
 
@@ -467,38 +645,47 @@ export default {
   margin-top: 4px;
   font-size: 0.55rem;
   letter-spacing: 0.06em;
-  color: #94a3b8;
+  color: #64748b;
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.15s ease;
 }
 .mal-link:hover { color: #3b82f6; }
+.dark .mal-link { color: #94a3b8; }
 
 .lightbox-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 4px;
+  border-top: 1px solid #e2e8f0;
+  margin-top: auto;
+}
+.dark .lightbox-nav {
+  border-top-color: rgba(255, 255, 255, 0.08);
 }
 .lb-nav-btn {
   font-family: inherit;
   font-size: 0.65rem;
   letter-spacing: 0.08em;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid #cbd5e1;
   border-radius: 4px;
-  color: #94a3b8;
+  color: #475569;
   padding: 3px 10px;
   cursor: pointer;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
-.lb-nav-btn:hover:not(:disabled) { color: #e2e8f0; border-color: rgba(255, 255, 255, 0.35); }
+.lb-nav-btn:hover:not(:disabled) { color: #1e293b; border-color: #94a3b8; }
 .lb-nav-btn:disabled { opacity: 0.25; cursor: default; }
+.dark .lb-nav-btn { border-color: rgba(255, 255, 255, 0.15); color: #94a3b8; }
+.dark .lb-nav-btn:hover:not(:disabled) { color: #e2e8f0; border-color: rgba(255, 255, 255, 0.35); }
 .lb-nav-count {
   font-size: 0.6rem;
   letter-spacing: 0.08em;
+  color: #64748b;
+}
+.dark .lb-nav-count {
   color: #475569;
 }
 

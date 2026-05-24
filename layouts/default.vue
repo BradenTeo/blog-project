@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen flex flex-col bg-gradient-to-br from-orange-200 to-slate-400 dark:from-gray-900 dark:to-gray-950 dark:text-gray-100">
-    <div class="text-3xl text-white bg-slate-700 dark:bg-gray-950 font-bold text-center py-4">
+    <div id="site-header" class="text-3xl text-white bg-slate-700 dark:bg-gray-950 font-bold text-center py-4">
       Braden's Journal &#9997;
     </div>
 
@@ -10,7 +10,7 @@
       <div class="absolute left-1/2 -translate-x-1/2 flex items-center space-x-1">
         <nuxt-link to="/" class="link whitespace-nowrap" exact> Home </nuxt-link>
         <nuxt-link to="/posts" class="link whitespace-nowrap"> Posts </nuxt-link>
-        <nuxt-link to="/behind-the-scenes" class="link whitespace-nowrap"> Behind the Scenes </nuxt-link>
+        <nuxt-link to="/behind-the-scenes" class="link whitespace-nowrap"> BTS </nuxt-link>
       </div>
       <div class="ml-auto flex items-center flex-none">
         <button

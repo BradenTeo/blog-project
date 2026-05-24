@@ -230,6 +230,8 @@
       <li>Anime Fetch — Cache-Aware &amp; Parallel Jikan Calls</li>
       <li>Anime Page — Card &amp; Lightbox Upgrades</li>
       <li>Component Renames &amp; Asset Cleanup</li>
+      <li>Lightbox — Wide-Screen Layout, Dark/Light Mode &amp; UX Fixes</li>
+      <li>Nav Rename — "Behind the Scenes" → BTS</li>
     </ol>
   </div>
 
@@ -1115,6 +1117,45 @@ for (let i = 0; i &lt; toFetch.length; i += BATCH) {
 
   <h3>Yuru-yuri gif removed</h3>
   <p>The decorative yuru-yuri gif at the bottom of the Posts landing page was removed from the template and both asset files (<code>yuru-yuri.gif</code> and <code>yuru-yuri-slow.gif</code>) were deleted.</p>
+
+  <!-- 28 -->
+  <h2>Lightbox — Wide-Screen Layout, Dark/Light Mode &amp; UX Fixes <span class="tag tag-style">Styling</span></h2>
+
+  <h3>Two-column layout on wide screens</h3>
+  <p>On screens ≥ 760 px the lightbox switches from a stacked (image above, text below) layout to a side-by-side layout: cover art fills a fixed-width left column and the title, genres, synopsis, and nav sit in a scrollable right column. The breakpoint was chosen so the screen is roughly twice the image width. The text column expands to fill any remaining horizontal space up to 900 px.</p>
+
+  <h3>Rating glow on the card border</h3>
+  <p>The popup card border and box-shadow now glow in the tier colour of the selected anime — ruby red for 10/10, amber gold for 9/10, slate silver for 8/10. Implemented via three modifier classes (<code>.glow-ruby</code>, <code>.glow-gold</code>, <code>.glow-silver</code>) bound dynamically from <code>lightbox.score</code>. Dark mode variants use slightly stronger glow values.</p>
+
+  <h3>Dark / light mode for the card</h3>
+  <p>The popup card was previously always dark (<code>#1a1a2e</code>). It now adapts to the site theme: light mode uses a near-white card (<code>#f8fafc</code>) with dark text, dark mode keeps the navy card. All inner elements — title, synopsis, nav buttons, dividers — have matching <code>.dark .classname</code> overrides.</p>
+
+  <h3>Scrollbar theming</h3>
+  <p>The scrollable card (mobile) and content column (wide) both receive themed scrollbars via <code>scrollbar-color</code> (Firefox) and <code>::-webkit-scrollbar</code> rules (Chrome/Safari). Light mode uses a gray track with a slate thumb; dark mode uses a near-black track with a dark slate thumb.</p>
+
+  <h3>Scroll lock and chrome hiding</h3>
+  <p>When the lightbox opens, <code>overflow: hidden</code> is set on both <code>document.documentElement</code> and <code>document.body</code> to prevent background scrolling. The site header, nav bar, and footer are all hidden via <code>element.style.display = 'none'</code> and restored on close. This gives the popup full-screen real estate and avoids z-index stacking conflicts.</p>
+
+  <h3>Reliable max-height via window.innerHeight</h3>
+  <p>Previous attempts to constrain the card height using <code>max-height: 100%</code> or <code>calc()</code> on a padded flex container were unreliable across scroll positions and mobile browsers. The final approach: <code>lightboxMaxHeight = window.innerHeight - 16</code> is computed in JS and bound as an inline <code>max-height</code> style directly on the card. The overlay uses <code>padding-top/bottom: 8px</code> driven by <code>lightboxTop</code> / <code>lightboxBottom</code> data properties.</p>
+
+  <h3>Stacking context fix (posts.vue)</h3>
+  <p>The <code>pages/posts.vue</code> wrapper div had <code>sticky z-20</code>, which created a CSS stacking context at z-index 20. This trapped the overlay (z-999) inside it, meaning the nav (z-100) and footer (z-50) painted above the overlay backdrop. Removing <code>z-20</code> from the wrapper eliminated the stacking context so the overlay correctly paints above all page chrome.</p>
+
+  <h3>Keyboard navigation</h3>
+  <p>Arrow Left / Right navigate between anime entries. Arrow Up / Down scroll the popup content by 80 px per press (with smooth scroll). Escape closes the popup. All three are handled in a single <code>keydown</code> listener registered in <code>mounted</code> and cleaned up in <code>beforeDestroy</code>.</p>
+
+  <h3>Mobile close button</h3>
+  <p>A circular ✕ button is shown in the top-right corner of the overlay on screens narrower than 760 px (hidden on desktop where Escape and backdrop click are the natural close gestures). In light mode the button uses a dark semi-transparent background so it remains visible over the white card; dark mode uses a frosted-glass white style.</p>
+
+  <!-- 29 -->
+  <h2>Nav Rename — "Behind the Scenes" → BTS <span class="tag tag-rename">Rename</span></h2>
+
+  <h3>Nav label</h3>
+  <p>The navigation link text was shortened from <em>Behind the Scenes</em> to <em>BTS</em> in <code>layouts/default.vue</code>. The route and file name (<code>pages/behind-the-scenes.vue</code>) are unchanged.</p>
+
+  <h3>Abbreviation callout on the page</h3>
+  <p>A small italic subtitle — <em>BTS — Behind the Scenes</em> — was added at the top of the page content so first-time visitors immediately understand the abbreviation.</p>
 
   <hr style="margin-top:48px; border:none; border-top:2px solid #e2e8f0;" />
   <p style="margin-top:20px; text-align:center; color:#a0aec0; font-size:0.85em;">

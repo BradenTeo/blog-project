@@ -37,7 +37,7 @@
 
     <div
       v-if="!isParent"
-      class="lg:flex lg:flex-row lg:justify-between sticky z-20 left-0 top-9"
+      class="lg:flex lg:flex-row lg:justify-between sticky left-0 top-9"
     >
       <PostsNavBar />
       <nuxt-child class="static" />
