@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-05-23T18:55:44.988Z",
+  "fetchedAt": "2026-05-24T03:16:01.875Z",
   "entries": [
     {
       "title": "Aria the Origination",
@@ -4234,15 +4234,21 @@
       "title": "Shadows House",
       "score": 8,
       "malId": 43439,
-      "imageUrl": "https://cdn.myanimelist.net/r/192x272/images/anime/1424/113342.jpg?s=95e00d85b0cb3b34b57297b295012569",
-      "genres": []
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1424/113342l.jpg",
+      "genres": [
+        "Fantasy",
+        "Thriller"
+      ]
     },
     {
       "title": "Shadows House",
       "score": 8,
       "malId": 43439,
-      "imageUrl": "https://cdn.myanimelist.net/r/192x272/images/anime/1424/113342.jpg?s=95e00d85b0cb3b34b57297b295012569",
-      "genres": []
+      "imageUrl": "https://cdn.myanimelist.net/images/anime/1424/113342l.jpg",
+      "genres": [
+        "Fantasy",
+        "Thriller"
+      ]
     },
     {
       "title": "Shadows House",
