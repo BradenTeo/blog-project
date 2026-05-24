@@ -2,7 +2,7 @@ name: Update Anime Cache
 
 on:
   schedule:
-    - cron: '0 1 * * *' # 1am UTC daily
+    - cron: '0 1 * * 0' # 1am UTC every Sunday
   workflow_dispatch: # allow manual trigger from GitHub Actions tab
 
 permissions:

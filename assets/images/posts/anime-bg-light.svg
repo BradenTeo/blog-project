@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="430" viewBox="0 0 700 430">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4e9ff"/>
+      <stop offset="100%" stop-color="#fce4f0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="700" height="430" fill="url(#sky)"/>
+
+  <!-- Soft clouds -->
+  <g fill="white" opacity="0.7">
+    <ellipse cx="100" cy="80" rx="60" ry="22"/>
+    <ellipse cx="140" cy="72" rx="40" ry="18"/>
+    <ellipse cx="60"  cy="75" rx="35" ry="16"/>
+
+    <ellipse cx="560" cy="110" rx="70" ry="24"/>
+    <ellipse cx="610" cy="100" rx="45" ry="20"/>
+    <ellipse cx="510" cy="106" rx="40" ry="18"/>
+
+    <ellipse cx="300" cy="50" rx="50" ry="18"/>
+    <ellipse cx="340" cy="44" rx="34" ry="14"/>
+    <ellipse cx="260" cy="47" rx="30" ry="13"/>
+  </g>
+
+  <!-- Sakura petals — scattered -->
+  <g opacity="0.55">
+    <!-- petal: 5-point flower simplified as layered ellipses -->
+    <g transform="translate(48,170) rotate(20)">
+      <ellipse rx="7" ry="4" fill="#ffb7c5"/>
+      <ellipse rx="7" ry="4" fill="#ffb7c5" transform="rotate(72)"/>
+      <ellipse rx="7" ry="4" fill="#ffb7c5" transform="rotate(144)"/>
+      <ellipse rx="7" ry="4" fill="#ffb7c5" transform="rotate(216)"/>
+      <ellipse rx="7" ry="4" fill="#ffb7c5" transform="rotate(288)"/>
+      <circle r="3" fill="#ff8fab"/>
+    </g>
+    <g transform="translate(150,310) rotate(-10)">
+      <ellipse rx="6" ry="3.5" fill="#ffb7c5"/>
+      <ellipse rx="6" ry="3.5" fill="#ffb7c5" transform="rotate(72)"/>
+      <ellipse rx="6" ry="3.5" fill="#ffb7c5" transform="rotate(144)"/>
+      <ellipse rx="6" ry="3.5" fill="#ffb7c5" transform="rotate(216)"/>
+      <ellipse rx="6" ry="3.5" fill="#ffb7c5" transform="rotate(288)"/>
+      <circle r="2.5" fill="#ff8fab"/>
+    </g>
+    <g transform="translate(600,160) rotate(35)">
+      <ellipse rx="8" ry="4.5" fill="#ffc8d8"/>
+      <ellipse rx="8" ry="4.5" fill="#ffc8d8" transform="rotate(72)"/>
+      <ellipse rx="8" ry="4.5" fill="#ffc8d8" transform="rotate(144)"/>
+      <ellipse rx="8" ry="4.5" fill="#ffc8d8" transform="rotate(216)"/>
+      <ellipse rx="8" ry="4.5" fill="#ffc8d8" transform="rotate(288)"/>
+      <circle r="3" fill="#ff8fab"/>
+    </g>
+    <g transform="translate(520,350) rotate(-25)">
+      <ellipse rx="6" ry="3.5" fill="#ffb7c5"/>
+      <ellipse rx="6" ry="3.5" fill="#ffb7c5" transform="rotate(72)"/>
+      <ellipse rx="6" ry="3.5" fill="#ffb7c5" transform="rotate(144)"/>
+      <ellipse rx="6" ry="3.5" fill="#ffb7c5" transform="rotate(216)"/>
+      <ellipse rx="6" ry="3.5" fill="#ffb7c5" transform="rotate(288)"/>
+      <circle r="2.5" fill="#ff8fab"/>
+    </g>
+    <g transform="translate(330,380) rotate(15)">
+      <ellipse rx="5" ry="3" fill="#ffccd8"/>
+      <ellipse rx="5" ry="3" fill="#ffccd8" transform="rotate(72)"/>
+      <ellipse rx="5" ry="3" fill="#ffccd8" transform="rotate(144)"/>
+      <ellipse rx="5" ry="3" fill="#ffccd8" transform="rotate(216)"/>
+      <ellipse rx="5" ry="3" fill="#ffccd8" transform="rotate(288)"/>
+      <circle r="2" fill="#ff8fab"/>
+    </g>
+    <g transform="translate(650,280) rotate(-15)">
+      <ellipse rx="7" ry="4" fill="#ffb7c5"/>
+      <ellipse rx="7" ry="4" fill="#ffb7c5" transform="rotate(72)"/>
+      <ellipse rx="7" ry="4" fill="#ffb7c5" transform="rotate(144)"/>
+      <ellipse rx="7" ry="4" fill="#ffb7c5" transform="rotate(216)"/>
+      <ellipse rx="7" ry="4" fill="#ffb7c5" transform="rotate(288)"/>
+      <circle r="3" fill="#ff8fab"/>
+    </g>
+    <g transform="translate(80,390) rotate(40)">
+      <ellipse rx="6" ry="3.5" fill="#ffc8d8"/>
+      <ellipse rx="6" ry="3.5" fill="#ffc8d8" transform="rotate(72)"/>
+      <ellipse rx="6" ry="3.5" fill="#ffc8d8" transform="rotate(144)"/>
+      <ellipse rx="6" ry="3.5" fill="#ffc8d8" transform="rotate(216)"/>
+      <ellipse rx="6" ry="3.5" fill="#ffc8d8" transform="rotate(288)"/>
+      <circle r="2.5" fill="#ff8fab"/>
+    </g>
+  </g>
+
+  <!-- Gold star accents -->
+  <text x="62"  y="210" font-family="monospace" font-size="22" fill="#e8a000" opacity="0.75">★</text>
+  <text x="604" y="210" font-family="monospace" font-size="22" fill="#e8a000" opacity="0.75">★</text>
+  <text x="326" y="60"  font-family="monospace" font-size="22" fill="#e8a000" opacity="0.75">★</text>
+  <text x="326" y="410" font-family="monospace" font-size="22" fill="#e8a000" opacity="0.75">★</text>
+
+  <!-- Center text -->
+  <text x="350" y="195" text-anchor="middle" font-family="monospace" font-size="38" font-weight="bold" letter-spacing="6" fill="#1a6b3a">ANIME</text>
+  <text x="350" y="228" text-anchor="middle" font-family="monospace" font-size="16" letter-spacing="4" fill="#2d7a4f">HALL OF FAME</text>
+  <text x="350" y="252" text-anchor="middle" font-family="monospace" font-size="12" letter-spacing="2" fill="#4a8c62" opacity="0.85">RATED 8/10 AND ABOVE</text>
+</svg>

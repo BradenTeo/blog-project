@@ -4,7 +4,7 @@
     <!-- Terminal frame -->
     <div
       ref="animeWindow"
-      class="anime-window rounded-xl overflow-hidden shadow-2xl border-2 border-gray-500 dark:border-gray-600"
+      class="anime-window rounded-xl overflow-hidden shadow-2xl border-2 border-gray-300 dark:border-gray-600"
       @mousemove="onMouseMove"
       @mouseenter="glowVisible = true"
       @mouseleave="glowVisible = false"
@@ -12,31 +12,31 @@
       <div v-if="glowVisible" class="cursor-glow" :style="{ left: glowX + 'px', top: glowY + 'px' }"></div>
 
       <!-- Title bar -->
-      <div class="bg-gray-700 dark:bg-gray-800 px-4 py-2 flex items-center gap-2 select-none">
+      <div class="bg-gray-200 dark:bg-gray-800 px-4 py-2 flex items-center gap-2 select-none">
         <span class="w-3 h-3 rounded-full bg-red-500 flex-shrink-0"></span>
         <span class="w-3 h-3 rounded-full bg-yellow-400 flex-shrink-0"></span>
         <span class="w-3 h-3 rounded-full bg-green-500 flex-shrink-0"></span>
-        <span class="ml-3 text-gray-300 text-xs font-mono tracking-wide">anime-hall-of-fame.exe</span>
+        <span class="ml-3 text-gray-500 dark:text-gray-300 text-xs font-mono tracking-wide">anime-hall-of-fame.exe</span>
       </div>
 
       <!-- Terminal body -->
-      <div class="bg-gray-950 px-5 py-6 font-mono text-sm leading-relaxed">
+      <div class="bg-gray-50 dark:bg-gray-950 px-5 py-6 font-mono text-sm leading-relaxed">
 
         <!-- Header -->
         <div class="text-center mb-5">
-          <div class="vt323 text-3xl text-green-400 tracking-widest">★ ANIME HALL OF FAME ★</div>
-          <div class="text-green-600 text-xs tracking-widest mt-1">BRADEN'S TOP PICKS — RATED 8/10 AND ABOVE</div>
-          <div class="text-green-800 text-xs mt-0.5">
+          <div class="vt323 text-3xl text-green-700 dark:text-green-400 tracking-widest">★ ANIME HALL OF FAME ★</div>
+          <div class="text-green-800 dark:text-green-600 text-xs tracking-widest mt-1">BRADEN'S TOP PICKS — RATED 8/10 AND ABOVE</div>
+          <div class="text-green-700 dark:text-green-800 text-xs mt-0.5">
             SHOWING: {{ visibleCount }} / {{ totalCount }} ENTRIES<span class="blink-cursor">_</span>
           </div>
-          <div v-if="fetchedAt" class="text-green-900 text-xs mt-0.5">
+          <div v-if="fetchedAt" class="text-green-600 dark:text-green-900 text-xs mt-0.5">
             CACHE: {{ fetchedAt }}
           </div>
         </div>
 
         <!-- Genre filter -->
         <div class="mb-5">
-          <div class="text-green-800 text-xs mb-2 tracking-widest">FILTER BY GENRE:</div>
+          <div class="text-green-700 dark:text-green-800 text-xs mb-2 tracking-widest">FILTER BY GENRE:</div>
           <div class="flex flex-wrap gap-1.5">
             <button
               v-for="g in genres"
@@ -51,12 +51,25 @@
           </div>
         </div>
 
-        <div class="border-t border-green-900 mb-5"></div>
+        <div class="border-t border-green-200 dark:border-green-900 mb-5"></div>
+
+        <!-- Loading -->
+        <div v-if="loading" class="text-green-600 dark:text-green-700 text-xs text-center py-8 tracking-widest">
+          LOADING DATA<span class="blink-cursor">_</span>
+        </div>
 
         <!-- No results -->
-        <div v-if="visibleCount === 0" class="text-green-800 text-xs text-center py-6 tracking-widest">
+        <div v-if="!loading && visibleCount === 0" class="text-green-700 dark:text-green-800 text-xs text-center py-6 tracking-widest">
           NO ENTRIES FOUND FOR THIS GENRE
         </div>
+
+        <!-- Lightbox -->
+        <transition name="lb">
+          <div v-if="lightbox" class="lightbox-overlay" @click="lightbox = null">
+            <img :src="lightbox.img" :alt="lightbox.title" class="lightbox-img" @click.stop />
+            <div class="lightbox-title vt323">{{ lightbox.title }}</div>
+          </div>
+        </transition>
 
         <!-- Tier 10 — cover art cards -->
         <div v-if="filteredTier10.length > 0" class="mb-6">
@@ -66,77 +79,82 @@
               v-for="anime in filteredTier10"
               :key="anime.title"
               class="tier-10-card flex items-center gap-3 p-3 rounded-lg"
+              @click="lightbox = anime"
             >
-              <img
-                :src="anime.img"
-                :alt="anime.title"
-                class="cover-art flex-shrink-0 rounded object-cover"
-                width="48"
-                height="68"
-                loading="lazy"
-              />
+              <div class="img-wrap">
+                <img
+                  :src="anime.img"
+                  :alt="anime.title"
+                  class="cover-art object-cover"
+                  width="48"
+                  height="68"
+                  loading="lazy"
+                />
+              </div>
               <div class="flex-1 min-w-0">
-                <div class="vt323 text-[#f9aabb] text-lg leading-tight">{{ anime.title }}</div>
+                <div class="vt323 text-rose-700 dark:text-[#f9aabb] text-lg leading-tight">{{ anime.title }}</div>
                 <div class="genre-tag mt-1">{{ anime.genres.join(' · ') }}</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div v-if="filteredTier10.length > 0 && (filteredTier9.length > 0 || filteredTier8.length > 0)" class="border-t border-green-900 mb-5"></div>
+        <div v-if="filteredTier10.length > 0 && (filteredTier9.length > 0 || filteredTier8.length > 0)" class="border-t border-green-200 dark:border-green-900 mb-5"></div>
 
         <!-- Tier 9 — cards -->
         <div v-if="filteredTier9.length > 0" class="mb-6">
-          <div class="vt323 text-xl text-amber-400 mb-3 tracking-wider tier-title-gold">[ EXCELLENT — 9/10 ]</div>
+          <div class="vt323 text-xl text-amber-600 dark:text-amber-400 mb-3 tracking-wider tier-title-gold">[ EXCELLENT — 9/10 ]</div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
             <div
               v-for="anime in filteredTier9"
               :key="anime.title"
               class="tier-9-card flex items-center gap-3 p-3 rounded-lg"
+              @click="lightbox = anime"
             >
-              <img
-                v-if="anime.img"
-                :src="anime.img"
-                :alt="anime.title"
-                class="cover-art flex-shrink-0 rounded object-cover"
-                width="48"
-                height="68"
-                loading="lazy"
-              />
+              <div v-if="anime.img" class="img-wrap">
+                <img
+                  :src="anime.img"
+                  :alt="anime.title"
+                  class="cover-art object-cover"
+                  width="48"
+                  height="68"
+                  loading="lazy"
+                />
+              </div>
               <div class="flex-1 min-w-0">
-                <div class="vt323 text-amber-200 text-lg leading-tight">{{ anime.title }}</div>
+                <div class="vt323 text-amber-700 dark:text-amber-200 text-lg leading-tight">{{ anime.title }}</div>
                 <div class="genre-tag mt-1">{{ anime.genres.join(' · ') }}</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div v-if="filteredTier9.length > 0 && filteredTier8.length > 0" class="border-t border-green-900 mb-5"></div>
+        <div v-if="filteredTier9.length > 0 && filteredTier8.length > 0" class="border-t border-green-200 dark:border-green-900 mb-5"></div>
 
         <!-- Tier 8 -->
         <div v-if="filteredTier8.length > 0" class="mb-4">
-          <div class="vt323 text-xl text-slate-400 mb-3 tracking-wider tier-title-silver">[ GREAT — 8/10 ]</div>
+          <div class="vt323 text-xl text-slate-600 dark:text-slate-400 mb-3 tracking-wider tier-title-silver">[ GREAT — 8/10 ]</div>
 
           <!-- Scrolling ticker (only when showing all) -->
           <template v-if="selectedGenre === 'all'">
-            <div class="overflow-hidden border border-slate-600/40 rounded bg-black/40 py-2 mb-3">
-              <div class="ticker-track text-slate-400 text-xs whitespace-nowrap">
+            <div class="overflow-hidden border border-slate-300 dark:border-slate-600/40 rounded bg-slate-100 dark:bg-black/40 py-2 mb-3">
+              <div class="ticker-track text-slate-500 dark:text-slate-400 text-xs whitespace-nowrap">
                 <span v-for="(anime, i) in tier8Doubled" :key="i" class="inline-block px-3">
                   {{ anime.title }}&nbsp;·
                 </span>
               </div>
             </div>
             <details class="group">
-              <summary class="text-slate-500 text-xs cursor-pointer hover:text-slate-300 transition-colors select-none py-1">
+              <summary class="text-slate-500 text-xs cursor-pointer hover:text-slate-800 dark:hover:text-slate-300 transition-colors select-none py-1">
                 ▶ SHOW FULL LIST ({{ filteredTier8.length }} entries)
               </summary>
               <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-x-6">
                 <div
                   v-for="anime in filteredTier8"
                   :key="anime.title"
-                  class="flex items-center gap-2 py-0.5 px-1 rounded text-slate-400 text-xs cursor-default"
+                  class="flex items-center gap-2 py-0.5 px-1 rounded text-slate-600 dark:text-slate-400 text-xs cursor-default"
                 >
-                  <span class="text-slate-600 flex-shrink-0">▶</span>
+                  <span class="text-slate-400 dark:text-slate-600 flex-shrink-0">▶</span>
                   <span>{{ anime.title }}</span>
                   <span class="genre-tag ml-auto flex-shrink-0">{{ anime.genres.join(' · ') }}</span>
                 </div>
@@ -150,17 +168,17 @@
               <div
                 v-for="anime in filteredTier8"
                 :key="anime.title"
-                class="flex items-center gap-2 py-1 px-1 rounded text-slate-400 text-xs cursor-default"
+                class="flex items-center gap-2 py-1 px-1 rounded text-slate-600 dark:text-slate-400 text-xs cursor-default"
               >
-                <span class="text-slate-600 flex-shrink-0">▶</span>
+                <span class="text-slate-400 dark:text-slate-600 flex-shrink-0">▶</span>
                 <span>{{ anime.title }}</span>
               </div>
             </div>
           </template>
         </div>
 
-        <div class="border-t border-green-900 mt-5 mb-3"></div>
-        <div class="text-green-800 text-xs text-center tracking-widest">
+        <div class="border-t border-green-200 dark:border-green-900 mt-5 mb-3"></div>
+        <div class="text-green-700 dark:text-green-800 text-xs text-center tracking-widest">
           PRESS START TO WATCH ANIME<span class="blink-cursor ml-1">█</span>
         </div>
 
@@ -172,156 +190,6 @@
 <script>
 const GENRES = ['all', 'Action', 'Fantasy', 'Sci-Fi', 'Slice of Life', 'Drama', 'Sports', 'Comedy', 'Thriller', 'Music', 'Horror']
 
-const TIER_10_DATA = [
-  { title: 'Aria the Origination',                 genres: ['Slice of Life', 'Fantasy'],          img: require('~/assets/images/posts/anime/aria-the-origination.jpg') },
-  { title: "Fate/stay night: Heaven's Feel III",   genres: ['Fantasy', 'Action'],                 img: require('~/assets/images/posts/anime/heavens-feel-iii.jpg') },
-  { title: 'K-On!!',                               genres: ['Music', 'Slice of Life', 'Comedy'],  img: require('~/assets/images/posts/anime/k-on.jpg') },
-  { title: 'Puella Magi Madoka Magica: Rebellion', genres: ['Fantasy', 'Thriller'],               img: require('~/assets/images/posts/anime/madoka-rebellion.jpg') },
-  { title: 'Wolf Children',                        genres: ['Drama', 'Fantasy'],                  img: require('~/assets/images/posts/anime/wolf-children.jpg') },
-]
-
-const TIER_9 = [
-  { title: 'Amanchu!',                                         genres: ['Slice of Life', 'Comedy']         },
-  { title: 'Arakawa Under the Bridge x Bridge',                genres: ['Comedy', 'Slice of Life']         },
-  { title: 'Aria the Avvenire',                                genres: ['Slice of Life', 'Fantasy']        },
-  { title: 'Bakemonogatari',                                   genres: ['Fantasy', 'Thriller']             },
-  { title: 'Barakamon',                                        genres: ['Slice of Life', 'Comedy']         },
-  { title: 'Bocchi the Rock!',                                 genres: ['Music', 'Slice of Life', 'Comedy']},
-  { title: 'Chainsaw Man: Reze Arc',                           genres: ['Action', 'Thriller']              },
-  { title: 'Chihayafuru 2',                                    genres: ['Sports', 'Drama']                 },
-  { title: 'Cyberpunk: Edgerunners',                           genres: ['Sci-Fi', 'Action']                },
-  { title: 'Dandadan 2nd Season',                              genres: ['Action', 'Comedy']                },
-  { title: 'Deca-Dence',                                       genres: ['Sci-Fi', 'Action']                },
-  { title: 'Demon Slayer: Mugen Train',                        genres: ['Action', 'Fantasy']               },
-  { title: 'Demon Slayer: Swordsmith Village Arc',             genres: ['Action', 'Fantasy']               },
-  { title: 'Fate/Zero',                                        genres: ['Fantasy', 'Action']               },
-  { title: 'Fate/Zero 2nd Season',                             genres: ['Fantasy', 'Action']               },
-  { title: 'Gintama: The Final Chapter — Yorozuya Forever',    genres: ['Comedy', 'Action']                },
-  { title: 'Haikyuu!! To the Top Part 2',                      genres: ['Sports']                          },
-  { title: 'Haikyuu!! vs. Shiratorizawa',                      genres: ['Sports']                          },
-  { title: 'Hajime no Ippo: New Challenger',                   genres: ['Sports', 'Action']                },
-  { title: 'Hunter x Hunter (2011)',                           genres: ['Action', 'Fantasy']               },
-  { title: 'Jujutsu Kaisen',                                   genres: ['Action', 'Fantasy']               },
-  { title: 'Kekkai Sensen & Beyond',                           genres: ['Action', 'Comedy']                },
-  { title: 'Kill la Kill',                                     genres: ['Action', 'Comedy']                },
-  { title: 'Knights of Sidonia: Love Woven in the Stars',      genres: ['Sci-Fi', 'Action']                },
-  { title: 'Liz and the Blue Bird',                            genres: ['Music', 'Drama']                  },
-  { title: 'Look Back',                                        genres: ['Drama']                           },
-  { title: 'Made in Abyss: Dawn of the Deep Soul',             genres: ['Fantasy', 'Action']               },
-  { title: 'Maquia: When the Promised Flower Blooms',          genres: ['Drama', 'Fantasy']                },
-  { title: 'March Comes in Like a Lion Season 2',              genres: ['Drama', 'Sports']                 },
-  { title: 'Mawaru Penguindrum',                               genres: ['Drama', 'Fantasy']                },
-  { title: 'Mob Psycho 100 III',                               genres: ['Action', 'Comedy']                },
-  { title: 'Monogatari Series: Second Season',                 genres: ['Fantasy', 'Thriller']             },
-  { title: 'Mushishi: Hihamukage',                             genres: ['Fantasy', 'Slice of Life']        },
-  { title: 'My Hero Academia: Final Season',                   genres: ['Action', 'Fantasy']               },
-  { title: 'O Maidens in Your Savage Season',                  genres: ['Drama', 'Slice of Life']          },
-  { title: 'Owarimonogatari 2nd Season',                       genres: ['Fantasy', 'Thriller']             },
-  { title: 'Ping Pong the Animation',                          genres: ['Sports', 'Drama']                 },
-  { title: 'Ponyo',                                            genres: ['Fantasy', 'Drama']                },
-  { title: 'Puella Magi Madoka Magica',                        genres: ['Fantasy', 'Thriller']             },
-  { title: 'Ranking of Kings',                                 genres: ['Fantasy', 'Drama']                },
-  { title: 'Silver Spoon 2nd Season',                          genres: ['Slice of Life', 'Drama']          },
-  { title: 'Sound! Euphonium',                                 genres: ['Music', 'Slice of Life']          },
-  { title: 'Sound of the Sky Specials',                        genres: ['Slice of Life', 'Sci-Fi']         },
-  { title: 'Steins;Gate',                                      genres: ['Sci-Fi', 'Thriller']              },
-  { title: 'Suzume',                                           genres: ['Fantasy', 'Drama']                },
-  { title: "Takopii's Original Sin",                           genres: ['Horror', 'Drama']                 },
-  { title: 'The Apothecary Diaries',                           genres: ['Thriller', 'Drama']               },
-  { title: 'The Disappearance of Haruhi Suzumiya',             genres: ['Sci-Fi', 'Thriller']              },
-  { title: 'The Garden of Words',                              genres: ['Drama', 'Slice of Life']          },
-  { title: 'The Secret World of Arrietty',                     genres: ['Fantasy', 'Drama']                },
-  { title: 'The Tatami Galaxy',                                genres: ['Drama', 'Comedy']                 },
-  { title: 'When Marnie Was There',                            genres: ['Drama', 'Fantasy']                },
-  { title: 'Yuru Yuri Nachuyachumi!+',                         genres: ['Comedy', 'Slice of Life']         },
-]
-
-const TIER_8 = [
-  { title: 'A Silent Voice',                           genres: ['Drama']                          },
-  { title: 'Akira',                                    genres: ['Sci-Fi', 'Action']               },
-  { title: 'Akudama Drive',                            genres: ['Sci-Fi', 'Action']               },
-  { title: 'Aria the Animation',                       genres: ['Slice of Life', 'Fantasy']       },
-  { title: 'Ascendance of a Bookworm',                 genres: ['Fantasy', 'Slice of Life']       },
-  { title: 'Astra Lost in Space',                      genres: ['Sci-Fi', 'Action']               },
-  { title: 'Attack on Titan: The Final Season',        genres: ['Action', 'Fantasy']              },
-  { title: 'Blue Lock',                                genres: ['Sports']                         },
-  { title: 'Castle in the Sky',                        genres: ['Fantasy', 'Action']              },
-  { title: 'Chainsaw Man',                             genres: ['Action', 'Horror']               },
-  { title: 'Chihayafuru',                              genres: ['Sports', 'Drama']                },
-  { title: 'Cowboy Bebop',                             genres: ['Sci-Fi', 'Action']               },
-  { title: 'Dandadan',                                 genres: ['Action', 'Comedy']               },
-  { title: 'Darker than Black: Gemini of the Meteor',  genres: ['Action', 'Sci-Fi']              },
-  { title: 'Death Parade',                             genres: ['Thriller', 'Drama']              },
-  { title: 'Demon Slayer',                             genres: ['Action', 'Fantasy']              },
-  { title: 'Dr. Stone',                                genres: ['Sci-Fi', 'Action']               },
-  { title: 'Dungeon Meshi',                            genres: ['Fantasy', 'Comedy']              },
-  { title: 'Durarara!!',                               genres: ['Thriller', 'Action']             },
-  { title: 'FLCL',                                     genres: ['Sci-Fi', 'Comedy']               },
-  { title: 'Food Wars!',                               genres: ['Slice of Life', 'Comedy']        },
-  { title: "Frieren: Beyond Journey's End",            genres: ['Fantasy', 'Slice of Life']       },
-  { title: 'From the New World',                       genres: ['Sci-Fi', 'Thriller']             },
-  { title: 'Fullmetal Alchemist: Brotherhood',         genres: ['Action', 'Fantasy']              },
-  { title: 'Ga-Rei: Zero',                             genres: ['Action', 'Thriller']             },
-  { title: 'Ghost in the Shell',                       genres: ['Sci-Fi', 'Thriller']             },
-  { title: 'Ghost in the Shell: SAC',                  genres: ['Sci-Fi', 'Thriller']             },
-  { title: "Gintama'",                                 genres: ['Comedy', 'Action']               },
-  { title: "Girls' Last Tour",                         genres: ['Sci-Fi', 'Slice of Life']        },
-  { title: 'Grave of the Fireflies',                   genres: ['Drama']                          },
-  { title: 'Gurren Lagann: Lagann-hen',                genres: ['Action', 'Sci-Fi']               },
-  { title: 'Haikyuu!!',                                genres: ['Sports']                         },
-  { title: 'Hajime no Ippo',                           genres: ['Sports', 'Action']               },
-  { title: 'Heavenly Delusion',                        genres: ['Sci-Fi', 'Thriller']             },
-  { title: 'Hinamatsuri',                              genres: ['Comedy', 'Slice of Life']        },
-  { title: 'Humanity Has Declined',                    genres: ['Comedy', 'Sci-Fi']               },
-  { title: 'Hyouka',                                   genres: ['Thriller', 'Slice of Life']      },
-  { title: 'I Want to Eat Your Pancreas',              genres: ['Drama']                          },
-  { title: "JoJo's Bizarre Adventure: Golden Wind",    genres: ['Action']                         },
-  { title: 'Jujutsu Kaisen 2nd Season',                genres: ['Action', 'Fantasy']              },
-  { title: 'K-On!',                                    genres: ['Music', 'Slice of Life', 'Comedy']},
-  { title: 'Kaiju No. 8',                              genres: ['Action', 'Sci-Fi']               },
-  { title: 'Laid-Back Camp',                           genres: ['Slice of Life']                  },
-  { title: 'Land of the Lustrous',                     genres: ['Fantasy', 'Sci-Fi']              },
-  { title: 'Little Witch Academia',                    genres: ['Fantasy', 'Comedy']              },
-  { title: 'Lycoris Recoil',                           genres: ['Action']                         },
-  { title: 'Made in Abyss',                            genres: ['Fantasy', 'Action']              },
-  { title: 'Mashle',                                   genres: ['Comedy', 'Fantasy']              },
-  { title: 'Mob Psycho 100 II',                        genres: ['Action', 'Comedy']               },
-  { title: "Monthly Girls' Nozaki-kun",                genres: ['Comedy', 'Slice of Life']        },
-  { title: 'Mushishi',                                 genres: ['Fantasy', 'Slice of Life']       },
-  { title: 'Mushoku Tensei',                           genres: ['Fantasy']                        },
-  { title: "Natsume's Book of Friends",                genres: ['Fantasy', 'Slice of Life']       },
-  { title: 'Nausicaä of the Valley of the Wind',       genres: ['Fantasy', 'Sci-Fi']              },
-  { title: 'Neon Genesis Evangelion',                  genres: ['Sci-Fi', 'Drama']                },
-  { title: 'Odd Taxi',                                 genres: ['Thriller']                       },
-  { title: 'Oshi no Ko',                               genres: ['Drama', 'Thriller']              },
-  { title: 'Perfect Blue',                             genres: ['Thriller', 'Horror']             },
-  { title: 'Planetes',                                 genres: ['Sci-Fi', 'Drama']                },
-  { title: 'Princess Mononoke',                        genres: ['Fantasy', 'Action']              },
-  { title: 'Psycho-Pass',                              genres: ['Sci-Fi', 'Thriller']             },
-  { title: 'Rainbow',                                  genres: ['Drama']                          },
-  { title: 'ReLIFE',                                   genres: ['Drama', 'Slice of Life']         },
-  { title: 'Revolutionary Girl Utena',                 genres: ['Fantasy', 'Drama']               },
-  { title: 'Samurai Champloo',                         genres: ['Action']                         },
-  { title: 'School-Live!',                             genres: ['Horror', 'Slice of Life']        },
-  { title: 'Shadows House',                            genres: ['Thriller', 'Fantasy']            },
-  { title: 'Shirobako',                                genres: ['Slice of Life', 'Drama']         },
-  { title: 'Showa Genroku Rakugo Shinju',              genres: ['Drama']                          },
-  { title: 'Sound of the Sky',                         genres: ['Slice of Life', 'Sci-Fi']        },
-  { title: 'Spice and Wolf II',                        genres: ['Fantasy', 'Drama']               },
-  { title: 'Spirited Away',                            genres: ['Fantasy', 'Drama']               },
-  { title: 'Spy x Family Season 2',                    genres: ['Action', 'Comedy']               },
-  { title: 'Summer Wars',                              genres: ['Sci-Fi', 'Drama']                },
-  { title: 'The Tale of the Princess Kaguya',          genres: ['Drama', 'Fantasy']               },
-  { title: 'Tiger & Bunny',                            genres: ['Action', 'Sci-Fi']               },
-  { title: 'To Your Eternity',                         genres: ['Fantasy', 'Drama']               },
-  { title: 'Toradora!',                                genres: ['Drama', 'Comedy']                },
-  { title: 'Trigun Stampede',                          genres: ['Action', 'Sci-Fi']               },
-  { title: 'Vinland Saga Season 2',                    genres: ['Drama', 'Action']                },
-  { title: 'Violet Evergarden',                        genres: ['Drama', 'Fantasy']               },
-  { title: 'Wandering Son',                            genres: ['Drama', 'Slice of Life']         },
-  { title: 'Yuki Yuna is a Hero',                      genres: ['Fantasy', 'Drama']               },
-  { title: 'Yuru Yuri',                                genres: ['Comedy', 'Slice of Life']        },
-]
 
 const CACHE_URL =
   'https://raw.githubusercontent.com/BradenTeo/blog-project/main/static/anime-cache.json'
@@ -333,9 +201,11 @@ export default {
     return {
       selectedGenre: 'all',
       genres: GENRES,
-      tier10Data: TIER_10_DATA,
-      tier9: TIER_9,
-      tier8: TIER_8,
+      loading: true,
+      lightbox: null,
+      tier10Data: [],
+      tier9: [],
+      tier8: [],
       fetchedAt: null,
       glowX: 0,
       glowY: 0,
@@ -378,6 +248,8 @@ export default {
     },
   },
   mounted() {
+    this._escHandler = (e) => { if (e.key === 'Escape') this.lightbox = null }
+    window.addEventListener('keydown', this._escHandler)
     fetch(CACHE_URL)
       .then(res => (res.ok ? res.json() : null))
       .then((cache) => {
@@ -394,6 +266,10 @@ export default {
         })
       })
       .catch(() => {})
+      .finally(() => { this.loading = false })
+  },
+  beforeDestroy() {
+    window.removeEventListener('keydown', this._escHandler)
   },
   methods: {
     genreCount(genre) {
@@ -419,15 +295,49 @@ export default {
   position: relative;
 }
 
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  z-index: 999;
+}
+
+.lightbox-img {
+  max-width: min(320px, 90vw);
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  object-fit: contain;
+}
+
+.lightbox-title {
+  color: #e2e8f0;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  max-width: 90vw;
+}
+
+.lb-enter-active, .lb-leave-active { transition: opacity 0.2s ease; }
+.lb-enter, .lb-leave-to { opacity: 0; }
+
 .cursor-glow {
   position: absolute;
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.04) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 50;
+}
+.dark .cursor-glow {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, transparent 70%);
 }
 
 .vt323 {
@@ -444,10 +354,18 @@ export default {
 }
 
 .filter-btn-idle {
+  border-color: #16a34a;
+  color: #15803d;
+}
+.filter-btn-idle:hover {
+  border-color: #15803d;
+  color: #14532d;
+}
+.dark .filter-btn-idle {
   border-color: #14532d;
   color: #166534;
 }
-.filter-btn-idle:hover {
+.dark .filter-btn-idle:hover {
   border-color: #16a34a;
   color: #4ade80;
 }
@@ -462,12 +380,17 @@ export default {
   font-size: 0.6rem;
   padding: 1px 5px;
   border-radius: 3px;
-  background-color: rgba(74, 222, 128, 0.08);
-  border: 1px solid rgba(74, 222, 128, 0.2);
-  color: #166534;
+  background-color: rgba(74, 222, 128, 0.15);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+  color: #15803d;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   white-space: nowrap;
+}
+.dark .genre-tag {
+  background-color: rgba(74, 222, 128, 0.08);
+  border-color: rgba(74, 222, 128, 0.2);
+  color: #166534;
 }
 
 .tier-title-ruby {
@@ -529,12 +452,24 @@ export default {
   100% { transform: translateY(260%); opacity: 0; }
 }
 
-.cover-art {
-  filter: brightness(0.92) saturate(0.9);
-  transition: filter 0.2s ease;
+.img-wrap {
+  flex-shrink: 0;
+  width: 48px;
+  height: 68px;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
-.tier-10-card:hover .cover-art {
+.cover-art {
+  width: 48px;
+  height: 68px;
+  filter: brightness(0.92) saturate(0.9);
+  transition: transform 0.3s ease, filter 0.2s ease;
+}
+
+.tier-10-card:hover .cover-art,
+.tier-9-card:hover .cover-art {
+  transform: scale(1.15);
   filter: brightness(1.05) saturate(1.05);
 }
 

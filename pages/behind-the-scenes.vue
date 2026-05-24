@@ -41,6 +41,8 @@
               <li>Reorganised the assets folder structure to match page usage</li>
               <li>General bug fixes and UI polish throughout</li>
               <li>Added an Anime Hall of Fame page — all series rated 8/10+ displayed in retro terminal style with a scrolling ticker</li>
+              <li>Anime page now auto-updates weekly via GitHub Actions: fetches the rated list from MyAnimeList, pulls cover art and genre tags from the Jikan API, and commits a JSON cache — no redeploy needed, data loads at runtime</li>
+              <li>Anime page visual upgrades: tier title glow effects, animated card border sweep, custom Naruto cursor, cursor spotlight glow, cover art zoom on hover, and a lightbox modal on click</li>
             </ul>
           </div>
         </div>

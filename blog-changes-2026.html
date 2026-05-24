@@ -225,6 +225,8 @@
       <li>ClickableTab — Modern Styling</li>
       <li>PostsButton Redesign</li>
       <li>Assets Folder Restructure</li>
+      <li>Anime Page — Auto-Update Pipeline</li>
+      <li>Anime Page — Visual Polish</li>
     </ol>
   </div>
 
@@ -895,6 +897,149 @@ gifsicle --delay 10 yuru-yuri.gif -o yuru-yuri-slow.gif</code></pre>
   <div class="callout">
     <strong>Verification:</strong> After updating all paths, a grep for the old folder names (<code>aboutme/</code>, <code>perspectives/</code>, <code>default/</code>, etc.) across all <code>.vue</code> files returned zero results — confirming no stale references remained.
   </div>
+
+
+  <!-- 24 -->
+  <h2>Anime Page — Auto-Update Pipeline <span class="tag tag-infra">Infrastructure</span></h2>
+
+  <h3>The problem</h3>
+  <p>The Anime Hall of Fame page had three large hardcoded arrays (one per tier) baked directly into the <span class="file">anime.vue</span> source file. Every time a new anime was rated, the arrays had to be manually edited and the site redeployed.</p>
+
+  <h3>How the auto-update works</h3>
+  <p>A new Node.js script (<span class="file">scripts/fetch-anime.js</span>) runs on a weekly GitHub Actions schedule. It has no npm dependencies — only Node built-ins.</p>
+  <ol>
+    <li><strong>Fetch the MAL list</strong> — hits MyAnimeList's internal JSON endpoint (paginated in batches of 100), filters for <code>score &gt;= 8</code></li>
+    <li><strong>Fetch per-anime details</strong> — calls the Jikan API (<code>/v4/anime/{id}</code>) for each entry to get the cover image URL and genre tags, with a 400ms sleep between calls to stay under Jikan's rate limit</li>
+    <li><strong>Map genres</strong> — a <code>GENRE_MAP</code> object translates MAL's genre names to the site's 11 display categories</li>
+    <li><strong>Write the cache</strong> — outputs <span class="file">static/anime-cache.json</span> with a <code>fetchedAt</code> timestamp and an array of <code>{ title, score, malId, imageUrl, genres }</code> objects, sorted by score desc then title asc</li>
+  </ol>
+
+  <pre><code>// .github/workflows/update-anime.yml
+on:
+  schedule:
+    - cron: '0 1 * * 0'  // 1am UTC every Sunday
+  workflow_dispatch:        // manual trigger from Actions tab
+
+permissions:
+  contents: write           // allows the bot to commit back to main</code></pre>
+
+  <p>After running the script, the workflow commits the updated JSON only if it changed:</p>
+  <pre><code>git add static/anime-cache.json
+git diff --staged --quiet && echo "No changes." || (
+  git commit -m "chore: update anime cache [skip ci]"
+  git push
+)</code></pre>
+
+  <div class="callout">
+    <strong>[skip ci]</strong> in the commit message tells GitHub Actions not to trigger the CI workflow on this commit. Since the JSON update doesn't affect the compiled site, there's nothing to lint or build.
+  </div>
+
+  <h3>No redeploy needed — runtime fetch</h3>
+  <p>Rather than baking the JSON into the static build, the page fetches it live from <code>raw.githubusercontent.com</code> every time a visitor loads the page. This means the cache update shows up immediately for the next visitor — no rebuild, no push to <code>gh-pages</code>.</p>
+  <pre><code>// pages/posts/anime.vue
+const CACHE_URL =
+  'https://raw.githubusercontent.com/BradenTeo/blog-project/main/static/anime-cache.json'
+
+mounted() {
+  fetch(CACHE_URL)
+    .then(res => (res.ok ? res.json() : null))
+    .then((cache) => {
+      if (!cache || !Array.isArray(cache.entries)) return
+      this.tier10Data = cache.entries.filter(e => e.score === 10).map(e => ({ ...e, img: e.imageUrl }))
+      this.tier9      = cache.entries.filter(e => e.score === 9).map(e => ({ ...e, img: e.imageUrl }))
+      this.tier8      = cache.entries.filter(e => e.score === 8)
+    })
+    .catch(() => {})
+    .finally(() => { this.loading = false })
+}</code></pre>
+
+  <p>A <code>loading</code> flag in <code>data()</code> starts as <code>true</code> and is cleared in <code>finally()</code>, so the page shows a "LOADING DATA_" indicator while the fetch is in flight and the "no results" message is suppressed until loading completes.</p>
+
+  <h3>Requirement</h3>
+  <p>The MyAnimeList profile must be set to <strong>Public</strong>. The endpoint used (<code>myanimelist.net/animelist/{user}/load.json</code>) is unauthenticated — it returns an empty response for private lists.</p>
+
+
+  <!-- 25 -->
+  <h2>Anime Page — Visual Polish <span class="tag tag-style">Styling</span></h2>
+
+  <h3>Tier title glow</h3>
+  <p>The three section headers (<code>[ LEGENDARY — 10/10 ]</code>, <code>[ EXCELLENT — 9/10 ]</code>, <code>[ GREAT — 8/10 ]</code>) were given static <code>text-shadow</code> glows matching their tier color — no animation, just always-on:</p>
+  <pre><code>.tier-title-ruby   { text-shadow: 0 0 8px rgba(232,64,96,0.6),  0 0 24px rgba(232,64,96,0.25); }
+.tier-title-gold   { text-shadow: 0 0 8px rgba(245,158,11,0.6), 0 0 24px rgba(245,158,11,0.25); }
+.tier-title-silver { text-shadow: 0 0 8px rgba(148,163,184,0.5),0 0 22px rgba(148,163,184,0.2); }</code></pre>
+
+  <h3>Animated card border sweep</h3>
+  <p>Cards have a subtle animated glow — not a pulsing box-shadow, but a radial-gradient blob that physically translates from the top of the card to the bottom via a <code>::after</code> pseudo-element:</p>
+  <pre><code>.tier-10-card { position: relative; overflow: hidden; }
+
+.tier-10-card::after {
+  content: '';
+  position: absolute;
+  left: -10%; top: 0;
+  width: 120%; height: 65%;
+  background: radial-gradient(ellipse 55% 100% at 50% 0%, rgba(232,64,96,0.09) 0%, transparent 100%);
+  transform: translateY(-100%);
+  animation: rubySwipe 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes rubySwipe {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 0.7; }
+  100% { transform: translateY(260%); opacity: 0; }
+}</code></pre>
+  <p>The card border is a static 0.22 opacity — it never disappears. The ellipse width (55%) and the vertical travel (260%) create the "circular downward sweep" feel.</p>
+
+  <h3>Custom cursor</h3>
+  <p>A Naruto image (resized to 25×32px via <code>sips</code>) is used as a custom cursor inside the terminal window. The <code>*</code> selector override ensures child elements don't revert to the system cursor:</p>
+  <pre><code>.anime-window,
+.anime-window * {
+  cursor: url('/blog-project/naruto-cursor-32.png') 12 16, auto;
+}</code></pre>
+
+  <h3>Cursor spotlight glow</h3>
+  <p>A <code>position: absolute</code> div follows the mouse inside the terminal window, creating a soft white radial glow (brightness spotlight) centered on the cursor. It's updated on <code>mousemove</code> using <code>getBoundingClientRect()</code> to convert viewport coordinates to element-relative coordinates:</p>
+  <pre><code>onMouseMove(e) {
+  const rect = this.$refs.animeWindow.getBoundingClientRect()
+  this.glowX = e.clientX - rect.left
+  this.glowY = e.clientY - rect.top
+}</code></pre>
+  <pre><code>.cursor-glow {
+  position: absolute;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 50;
+}</code></pre>
+
+  <h3>Cover art zoom on hover</h3>
+  <p>Images are wrapped in a fixed-size <code>.img-wrap</code> div with <code>overflow: hidden</code>. The <code>img</code> inside scales up on card hover — the wrapper clips the zoom so surrounding text never shifts:</p>
+  <pre><code>.img-wrap { width: 48px; height: 68px; overflow: hidden; border-radius: 4px; }
+.cover-art { transition: transform 0.3s ease, filter 0.2s ease; }
+.tier-10-card:hover .cover-art,
+.tier-9-card:hover .cover-art  { transform: scale(1.15); filter: brightness(1.05) saturate(1.05); }</code></pre>
+
+  <h3>Lightbox modal on click</h3>
+  <p>Clicking any card opens a centered lightbox overlay with the full cover art enlarged to <code>min(320px, 90vw)</code> and the anime title below it. It is dismissed by clicking the overlay or pressing Escape.</p>
+  <pre><code>// data()
+lightbox: null
+
+// template
+&lt;div v-if="lightbox" class="lightbox-overlay" @click="lightbox = null"&gt;
+  &lt;img :src="lightbox.img" @click.stop /&gt;
+  &lt;div&gt;{{ lightbox.title }}&lt;/div&gt;
+&lt;/div&gt;
+
+// mounted() — Escape key handler
+this._escHandler = (e) => { if (e.key === 'Escape') this.lightbox = null }
+window.addEventListener('keydown', this._escHandler)
+
+// beforeDestroy()
+window.removeEventListener('keydown', this._escHandler)</code></pre>
+  <p>A Vue <code>&lt;transition name="lb"&gt;</code> fades the overlay in and out over 0.2s. The <code>@click.stop</code> on the image prevents clicks on the image itself from closing the lightbox.</p>
 
 
   <hr style="margin-top:48px; border:none; border-top:2px solid #e2e8f0;" />
