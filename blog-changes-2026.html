@@ -7,53 +7,99 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg:             #f7fafc;
+      --page-bg:        #ffffff;
+      --text:           #1a202c;
+      --muted:          #718096;
+      --heading:        #2d3748;
+      --sub:            #4a5568;
+      --border:         #e2e8f0;
+      --code-bg:        #edf2f7;
+      --code-color:     #c53030;
+      --toc-bg:         #f7fafc;
+      --th-bg:          #edf2f7;
+      --callout-bg:     #ebf8ff;
+      --callout-border: #4299e1;
+      --callout-color:  #2b6cb0;
+      --callout-strong: #2c5282;
+      --file-bg:        #faf5ff;
+      --file-color:     #805ad5;
+      --counter-color:  #a0aec0;
+      --shadow:         rgba(0,0,0,0.08);
+    }
+
+    body.dark {
+      --bg:             #0f172a;
+      --page-bg:        #1e293b;
+      --text:           #e2e8f0;
+      --muted:          #94a3b8;
+      --heading:        #f1f5f9;
+      --sub:            #cbd5e1;
+      --border:         #334155;
+      --code-bg:        #0f172a;
+      --code-color:     #f87171;
+      --toc-bg:         #0f172a;
+      --th-bg:          #334155;
+      --callout-bg:     #1e3a5f;
+      --callout-border: #3b82f6;
+      --callout-color:  #93c5fd;
+      --callout-strong: #bfdbfe;
+      --file-bg:        #1e1b4b;
+      --file-color:     #a78bfa;
+      --counter-color:  #64748b;
+      --shadow:         rgba(0,0,0,0.4);
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: 15px;
       line-height: 1.7;
-      color: #1a202c;
-      background: #f7fafc;
+      color: var(--text);
+      background: var(--bg);
       padding: 40px 24px;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
     .page {
       max-width: 800px;
       margin: 0 auto;
-      background: white;
+      background: var(--page-bg);
       border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 24px var(--shadow);
       padding: 56px 64px;
+      transition: background 0.2s ease, box-shadow 0.2s ease;
     }
 
     h1 {
       font-size: 2rem;
       font-weight: 800;
-      color: #1a202c;
+      color: var(--heading);
       margin-bottom: 6px;
     }
 
     .subtitle {
-      color: #718096;
+      color: var(--muted);
       font-size: 0.95rem;
       margin-bottom: 40px;
       padding-bottom: 24px;
-      border-bottom: 2px solid #e2e8f0;
+      border-bottom: 2px solid var(--border);
     }
 
     h2 {
       font-size: 1.25rem;
       font-weight: 700;
-      color: #2d3748;
+      color: var(--heading);
       margin-top: 40px;
       margin-bottom: 12px;
       padding-bottom: 6px;
-      border-bottom: 2px solid #e2e8f0;
+      border-bottom: 2px solid var(--border);
       counter-increment: section;
     }
 
     h2::before {
       content: counter(section) ". ";
-      color: #a0aec0;
+      color: var(--counter-color);
     }
 
     body { counter-reset: section; }
@@ -61,17 +107,17 @@
     h3 {
       font-size: 1rem;
       font-weight: 600;
-      color: #4a5568;
+      color: var(--sub);
       margin-top: 20px;
       margin-bottom: 6px;
     }
 
-    p { margin-bottom: 10px; color: #4a5568; }
+    p { margin-bottom: 10px; color: var(--sub); }
 
     ul, ol {
       padding-left: 22px;
       margin-bottom: 12px;
-      color: #4a5568;
+      color: var(--sub);
     }
 
     li { margin-bottom: 5px; }
@@ -79,14 +125,14 @@
     code {
       font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
       font-size: 0.82em;
-      background: #edf2f7;
-      color: #c53030;
+      background: var(--code-bg);
+      color: var(--code-color);
       padding: 1px 5px;
       border-radius: 4px;
     }
 
     pre {
-      background: #2d3748;
+      background: #1e293b;
       color: #e2e8f0;
       padding: 16px 20px;
       border-radius: 8px;
@@ -97,12 +143,7 @@
       margin: 12px 0 16px;
     }
 
-    pre code {
-      background: none;
-      color: inherit;
-      padding: 0;
-      font-size: inherit;
-    }
+    pre code { background: none; color: inherit; padding: 0; font-size: inherit; }
 
     .tag {
       display: inline-block;
@@ -122,78 +163,94 @@
     .tag-rename { background: #fef3c7; color: #92400e; }
     .tag-infra  { background: #e9d8fd; color: #553c9a; }
 
+    body.dark .tag-fix    { background: #7f1d1d; color: #fca5a5; }
+    body.dark .tag-new    { background: #14532d; color: #86efac; }
+    body.dark .tag-style  { background: #1e3a5f; color: #93c5fd; }
+    body.dark .tag-rename { background: #451a03; color: #fcd34d; }
+    body.dark .tag-infra  { background: #2e1065; color: #c4b5fd; }
+
     .callout {
-      background: #ebf8ff;
-      border-left: 4px solid #4299e1;
+      background: var(--callout-bg);
+      border-left: 4px solid var(--callout-border);
       border-radius: 0 8px 8px 0;
       padding: 12px 16px;
       margin: 14px 0;
-      color: #2b6cb0;
+      color: var(--callout-color);
       font-size: 0.9em;
     }
 
-    .callout strong { color: #2c5282; }
+    .callout strong { color: var(--callout-strong); }
 
     .file {
       font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
       font-size: 0.8em;
-      color: #805ad5;
-      background: #faf5ff;
+      color: var(--file-color);
+      background: var(--file-bg);
       padding: 1px 6px;
       border-radius: 4px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 12px 0;
-      font-size: 0.9em;
-    }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9em; }
 
     th {
-      background: #edf2f7;
+      background: var(--th-bg);
       text-align: left;
       padding: 8px 12px;
       font-weight: 600;
-      color: #4a5568;
+      color: var(--sub);
     }
 
     td {
       padding: 8px 12px;
-      border-bottom: 1px solid #e2e8f0;
-      color: #4a5568;
+      border-bottom: 1px solid var(--border);
+      color: var(--sub);
     }
 
     tr:last-child td { border-bottom: none; }
 
     .toc {
-      background: #f7fafc;
-      border: 1px solid #e2e8f0;
+      background: var(--toc-bg);
+      border: 1px solid var(--border);
       border-radius: 8px;
       padding: 20px 28px;
       margin-bottom: 36px;
     }
 
-    .toc h3 {
-      color: #2d3748;
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
+    .toc h3 { color: var(--heading); margin-top: 0; margin-bottom: 10px; }
+    .toc ol  { color: var(--sub); margin-bottom: 0; }
+    .toc li  { margin-bottom: 3px; }
 
-    .toc ol {
-      color: #4a5568;
-      margin-bottom: 0;
+    /* Toggle button */
+    #theme-toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--page-bg);
+      color: var(--sub);
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: background 0.2s ease, border-color 0.2s ease;
+      z-index: 100;
     }
-
-    .toc li { margin-bottom: 3px; }
+    #theme-toggle:hover { border-color: var(--muted); }
 
     @media print {
       body { background: white; padding: 0; }
       .page { box-shadow: none; border-radius: 0; padding: 32px 48px; }
+      #theme-toggle { display: none; }
     }
   </style>
 </head>
 <body>
+<button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
 <div class="page">
 
   <h1>Blog Project — 2026 Changes</h1>
@@ -1163,5 +1220,21 @@ for (let i = 0; i &lt; toFetch.length; i += BATCH) {
   </p>
 
 </div>
+<script>
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    var dark = localStorage.getItem('docs-dark') === 'true';
+    function apply() {
+      document.body.classList.toggle('dark', dark);
+      btn.textContent = dark ? '☀️' : '🌙';
+    }
+    apply();
+    btn.addEventListener('click', function () {
+      dark = !dark;
+      localStorage.setItem('docs-dark', dark);
+      apply();
+    });
+  })();
+</script>
 </body>
 </html>
